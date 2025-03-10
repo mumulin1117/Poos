@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-Posmzen/Pods-Posmzen-frameworks.sh
+${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework
+${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework

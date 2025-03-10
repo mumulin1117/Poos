@@ -1,0 +1,28 @@
+PODS:
+  - iCarousel (1.8.3)
+  - IQKeyboardManager (6.5.19)
+  - SnapKit (5.7.1)
+  - SwiftyStoreKit (0.16.1)
+
+DEPENDENCIES:
+  - iCarousel
+  - IQKeyboardManager
+  - SnapKit
+  - SwiftyStoreKit
+
+SPEC REPOS:
+  trunk:
+    - iCarousel
+    - IQKeyboardManager
+    - SnapKit
+    - SwiftyStoreKit
+
+SPEC CHECKSUMS:
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
+
+PODFILE CHECKSUM: 992907fce4110ced99c89b29986dd6e9c9c8ad24
+
+COCOAPODS: 1.16.2
