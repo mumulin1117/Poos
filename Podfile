@@ -10,6 +10,6 @@ pod 'SnapKit'
 pod 'iCarousel'
 pod "IQKeyboardManager"
 
-
+pod "SVProgressHUD"
 pod "SwiftyStoreKit"
 end

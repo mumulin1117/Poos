@@ -14,28 +14,35 @@ class ViewController: UIViewController {
     static var posmLikeingme = Array<Dictionary<String,String>>()
     
     
-    static var lognCacheing:UIImage = UIImage(named: "MIAJ_6")!
+    static var lognCacheing:UIImage = UIImage(named: "posImagvc6")!
     override func viewDidLoad() {
         super.viewDidLoad()
        //是否已经下载过app
         if UserDefaults.standard.bool(forKey: "dpownedThisB") == false {
             //设置test账号
             let Adbop = ["posmOID":"poosder@gmail.com",
-                         "posmuNime":"Jami",
+                         "posmuNime":"Ava Miller",
                         
-                         "posmuBlance":"200"]
-            
+                         "posmuBlance":"200",
+            "SupplementaryText":"Here’s my latest selfie! Any tips for improvement?",
+            "Supplementaryimg":"Supplementaryimg61%Supplementaryimg62%Supplementaryimg60"]
             UserDefaults.standard.set(Adbop, forKey: "poosder@gmail.com")
             //已经下载过
             UserDefaults.standard.set(true, forKey: "dpownedThisB")
         }
  
-         //是否登陆
-        ViewController.createappdemoingPOSM(statusluserPOSM: UserDefaults.standard.object(forKey: "statusUserloagPOSM") != nil)
+        
     }
 
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //是否登陆
+       ViewController.createappdemoingPOSM(statusluserPOSM: UserDefaults.standard.object(forKey: "statusUserloagPOSM") != nil)
+        
+    }
     class func createappdemoingPOSM(statusluserPOSM:Bool)  {
-        guard let alllfBounposm = Bundle.main.path(forResource: "", ofType: "plist"),
+        guard let alllfBounposm = Bundle.main.path(forResource: "oosmBdk", ofType: "plist"),
         let relaop = FileManager.default.contents(atPath: alllfBounposm) else {
            
             return
@@ -46,20 +53,23 @@ class ViewController: UIViewController {
         }
         
         // 获取当前活跃的 window
-        guard let windowScene = UIApplication.shared.connectedScenes
-            .filter({ $0.activationState == .foregroundActive })
-            .first as? UIWindowScene,
-            let sceneDelegate = windowScene.delegate as? SceneDelegate else {
-                return
+        // 获取当前活跃窗口 (支持 iOS 13+)
+        var windowMain:UIWindow?
+        if let window = (UIApplication.shared.connectedScenes
+            .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
+            .windows
+            .first(where: \.isKeyWindow)  {
+            windowMain = window
+              
+        }else{
+            windowMain = UIApplication.shared.windows.first { $0.isKeyWindow }
         }
-
-        let window = sceneDelegate.window
         
         if statusluserPOSM {
-            window?.rootViewController = POSMRootwDrcxaw()
+            windowMain?.rootViewController = POSMRootwDrcxaw()
             let curentuser = UserDefaults.standard.object(forKey: "statusUserloagPOSM") as? [String:String]
             if curentuser?["posmOID"] == "poosder@gmail.com" {
-                ViewController.lognCacheing = UIImage(named: "MIAJ_6")!
+                ViewController.lognCacheing = UIImage(named: "posImagvc6")!
                 ViewController.posmIlikeing = Array(ViewController.posmalllBuff.prefix(1))
                 ViewController.posmLikeingme = Array(ViewController.posmalllBuff.suffix(1))
             }
@@ -68,7 +78,7 @@ class ViewController: UIViewController {
            
             let laoginIncontroller = UINavigationController.init(rootViewController: POSMLogDrcxaw.init())
             laoginIncontroller.navigationBar.isHidden = true
-            window?.rootViewController =  laoginIncontroller
+            windowMain?.rootViewController =  laoginIncontroller
         }
     }
     

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="POSMRandomTakeCrcxaw" customModule="Posmzen" customModuleProvider="target">
+            <connections>
+                <outlet property="CounttitleMount" destination="L9d-na-AUD" id="WyS-Sr-WVh"/>
+                <outlet property="staresuilposs" destination="79I-Fg-Nbu" id="i3m-5E-X3N"/>
+                <outlet property="tipointe" destination="Tiv-so-nHW" id="xa0-eC-q9K"/>
+                <outlet property="view" destination="bAJ-oK-V56" id="D7t-FK-6BP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="bAJ-oK-V56">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radomtakeingBafgd" translatesAutoresizingMaskIntoConstraints="NO" id="HAq-by-NUe">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get a random photo pose and just follow it！" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tiv-so-nHW">
+                    <rect key="frame" x="18" y="129" width="357" height="51"/>
+                    <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="22"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79I-Fg-Nbu">
+                    <rect key="frame" x="19" y="756" width="355" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="ByK-DX-cJQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Start" backgroundImage="posdaiNbc">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="reallPickBegin:" destination="-1" eventType="touchUpInside" id="zj8-qn-G3C"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYV-e6-F05">
+                    <rect key="frame" x="18" y="59" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="6Of-uO-KaN"/>
+                        <constraint firstAttribute="width" constant="40" id="jO3-ps-3RL"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" backgroundImage="Hubergyu"/>
+                    <state key="selected" backgroundImage="posmxuanzhong"/>
+                    <connections>
+                        <action selector="paperNoginb:" destination="-1" eventType="touchUpInside" id="AoP-y4-IDk"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Single" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9d-na-AUD">
+                    <rect key="frame" x="68" y="67.333333333333329" width="61" height="23.333333333333329"/>
+                    <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="LWF-2R-LiH"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="uYV-e6-F05" firstAttribute="top" secondItem="LWF-2R-LiH" secondAttribute="top" id="4gN-I4-HBd"/>
+                <constraint firstItem="79I-Fg-Nbu" firstAttribute="leading" secondItem="LWF-2R-LiH" secondAttribute="leading" constant="19" id="7me-x7-XUi"/>
+                <constraint firstAttribute="bottom" secondItem="HAq-by-NUe" secondAttribute="bottom" id="E6X-04-f4A"/>
+                <constraint firstItem="LWF-2R-LiH" firstAttribute="trailing" secondItem="Tiv-so-nHW" secondAttribute="trailing" constant="18" id="Enr-Kj-Tcg"/>
+                <constraint firstItem="L9d-na-AUD" firstAttribute="centerY" secondItem="uYV-e6-F05" secondAttribute="centerY" id="FF5-EK-t03"/>
+                <constraint firstItem="Tiv-so-nHW" firstAttribute="leading" secondItem="uYV-e6-F05" secondAttribute="leading" id="JBJ-lN-rgo"/>
+                <constraint firstItem="uYV-e6-F05" firstAttribute="leading" secondItem="LWF-2R-LiH" secondAttribute="leading" constant="18" id="Llc-LK-8VF"/>
+                <constraint firstItem="L9d-na-AUD" firstAttribute="leading" secondItem="uYV-e6-F05" secondAttribute="trailing" constant="10" id="XNo-UK-9eI"/>
+                <constraint firstItem="Tiv-so-nHW" firstAttribute="top" secondItem="uYV-e6-F05" secondAttribute="bottom" constant="30" id="YRd-SP-fiy"/>
+                <constraint firstItem="HAq-by-NUe" firstAttribute="top" secondItem="bAJ-oK-V56" secondAttribute="top" id="jmr-ef-LQN"/>
+                <constraint firstItem="LWF-2R-LiH" firstAttribute="bottom" secondItem="79I-Fg-Nbu" secondAttribute="bottom" constant="10" id="p35-TV-maI"/>
+                <constraint firstItem="LWF-2R-LiH" firstAttribute="trailing" secondItem="79I-Fg-Nbu" secondAttribute="trailing" constant="19" id="qij-sg-QQk"/>
+                <constraint firstItem="HAq-by-NUe" firstAttribute="leading" secondItem="LWF-2R-LiH" secondAttribute="leading" id="rJ3-Vz-RVB"/>
+                <constraint firstItem="HAq-by-NUe" firstAttribute="trailing" secondItem="LWF-2R-LiH" secondAttribute="trailing" id="twY-sp-Tlw"/>
+            </constraints>
+            <point key="canvasLocation" x="46.564885496183201" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Hubergyu" width="40" height="40"/>
+        <image name="posdaiNbc" width="335" height="52"/>
+        <image name="posmxuanzhong" width="128" height="128"/>
+        <image name="radomtakeingBafgd" width="375" height="812"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

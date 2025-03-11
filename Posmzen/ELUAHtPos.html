@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poos Legal Agreements</title>
+    <style>
+        :root {
+            --primary-color: #780099;    /* UIColor(red:0.47, green:0.05, blue:0.6, alpha:1) */
+            --accent-color: #00FFB7;    /* UIColor(red:0, green:1, blue:0.72, alpha:1) */
+        }
+
+        body {
+            font-family: -apple-system, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 25px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .content {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        button {
+            padding: 14px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #agreeBtn {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        #declineBtn {
+            background: #eaeaea;
+            color: var(--primary-color);
+        }
+
+        .legal-links {
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .legal-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            border-bottom: 2px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>End-User License Agreement</h1>
+        
+        <div class="content">
+           <h3>1. License Grant</h3>
+            <p>Poos grants you a non-exclusive, non-transferable license to use our AI-powered photography features and pose suggestions for personal/non-commercial purposes.</p>
+
+            <h3>2. Content Ownership</h3>
+            <p>You retain copyright to uploaded photos but grant Poos a worldwide license to:<br>
+            - Store/display content in community features<br>
+            - Use anonymized data to improve AI algorithms</p>
+
+            <h3>3. Prohibited Uses</h3>
+            <p>You may not:<br>
+            - Upload copyrighted material without authorization<br>
+            - Use AI suggestions for illegal surveillance<br>
+            - Reverse-engineer pose generation algorithms</p>
+
+            <h3>4. Termination</h3>
+            <p>We may suspend accounts for:<br>
+            - 3+ community guideline violations<br>
+            - Commercial resale of AI-generated poses<br>
+            - Unauthorized facial recognition usage</p>
+        </div>
+
+        <div class="button-group">
+            <button id="agreeBtn" onclick="handleResponse(true)">Agree</button>
+            <button id="declineBtn" onclick="handleResponse(false)">Decline</button>
+        </div>
+
+        <div class="legal-links">
+            <a href="priHtPos.html">Privacy Policy</a>
+            <a href="termPos.html">User Agreement</a>
+        </div>
+    </div>
+
+    <script>
+        function handleResponse(accepted) {
+            window.webkit.messageHandlers.responseHandler.postMessage(accepted);
+        }
+        
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.webkit.messageHandlers.linkHandler.postMessage(e.target.href);
+            });
+        });
+    </script>
+</body>
+</html>

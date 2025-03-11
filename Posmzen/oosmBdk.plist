@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>posmOID</key>
+		<string>321</string>
+		<key>posmuNime</key>
+		<string>Ella James</string>
+		<key>posImagvc</key>
+		<string>posImagvc1</string>
+		<key>SupplementaryText</key>
+		<string>New pose ideas! What do you think?</string>
+		<key>Supplementaryimg</key>
+		<string>Supplementaryimg10%Supplementaryimg11</string>
+	</dict>
+	<dict>
+		<key>posmOID</key>
+		<string>322</string>
+		<key>posmuNime</key>
+		<string>Liam Foster</string>
+		<key>posImagvc</key>
+		<string>posImagvc2</string>
+		<key>SupplementaryText</key>
+		<string>Feeling creative today! Here&apos;s my latest shot.</string>
+		<key>Supplementaryimg</key>
+		<string>Supplementaryimg21%Supplementaryimg22%Supplementaryimg20</string>
+	</dict>
+	<dict>
+		<key>posmOID</key>
+		<string>323</string>
+		<key>posmuNime</key>
+		<string>Maya Collins</string>
+		<key>posImagvc</key>
+		<string>posImagvc3</string>
+		<key>SupplementaryText</key>
+		<string>Tried a new angle, how’s it look?</string>
+		<key>Supplementaryimg</key>
+		<string>Supplementaryimg31%Supplementaryimg32%Supplementaryimg30</string>
+	</dict>
+	<dict>
+		<key>posmOID</key>
+		<string>324</string>
+		<key>posmuNime</key>
+		<string>ack Bennett</string>
+		<key>posImagvc</key>
+		<string>posImagvc4</string>
+		<key>SupplementaryText</key>
+		<string>AI suggested this pose, and I’m loving it!</string>
+		<key>Supplementaryimg</key>
+		<string>Supplementaryimg41%Supplementaryimg42%Supplementaryimg40</string>
+	</dict>
+	<dict>
+		<key>posmOID</key>
+		<string>325</string>
+		<key>posmuNime</key>
+		<string>Grace Taylor</string>
+		<key>posImagvc</key>
+		<string>posImagvc5</string>
+		<key>SupplementaryText</key>
+		<string>Had so much fun experimenting with different poses!</string>
+		<key>Supplementaryimg</key>
+		<string>Supplementaryimg51%Supplementaryimg52%Supplementaryimg50</string>
+	</dict>
+</array>
+</plist>
