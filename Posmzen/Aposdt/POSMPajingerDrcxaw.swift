@@ -157,7 +157,7 @@ class POSMPajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollection
         poosTitle.text = "Coin Recharge"
         poosTitle.font = UIFont(name: "Arial Rounded MT Bold", size: 20)
         poosTitle.textColor = .white
-        pigCoverBackgroun.contentMode = .scaleAspectFill
+        pigCoverBackgroun.contentMode = .scaleToFill
         
         idperform.addTarget(self, action: #selector(AokoiGuni), for: .touchUpInside)
         idperform.setImage(UIImage.init(named: "Hubergyu"), for: .normal)
