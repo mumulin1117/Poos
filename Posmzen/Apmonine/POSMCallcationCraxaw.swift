@@ -22,7 +22,7 @@ class POSMCallcationCraxaw: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("iAllioer poosd")
     }
     
     
@@ -138,7 +138,8 @@ class POSMCallcationCraxaw: UIViewController {
         
         poosTitle.font = UIFont(name: "Arial Rounded MT Bold", size: 20)
         poosTitle.textColor = .white
-        poosTitle.text = "connecting...."
+        let ajigjkin = self.poseRealStr("cjovnwncercztiianrgw.u.e.s.").0
+        poosTitle.text = ajigjkin
         
         loadinGscv()
         NoNOojhade()

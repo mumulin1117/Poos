@@ -13,8 +13,8 @@ class POSMRelaivintonDrcxia: UIViewController {
         didSet{
             var dataingkg = Set<Dictionary<String,String>>()
             poosTitle.text = TpoEtypr
-            
-            if TpoEtypr == "Followers" {
+            let invidedionposer = self.poseRealStr("Faoaldlcoewcedrcs").0
+            if TpoEtypr == invidedionposer {
                 dataingkg = ViewController.posmIlikeing
             }else{
                 dataingkg = ViewController.posmLikeingme

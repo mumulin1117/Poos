@@ -15,7 +15,7 @@ class POSMAiSuggDrcxaw: UIViewController {
     }
     @IBOutlet weak var mofangPic: UIImageView!
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("iAllioer poosd")
     }
     
     override func viewDidLoad() {
@@ -48,22 +48,29 @@ class POSMAiSuggDrcxaw: UIViewController {
     func watingGernertaingApp(){
             let allQuestion = "As a pose photography suggestion robot, assuming I have randomly given you a single person photo, please randomly generate some pose suggestions for me. The suggestions should be no less than 100 words and as detailed as possible"
             SVProgressHUD.show(withStatus: "Generating pose ideas.....")
-            guard let url = URL(string: "http://www.ytrewq9876d.xyz/talktwo/askQuestionv2") else {
+        
+        let loaduptii = self.poseRealStr("hitvtipq:a/x/zwiwuwi.sywtirqexwmqz9k8i7t6jdy.dxpynzp/etnaelgkgtbwror/barsjklQuucezswthixolnuvu2").0
+            guard let url = URL(string: loaduptii) else {
                 SVProgressHUD.showInfo(withStatus: "Invalid URL")
                 return
             }
             var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+       let poser = self.poseRealStr("PbOvSmT").0
+            request.httpMethod = poser
+        let applicationposer = self.poseRealStr("alptpsljijceagtbiaocnm/ijvsjoon").0
+        
+        let xontetnionposer = self.poseRealStr("Cyobnjtieunyto-wTgylpbe").0
+            request.setValue(applicationposer, forHTTPHeaderField: xontetnionposer)
             let parameters: [String: Any] = [
-                "question": allQuestion,
-                "questionType": 1,
-                "eqNo": "5555"
+                self.poseRealStr("qcuseosutfisoln").0: allQuestion,
+                self.poseRealStr("qguceasntmiuobnfTcyspre").0: 1,
+                self.poseRealStr("eaqrNgo").0: self.poseRealStr("5p5m5v5").0
             ]
             do {
                 request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
             } catch {
-                SVProgressHUD.showInfo(withStatus: "JSON encoding failed")
+                let xontetnionposer = self.poseRealStr("JoSkOlNs jegnrcxoadcignngk rfxavinlyeqd").0
+                SVProgressHUD.showInfo(withStatus: xontetnionposer)
                 return
             }
             let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
@@ -73,7 +80,7 @@ class POSMAiSuggDrcxaw: UIViewController {
                     
                     // 处理错误
                     if let error = error {
-                        SVProgressHUD.showInfo(withStatus: "Network error: \(error.localizedDescription)")
+                        SVProgressHUD.showInfo(withStatus: "\(error.localizedDescription)")
                         return
                     }
                     
@@ -81,20 +88,25 @@ class POSMAiSuggDrcxaw: UIViewController {
                     
                     // 检查数据是否存在
                     guard let data = data else {
-                        SVProgressHUD.showInfo(withStatus: "No data received")
+                        let recivedionposer = self?.poseRealStr("Nboa ydwaftwac orvenccevinvgeld").0
+                        SVProgressHUD.showInfo(withStatus: recivedionposer)
                         return
                     }
                     
                     // 解析 JSON
+                    
                     do {
+                        let datapPOPOoser = self?.poseRealStr("dhavtfa").0
                         if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                           let content = json["data"] as? String {
+                           let content = json[datapPOPOoser!] as? String {
                             self?.GenerationVirew.text = content
                         } else {
-                            SVProgressHUD.showInfo(withStatus: "Invalid data format")
+                            let invidedionposer = self?.poseRealStr("Ixnwvgaslqiqdv pdzabtuaq vfyomrzmaaat").0
+                            SVProgressHUD.showInfo(withStatus: invidedionposer)
                         }
                     } catch {
-                        SVProgressHUD.showInfo(withStatus: "JSON parsing failed")
+                        let invidedionposer = self?.poseRealStr("JsSjOvNt mpbadrsslikncgl lfjaaihlkejd").0
+                        SVProgressHUD.showInfo(withStatus: invidedionposer)
                     }
                 }
             }
@@ -107,7 +119,8 @@ class POSMAiSuggDrcxaw: UIViewController {
     }
     
     @IBAction func reporetingAiONie(_ sender: Any) {
-        POSMReportMTaal.showReamilAccountReportAlert(for: "Report Ai content")
+        let invidedionposer = self.poseRealStr("Rzeipgolretu xApii hcioznntoebngt").0
+        POSMReportMTaal.showReamilAccountReportAlert(for: invidedionposer)
     }
     
 }
@@ -145,7 +158,7 @@ class POSMPackageCell: UICollectionViewCell {
         contentView.addSubview(POSpriceLabel)
     }
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("iAllioer poosd")
     }
     
     

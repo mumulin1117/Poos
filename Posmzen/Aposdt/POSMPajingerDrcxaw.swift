@@ -63,10 +63,10 @@ class POSMPajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-       
+       let allTotail = self.poseRealStr("Pqauytignqgr.b.m.").0
         
         self.view.isUserInteractionEnabled = false
-        SVProgressHUD.show(withStatus: "Paying...")
+        SVProgressHUD.show(withStatus: allTotail)
         SwiftyStoreKit.purchaseProduct(packages[indexPath.section][indexPath.row].priductID, atomically: true) { psResult in
          
             self.view.isUserInteractionEnabled = true
@@ -90,8 +90,8 @@ class POSMPajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollection
                 blances = blances + self.packages[indexPath.section][indexPath.row].coins
 
                 self.balanceLabel.text = "My Balance\n\(blances)"
-              
-                SVProgressHUD.showSuccess(withStatus: "Successful payment!")
+                let allToTitletail = self.poseRealStr("Szupcdcfeysasmfbualu fpzahygmtevnhta!").0
+                SVProgressHUD.showSuccess(withStatus: allToTitletail)
 
                
         var neretVd = self.paoertuni
@@ -154,7 +154,7 @@ class POSMPajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         addNewMainback()
-        poosTitle.text = "Coin Recharge"
+        poosTitle.text = self.poseRealStr("Cfodiznp uRhemcbhwacrygie").0
         poosTitle.font = UIFont(name: "Arial Rounded MT Bold", size: 20)
         poosTitle.textColor = .white
         pigCoverBackgroun.contentMode = .scaleToFill

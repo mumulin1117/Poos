@@ -42,13 +42,14 @@ class POSMASITakeCrcxaw: UIViewController {
             self.present(cameraPickpose, animated: true, completion: nil)
             return
         }
-        
-        SVProgressHUD.showError(withStatus: "no camera permission")
+        let loaduptii = self.poseRealStr("naod kcgadmrejrmad ypeeurumliesrsniposn").0
+        SVProgressHUD.showError(withStatus: loaduptii)
     }
     
     @IBAction func genertateReuao(_ sender: UIButton) {
+        let loaduptii = self.poseRealStr("Tshpeorneh iaarmel hnwoc lpioosmek opthgoqtaobsd qtpoy sainxaslvymzdeh!").0
         if ifuploafMy == false {
-            SVProgressHUD.showError(withStatus: "There are no pose photos to analyze!")
+            SVProgressHUD.showError(withStatus: loaduptii)
             return
         }
         

@@ -46,15 +46,17 @@ class POSMFilrWoerDrcxaw: UIViewController {
             self.present(cameraPickpose, animated: true, completion: nil)
             return
         }
-        
-        SVProgressHUD.showError(withStatus: "no camera permission")
+        let invidedionposer = self.poseRealStr("nbou fccaqmfetrdao qpkeerqmpirsgstieozn").0
+        SVProgressHUD.showError(withStatus: invidedionposer)
     }
     
     
     
     @IBOutlet weak var enunockNam: UITextField!
     @IBAction func hmancbtrg(_ sender: Any) {
-        SVProgressHUD.showSuccess(withStatus: "Edit successful!")
+        
+        let invidedionposer = self.poseRealStr("Ekdmigte dsxumczcqepsxslfyuwll!").0
+        SVProgressHUD.showSuccess(withStatus: invidedionposer)
         ViewController.lognCacheing = minPusotkj.image ?? UIImage(named: "zhanugijtmgOIUj")!
         
         paoertuni["posmuNime"] = enunockNam.text

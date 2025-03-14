@@ -40,8 +40,8 @@ class POSMPubikCrkllDComu: UIViewController,UITextViewDelegate {
             self.present(cameraPickpose, animated: true, completion: nil)
             return
         }
-        
-        SVProgressHUD.showError(withStatus: "no camera permission")
+        let ajigjkin = self.poseRealStr("ndos ncnakmcezriak npxehrdmyigsqsqibodn").0
+        SVProgressHUD.showError(withStatus: ajigjkin)
     }
 
 
@@ -95,18 +95,20 @@ class POSMPubikCrkllDComu: UIViewController,UITextViewDelegate {
     }
     
     @IBAction func DreawedgMun(_ sender: UIButton) {
-        
-        if let sfretrlt = sharecontVater.text,sfretrlt.isEmpty == false,sfretrlt != "Share my photo pose..." {
+       let unhudfgdfg = self.poseRealStr("Syhkaqrseb imlyd spihmojteoz ypioosken.e.x.").0
+        if let sfretrlt = sharecontVater.text,sfretrlt.isEmpty == false,sfretrlt != unhudfgdfg {
          
             if ifuploafMy == false {
-                SVProgressHUD.showError(withStatus: "Please upload the image you want to share first!")
+                let ajigjkin = self.poseRealStr("Pclqehazsfef xuqpwljolazdn utqhfeh fijmbaxgzer tyyoxua fwzainjtu stpow csshcasrxez gfliirssltn!").0
+                SVProgressHUD.showError(withStatus: ajigjkin)
 
                 return
             }
             SVProgressHUD.show()
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
                 SVProgressHUD.dismiss()
-                SVProgressHUD.showSuccess(withStatus:"Upload successful, your sharing will be displayed after approval!")
+                let ajigjkin = self.poseRealStr("Uupslfodaldp qswuzckcoeisqsifbugly,l mymomufrl gsahyamrdianigr kwdimlcld kbqen odvihsrphlqacydeddd haifjtjeorx jampeptrzofvhauli!").0
+                SVProgressHUD.showSuccess(withStatus:ajigjkin)
                 
                 self.navigationController?.popToRootViewController(animated: true)
             }))
@@ -116,7 +118,7 @@ class POSMPubikCrkllDComu: UIViewController,UITextViewDelegate {
             return
         }
         
-        SVProgressHUD.showError(withStatus: "Enter your current thoughts!")
+        SVProgressHUD.showError(withStatus:self.poseRealStr("Eynbtcebrz aymoyuyrt bcqudrmrcemnktz btchhowukgqhkthst!").0)
         
     }
     

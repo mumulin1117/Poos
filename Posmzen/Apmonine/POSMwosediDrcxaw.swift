@@ -128,9 +128,11 @@ class POSMwosediDrcxaw: POSMbasicwDrcxaw {
     @objc func innerViewllowr(tapINView: UITapGestureRecognizer) {
         let v  = POSMRelaivintonDrcxia.init()
         if tapINView.view == self.bafolBagjpose{
-            v.TpoEtypr = "Followers"
+            let invidedionposer = self.poseRealStr("Fooqlmljodwvekrls").0
+            v.TpoEtypr = invidedionposer
         }else{
-            v.TpoEtypr = "Fans"
+            let invidedionposer = self.poseRealStr("Fnaknes").0
+            v.TpoEtypr = invidedionposer
         }
         self.navigationController?.pushViewController(v, animated: true)
         

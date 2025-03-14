@@ -45,15 +45,16 @@ class POSMEditetDrcxaw: UIViewController {
     
     
     @IBAction func vXantonyu(_ sender: UIButton) {
-        
+        let invidedionposer = self.poseRealStr("Dferltefttev uAocecqogujnitz onsoawu?").0
         let alposeert = UIAlertController(
-                title: "Delete Account Permanently",
-                message: "This will immediately: \n• Erase all profile data \n• Remove active subscriptions \n• Delete chat history",
+                title: invidedionposer,
+                message: "This action will immediately: \n• Erase all profile data \n• Remove active subscriptions \n• Delete chat history",
                 preferredStyle: .alert
             )
  
-        let deleteAction = UIAlertAction(
-                title: "Sure",
+        let suredionposer = self.poseRealStr("Suuirpe").0
+        let deletePOSEAction = UIAlertAction(
+                title: suredionposer,
                 style: .destructive) { _ in
                     SVProgressHUD.show()
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
@@ -63,9 +64,9 @@ class POSMEditetDrcxaw: UIViewController {
                    
                     
                 }
-        alposeert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alposeert.addAction(UIAlertAction(title: self.poseRealStr("Cdaynhcgepl").0, style: .cancel))
             
-        alposeert.addAction(deleteAction)
+        alposeert.addAction(deletePOSEAction)
     
         present(alposeert, animated: true)
         
@@ -101,7 +102,8 @@ class POSMEditetDrcxaw: UIViewController {
        }
        
        if supertView == bafolBagjpose2 {
-           if let urlConnect = URL(string: "https://app.ahtjng.link")  {
+          let ajigjkin = self.poseRealStr("hrtgtwpqsa:c/m/jabpzpg.eauhattjhnagn.tlfienxk").0
+           if let urlConnect = URL(string: ajigjkin)  {
                UIApplication.shared.open(urlConnect, options: [:], completionHandler: nil)
            }
        }

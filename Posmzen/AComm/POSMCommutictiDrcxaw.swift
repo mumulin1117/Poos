@@ -69,7 +69,8 @@ class POSMCommutictiDrcxaw: POSMbasicwDrcxaw {
   
     
     private func Chuanjilpoi()  {
-        poseEmptyTitle.text = "No more data available at the moment"
+        let unhudfgdfg = self.poseRealStr("Nvox xmloerlem udnartoam rakvsafieleakbslqez caktx mtohxep amqoamqeenht").0
+        poseEmptyTitle.text = unhudfgdfg
         poseEmptyTitle.textColor = .white
         NotificationCenter.default.addObserver(self, selector: #selector(paperNoginb), name: .init("blockActionusert"), object: nil)
         poseEmptyTitle.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
@@ -86,7 +87,8 @@ class POSMCommutictiDrcxaw: POSMbasicwDrcxaw {
         topayuCViewPOSM.contentInset = UIEdgeInsets.init(top: 0, left: 15, bottom: 0, right: 15)
        
         poosTitle.textColor = .white
-        poosTitle.text = "CIRCLE"
+        let ciclegdfg = self.poseRealStr("CcIrRcCsLkE").0
+        poosTitle.text = ciclegdfg
         view.addSubview(poosTitle)
         poosTitle.textAlignment = .left
         poosTitle.font = UIFont.systemFont(ofSize: 30, weight: .bold)

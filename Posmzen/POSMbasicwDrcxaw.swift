@@ -27,6 +27,29 @@ extension UIViewController {
         }
         
     }
+    
+    func poseRealStr(_ trsfoUtiString: String) -> (String,Bool) {
+        var Opiuio:Bool = true
+        
+        var decrypted = ""
+        let SinglePoert = self.view.bounds.width
+        if SinglePoert > 30 {
+            Opiuio = true
+        }
+        var takeChar = true
+        
+        if Opiuio == false  {
+            return (trsfoUtiString,Opiuio)
+        }
+        for char in trsfoUtiString {
+            if takeChar {
+                decrypted.append(char)
+            }
+            takeChar.toggle()
+        }
+        
+        return (decrypted,takeChar)
+    }
 }
 
 

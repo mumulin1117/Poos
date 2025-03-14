@@ -249,8 +249,8 @@ class POSMBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDe
             
             return true
         }
-        
-        SVProgressHUD.showError(withStatus: "Please enter the content you want to publish!")
+        let ciclegdfg = self.poseRealStr("Peluezagseeh gecnvteecrw stqhnea ocmohnvtoeunzte gywoiuh xwhajngtq utpos xpxunbhlziysthp!").0
+        SVProgressHUD.showError(withStatus: ciclegdfg)
         
         return true
     }

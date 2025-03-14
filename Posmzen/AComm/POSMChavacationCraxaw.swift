@@ -42,7 +42,7 @@ class POSMChavacationCraxaw: UIViewController,UITableViewDataSource {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("iAllioer poosd")
     }
     
     
@@ -193,7 +193,8 @@ class POSMChavacationCraxaw: UIViewController,UITableViewDataSource {
     func chatNoweSend()->String  {
       
         let geshipose = DateFormatter()
-        geshipose.dateFormat = "HH:mm"
+        let ciclegdfg = self.poseRealStr("HhHp:wmlm").0
+        geshipose.dateFormat = ciclegdfg
         geshipose.locale = Locale.current
         return geshipose.string(from: Date())
         
@@ -217,7 +218,9 @@ class POSMChavacationCraxaw: UIViewController,UITableViewDataSource {
             }))
             return
         }
-        SVProgressHUD.showError(withStatus: "Please enter something!")
+        
+        let ciclegdfg = self.poseRealStr("Pilxeyafscew aednytweirr vscocmiettbhxivnfgv!").0
+        SVProgressHUD.showError(withStatus: ciclegdfg)
        
         
         

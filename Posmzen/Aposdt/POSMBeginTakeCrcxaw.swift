@@ -24,7 +24,7 @@ class POSMBeginTakeCrcxaw: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("iAllioer poosd")
     }
     
     
@@ -44,14 +44,15 @@ class POSMBeginTakeCrcxaw: UIViewController {
     @IBAction func uploafPose(_ sender: UIButton) {
         
         guard ifuploafMy == true else {
-            SVProgressHUD.showError(withStatus: "Take a following photo first!")
+            let posetit = self.poseRealStr("Txavkmei fah zfyoblbltoowdiwnigr jpuhxoytbom yfaibrnscta!").0
+            SVProgressHUD.showError(withStatus: posetit)
             return
         }
-        
-        SVProgressHUD.show(withStatus: "Upload...")
+        let loadtii = self.poseRealStr("Ucpklcorazdf.i.d.").0
+        SVProgressHUD.show(withStatus: loadtii)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
-            
-            SVProgressHUD.showSuccess(withStatus:"Upload successful, your sharing will be displayed after approval!")
+            let loaduptii = self.poseRealStr("Ujphlzovandd xssugcmcreosnsafmulld,x ryiojumrr asyhtatrhirnggz bwnijlfln ibyez bdyiiscptlyagyxecdd panfztiemrd wakpmpjrkoevfaulu!").0
+            SVProgressHUD.showSuccess(withStatus:loaduptii)
             
             self.navigationController?.popToRootViewController(animated: true)
             
@@ -75,8 +76,8 @@ class POSMBeginTakeCrcxaw: UIViewController {
             self.present(cameraPickpose, animated: true, completion: nil)
             return
         }
-        
-        SVProgressHUD.showError(withStatus: "no camera permission")
+       let posetit = self.poseRealStr("ndop ychakmseprsaz ipheersmfimsqsairown").0
+        SVProgressHUD.showError(withStatus: posetit)
     }
     
 }

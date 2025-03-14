@@ -16,7 +16,7 @@ class POSMRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDel
     }
     let icalaert = iCarousel.init()
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("iAllioer poosd")
     }
     
     @IBOutlet weak var CounttitleMount: UILabel!
@@ -103,26 +103,28 @@ class POSMRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDel
     
     @objc func repoaintniuIC()  {
         icalaert.autoscroll = 0
+      let titieltpose =  self.poseRealStr("Rieopyourwtx mcgoznbtxeqnet")
         
+        let surepose =  self.poseRealStr("Akrler uyrovuv iscujrjes wyqohua uwmaznvtk utqom vrpeupnogratp utlhtixsf gizmtadggem?")
         let alertPOSM = UIAlertController(
-                    title: "Report content",
-                    message: "Are you sure you want to report this image?",
+            title: titieltpose.0,
+            message: surepose.0,
                     preferredStyle: .alert
                 )
   
-        let reasons = ["Illegal POS machine information", "Contains sensitive information", "Image quality issues", "Other illegal content"]
+        let reasons = ["Illegal pose machine information", "Contains sensitive information", "Image quality issues", "Other illegal content"]
         reasons.forEach { reason in
             alertPOSM.addAction(UIAlertAction(title: reason, style: .default) { _ in
                 SVProgressHUD.show()
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0, execute: DispatchWorkItem(block: {
                     self.icalaert.autoscroll = 0.25
-                    SVProgressHUD.showSuccess(withStatus:"Thank you for the supervision. We will verify and handle it as soon as possible!")
+                    SVProgressHUD.showSuccess(withStatus:self.poseRealStr("Tqhoafnmkn wynoiux pfvowrc utyhkef gswufpueqrpvlilstiboank.v wWkeq qwoialrlf hvgearkidfeys daunwdr zhsannpdllzem tixtk oajse hsqomoknn vadsw yprowsjsqiwbhltee!").0)
                     
                 }))
             })
         }
         
-        alertPOSM.addAction(UIAlertAction(title: "cancel", style: .cancel))
+        alertPOSM.addAction(UIAlertAction(title: self.poseRealStr("Cpadnjcsebl").0, style: .cancel))
         present(alertPOSM, animated: true)
         
     }
