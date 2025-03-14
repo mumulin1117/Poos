@@ -2,7 +2,7 @@
 //  POSMBlaeifDeCrkllDComu.swift
 //  Posmzen
 //
-//  Created by mumu on 2025/3/12.
+//  Created by Posmzen on 2025/3/12.
 //
 
 import UIKit
@@ -18,10 +18,12 @@ class POSMBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDe
         let maingAlertView = iCarousel()
         maingAlertView.type = .rotary // 选择 3D 效果类型
         maingAlertView.autoscroll = 0.25
-        maingAlertView.dataSource = self
+        
         maingAlertView.delegate = self
         
         self.icalaert.addSubview(maingAlertView)
+        
+        
         maingAlertView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
