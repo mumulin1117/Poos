@@ -70,10 +70,12 @@ class POSMwosediDrcxaw: POSMbasicwDrcxaw {
     
     
     func opertunbsd(Fiupose:Dictionary<String,String>){
+        
+        folertCountpose.text = "\(ViewController.posmIlikeing.count)"
+        fancertCountpose.text = "\(ViewController.posmLikeingme.count)"
+      
         if  Fiupose["posmOID"] == "poosder@gmail.com"{
-            folertCountpose.text = "\(ViewController.posmIlikeing.count)"
-            fancertCountpose.text = "\(ViewController.posmLikeingme.count)"
-            
+             
             if let forit = Fiupose["Supplementaryimg"]?.components(separatedBy: "%").first {
                 jemopose.image = UIImage(named: forit)
             }
@@ -93,8 +95,7 @@ class POSMwosediDrcxaw: POSMbasicwDrcxaw {
             jemoNameSeting.text = "You haven't posted any updates yet"
             hotheart.isHidden = true
             
-            folertCountpose.text = "0"
-            fancertCountpose.text = "0"
+          
         }
         
         jemoAvtoer.image = ViewController.lognCacheing
@@ -113,7 +114,8 @@ class POSMwosediDrcxaw: POSMbasicwDrcxaw {
         jemoAvtoerSmall.layer.masksToBounds = true
         jemoAvtoerSmall.layer.borderWidth = 2
         jemoAvtoerSmall.layer.borderColor = UIColor.white.cgColor
-        
+        self.bafolBagjpose.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(innerViewllowr(tapINView:))))
+        self.bafolBagjpose1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(innerViewllowr(tapINView:))))
         jemoAvtoerSmall.layer.cornerRadius = 22
     }
     
@@ -124,8 +126,13 @@ class POSMwosediDrcxaw: POSMbasicwDrcxaw {
     
     
     @objc func innerViewllowr(tapINView: UITapGestureRecognizer) {
-        
-        
+        let v  = POSMRelaivintonDrcxia.init()
+        if tapINView.view == self.bafolBagjpose{
+            v.TpoEtypr = "Followers"
+        }else{
+            v.TpoEtypr = "Fans"
+        }
+        self.navigationController?.pushViewController(v, animated: true)
         
     }
     

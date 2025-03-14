@@ -153,6 +153,7 @@ class POSMPajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNewMainback()
         poosTitle.text = "Coin Recharge"
         poosTitle.font = UIFont(name: "Arial Rounded MT Bold", size: 20)
         poosTitle.textColor = .white
@@ -160,7 +161,7 @@ class POSMPajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollection
         
         idperform.addTarget(self, action: #selector(AokoiGuni), for: .touchUpInside)
         idperform.setImage(UIImage.init(named: "Hubergyu"), for: .normal)
-        addNewMainback()
+//        addNewMainback()
         topayuCViewPOSM.delegate = self
         topayuCViewPOSM.register(POSMPackageCell.self, forCellWithReuseIdentifier: "POSMPackageCellID")
         topayuCViewPOSM.dataSource = self

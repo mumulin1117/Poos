@@ -352,7 +352,8 @@ class POSMReportMTaal {
             }
             SVProgressHUD.show()
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-                self.handleReport(reason: "Custom: \(reason)")
+                SVProgressHUD.dismiss()
+                self.handleReport(reason: "Custom: \(reason)",postId: postId)
             }))
             
         }
@@ -395,14 +396,22 @@ class POSMReportMTaal {
             return
         }
         
-        let confirmation = UIAlertController(
-            title: "Report Submitted",
-            message: "Thank you for your feedback. We'll review this content within 24 hours.",
-            preferredStyle: .alert
-        )
-        confirmation.addAction(UIAlertAction(title: "OK", style: .default))
-        confirmation.view.tintColor = themeColor
-        topViewController?.present(confirmation, animated: true)
+        SVProgressHUD.show()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
+            SVProgressHUD.dismiss()
+          
+            let confirmation = UIAlertController(
+                title: "Report Submitted",
+                message: "Thank you for your feedback. We'll review this content within 24 hours.",
+                preferredStyle: .alert
+            )
+            confirmation.addAction(UIAlertAction(title: "OK", style: .default))
+            confirmation.view.tintColor = themeColor
+            topViewController?.present(confirmation, animated: true)
+            
+        }))
+        
+       
     }
     
     // MARK: - Top ViewController Helper

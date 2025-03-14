@@ -11,10 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="POSMussercentDrxca" customModule="Posmzen" customModuleProvider="target">
             <connections>
+                <outlet property="Ingdbrf" destination="u4y-Xg-8LC" id="Sc6-1N-XyY"/>
+                <outlet property="allfangve" destination="SAG-WS-q2k" id="1Cw-AE-LiP"/>
                 <outlet property="backScroole" destination="ChV-xx-55n" id="SoN-y6-Vy5"/>
                 <outlet property="bafolBagjpose" destination="6xS-TF-324" id="2eh-0C-CKA"/>
                 <outlet property="bafolBagjpose1" destination="hwm-mL-tfd" id="ECx-Zp-Cop"/>
                 <outlet property="bafolBagjpose2" destination="Sq8-HY-Vj3" id="e6L-Nm-EIO"/>
+                <outlet property="faberetalbe" destination="zem-Pk-T7O" id="9X7-KC-4tw"/>
                 <outlet property="jemoAvtoer" destination="ADC-sm-xVv" id="6xC-4m-cEd"/>
                 <outlet property="jemoAvtoerSmall" destination="OcE-6A-mpY" id="xud-4n-6se"/>
                 <outlet property="jemoNameSeting" destination="UDj-vr-Qpr" id="AnE-pQ-TUs"/>
@@ -48,7 +51,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hwm-mL-tfd">
                                     <rect key="frame" x="139" y="224" width="115" height="80"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAG-WS-q2k">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAG-WS-q2k">
                                             <rect key="frame" x="52" y="18" width="11.333333333333336" height="23"/>
                                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

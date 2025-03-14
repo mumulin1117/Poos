@@ -72,6 +72,7 @@ class ViewController: UIViewController {
                 ViewController.lognCacheing = UIImage(named: "posImagvc6")!
                 ViewController.posmIlikeing = Set(ViewController.posmalllBuff.prefix(1))
                 ViewController.posmLikeingme = Set(ViewController.posmalllBuff.suffix(1))
+                return
             }
             
             ViewController.lognCacheing = UIImage(named: "zhanugijtmgOIUj")!

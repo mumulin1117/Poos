@@ -17,19 +17,23 @@ class POSMussercentDrxca: UIViewController {
     @IBOutlet weak var bafolBagjpose1: UIView!
     @IBOutlet weak var bafolBagjpose2: UIView!
     
-
+    @IBOutlet weak var faberetalbe: UILabel!
+    
     @IBOutlet weak var jemopose: UIImageView!
     
+    @IBOutlet weak var Ingdbrf: UILabel!
     
     @IBOutlet weak var jemoAvtoer: UIImageView!
     @IBOutlet weak var jemoAvtoerSmall: UIImageView!
     
+    @IBOutlet weak var allfangve: UILabel!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         opertunbsd(Fiupose: paoertuni ?? [:])
         
+       
     }
     
     @IBOutlet weak var jemoNameSeting: UILabel!
@@ -90,7 +94,9 @@ class POSMussercentDrxca: UIViewController {
         super.viewDidLoad()
         self.jemopose.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(innerDetail)))
         NotificationCenter.default.addObserver(self, selector: #selector(paperNoginb), name: .init("blockActionusert"), object: nil)
-        
+        allfangve.text = "\(Int.random(in: 0...3))"
+        Ingdbrf.text = "\(Int.random(in: 0...4))"
+        faberetalbe.text = "\(Int.random(in: 1...4))"
         Abwdgmn()
         jemoAvtoerSmall.layer.masksToBounds = true
         jemoAvtoerSmall.layer.borderWidth = 2
@@ -114,8 +120,7 @@ class POSMussercentDrxca: UIViewController {
     
     @IBAction func innerViewllowr(_ sender: UIButton) {
         
-        
-        
+        self.navigationController?.pushViewController(POSMCallcationCraxaw.init(paoertuni: paoertuni!), animated: true)
     }
     
     
@@ -131,6 +136,7 @@ class POSMussercentDrxca: UIViewController {
 
     
     @IBAction func innerChasayllowr(_ sender: UIButton) {
+        self.navigationController?.pushViewController(POSMChavacationCraxaw.init(paoertuni: paoertuni!), animated: true)
     }
     
     
