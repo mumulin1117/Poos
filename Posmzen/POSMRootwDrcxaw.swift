@@ -29,7 +29,7 @@ class POSMRootwDrcxaw: UITabBarController {
         self.viewControllers = [
             POSMNavitguiController(rootViewController: setingTbabrContrpage(textPOSM: "Post", imacion: "atkepos_", inistVcpge: POSMpostDrcxaw.init())),
                                 
-            POSMNavitguiController(rootViewController: setingTbabrContrpage(textPOSM: "Community", imacion: "compos_", inistVcpge: POSMbasicwDrcxaw())),
+            POSMNavitguiController(rootViewController: setingTbabrContrpage(textPOSM: "Community", imacion: "compos_", inistVcpge: POSMCommutictiDrcxaw())),
             
             POSMNavitguiController(rootViewController: setingTbabrContrpage(textPOSM: "Mine", imacion: "minepos_", inistVcpge: POSMwosediDrcxaw()))]
     }

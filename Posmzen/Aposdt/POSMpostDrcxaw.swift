@@ -27,7 +27,7 @@ class POSMpostDrcxaw: POSMbasicwDrcxaw {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addNewMainback()
         
         topayuCViewPOSM.contentInset = UIEdgeInsets.init(top: 0, left: 15.xszen, bottom: 0, right: 0)
        
@@ -43,6 +43,9 @@ class POSMpostDrcxaw: POSMbasicwDrcxaw {
         
         
         
+      
+        
+        singleAppAddTopaI()
         let remoteNi = UIButton.init()
         
         view.addSubview(remoteNi)
@@ -53,9 +56,6 @@ class POSMpostDrcxaw: POSMbasicwDrcxaw {
             make.centerY.equalTo(poosTitle)
         }
         remoteNi.addTarget(self, action: #selector(actoglle), for: .touchUpInside)
-        
-        
-        singleAppAddTopaI()
         
         setingColoop()
         AddinserThreTyoe()
@@ -72,11 +72,26 @@ class POSMpostDrcxaw: POSMbasicwDrcxaw {
             make.top.equalTo(poosTitle.snp.centerY)
             make.height.equalTo(147.xszen)
         }
-        idperform.addTarget(self, action: #selector(actoglle), for: .touchUpInside)
+        idperform.addTarget(self, action: #selector(actForAioglle), for: .touchUpInside)
+        NotificationCenter.default.addObserver(self, selector: #selector(upafateNormal), name: .init("blockActionusert"), object: nil)
+    }
+    
+    @objc func upafateNormal() {
+        self.topayuCViewPOSM.reloadData()
     }
    
     @objc func actoglle()  {
         self.navigationController?.pushViewController(POSMRemoteDrcxaw.init(), animated: true)
+       
+    }
+    
+    
+    
+    
+    
+    
+    @objc func actForAioglle()  {
+        self.navigationController?.pushViewController(POSMASITakeCrcxaw.init(), animated: true)
         
     }
     
@@ -177,7 +192,11 @@ extension POSMpostDrcxaw:UICollectionViewDelegate,UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+    
+        let ginsdrng = POSMussercentDrxca.init()
+        ginsdrng.paoertuni = ViewController.posmalllBuff[indexPath.row]
+        ginsdrng.tapginsed = indexPath.row
+        self.navigationController?.pushViewController(ginsdrng, animated: true)
     }
     
     

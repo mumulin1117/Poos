@@ -125,6 +125,8 @@ class POSMLogDrcxaw: UIViewController {
                     
                      "posmuBlance":"0"]
         
+      
+        
         UserDefaults.standard.set(Adbop, forKey: "statusUserloagPOSM")//设置当前的登陆帐号
         UserDefaults.standard.set(Adbop, forKey: validateConditionCredentials().0)//存储到已经存在的账户
     }
@@ -142,7 +144,7 @@ class POSMLogDrcxaw: UIViewController {
     }
     
     @objc func presentElauiVcpagr() {
-        let Present = POSMELUACrcxaw.init()
+        let Present = POSMELUACrcxaw.init(laoingDagvc: "ELUAHtPos")
         Present.BloakjPOSM = { boii in
             if boii {
                 self.poosBeginmenr.isSelected = true

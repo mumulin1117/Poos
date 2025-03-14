@@ -8,22 +8,155 @@
 import UIKit
 
 class POSMwosediDrcxaw: POSMbasicwDrcxaw {
+    var paoertuni :Dictionary<String,String>{
+        get{
+            return   UserDefaults.standard.object(forKey: "statusUserloagPOSM") as? [String:String] ?? [:]
+        }
+    }
+   
+    
+    
+    @IBOutlet weak var bafolBagjpose: UIView!
+    @IBOutlet weak var bafolBagjpose1: UIView!
+   
 
+    @IBOutlet weak var jemopose: UIImageView!
+    
+    
+    @IBOutlet weak var jemoAvtoer: UIImageView!
+    @IBOutlet weak var jemoAvtoerSmall: UIImageView!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        opertunbsd(Fiupose: paoertuni)
+    }
+    
+    @IBOutlet weak var jemoNameSeting: UILabel!
+    
+    
+    @IBOutlet weak var hotheart: UIButton!
+    @IBOutlet weak var poseButtoneEdit: UIButton!
+    @IBOutlet weak var poseButtoneSite: UIButton!
+    
+    @IBOutlet weak var poseButtoneCardt: UIButton!
+    
+  
+
+    
+    @IBOutlet weak var backScroole: UIScrollView!
+    
+    
+    @IBOutlet weak var folertCountpose: UILabel!
+    @IBOutlet weak var fancertCountpose: UILabel!
+    
+    
+    private func Abwdgmn()  {
+        jemoAvtoer.layer.cornerRadius = 8
+        
+        
+        backScroole.contentInsetAdjustmentBehavior = .never
+        jemoAvtoer.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+        jemopose.layer.cornerRadius = 8
+        jemopose.layer.masksToBounds = true
+        
+        
+        bafolBagjpose.layer.cornerRadius = 8
+        bafolBagjpose.layer.masksToBounds = true
+        bafolBagjpose1.layer.cornerRadius = 8
+        bafolBagjpose1.layer.masksToBounds = true
+       
+    }
+    
+    
+    func opertunbsd(Fiupose:Dictionary<String,String>){
+        if  Fiupose["posmOID"] == "poosder@gmail.com"{
+            folertCountpose.text = "\(ViewController.posmIlikeing.count)"
+            fancertCountpose.text = "\(ViewController.posmLikeingme.count)"
+            
+            if let forit = Fiupose["Supplementaryimg"]?.components(separatedBy: "%").first {
+                jemopose.image = UIImage(named: forit)
+            }
+           
+           
+            
+            jemoNameSeting.text = Fiupose["posmuNime"]
+            
+            jemopose.isHidden = false
+            jemoAvtoerSmall.isHidden = false
+            jemoNameSeting.isHidden = false
+            hotheart.isHidden = false
+            
+        }else{
+            jemopose.isHidden = true
+            jemoAvtoerSmall.isHidden = true
+            jemoNameSeting.text = "You haven't posted any updates yet"
+            hotheart.isHidden = true
+            
+            folertCountpose.text = "0"
+            fancertCountpose.text = "0"
+        }
+        
+        jemoAvtoer.image = ViewController.lognCacheing
+        jemoAvtoerSmall.image = ViewController.lognCacheing
+        
+       
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.jemopose.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(innerDetail)))
+      
+        
+        Abwdgmn()
+        jemoAvtoerSmall.layer.masksToBounds = true
+        jemoAvtoerSmall.layer.borderWidth = 2
+        jemoAvtoerSmall.layer.borderColor = UIColor.white.cgColor
+        
+        jemoAvtoerSmall.layer.cornerRadius = 22
+    }
+    
+ 
+    
+  
+    
+    
+    
+    @objc func innerViewllowr(tapINView: UITapGestureRecognizer) {
+        
+        
+        
+    }
+    
+    
+    @objc func innerDetail() {
+        
+        let singlrpo = POSMBlaeifDeCrkllDComu.init()
+        singlrpo.paoertuni = paoertuni
+        
+        singlrpo.tapginsed = 2
+        self.navigationController?.pushViewController(singlrpo, animated: true)
+        
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func innerCashlowr(_ sender: UIButton) {
+        if sender == poseButtoneCardt {
+            self.navigationController?.pushViewController(POSMPajingerDrcxaw.init(), animated: true)
+        }
+        
+        
+        if sender == poseButtoneSite {//设置
+            self.navigationController?.pushViewController(POSMEditetDrcxaw.init(), animated: true)
+        }
+        
+        if sender == poseButtoneEdit {//编辑
+            self.navigationController?.pushViewController(POSMFilrWoerDrcxaw.init(), animated: true)
+        }
     }
-    */
-
+    
+    
+   
+    
 }

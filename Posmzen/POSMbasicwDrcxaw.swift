@@ -10,15 +10,6 @@ import SnapKit
 class POSMbasicwDrcxaw: UIViewController {
    
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        addNewMainback()
-        
-      
-    }
-    
-    
    
 }
 

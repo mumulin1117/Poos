@@ -27,14 +27,24 @@ class POSMELUACrcxaw: UIViewController,WKScriptMessageHandler ,WKNavigationDeleg
     }()
     
       
-  
+    var laoingDagvc:String
+    init(laoingDagvc: String) {
+       
+        self.laoingDagvc = laoingDagvc
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
        
        
-        if let url = Bundle.main.url(forResource: "ELUAHtPos", withExtension: "html") {
+        if let url = Bundle.main.url(forResource: laoingDagvc, withExtension: "html") {
             webPOSMView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
         view.addSubview(webPOSMView)
@@ -48,20 +58,26 @@ class POSMELUACrcxaw: UIViewController,WKScriptMessageHandler ,WKNavigationDeleg
         idperform.snp.makeConstraints { make in
             make.width.height.equalTo(33)
             make.left.equalToSuperview().inset(14)
-            make.top.equalToSuperview().offset(13)
+            make.top.equalToSuperview().offset(UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
         }
     }
     
    @objc func BavkjihORnow()  {
-       if  self.recoringOnwpage == "termPos" ||  self.recoringOnwpage == "priHtPos" {
-           if let url = Bundle.main.url(forResource: "ELUAHtPos", withExtension: "html") {
-               let request = URLRequest(url: url)
-               self.recoringOnwpage = "ELUAHtPos"
-                   webPOSMView.load(request)
+       if laoingDagvc == "ELUAHtPos" {
+           if  self.recoringOnwpage == "termPos" ||  self.recoringOnwpage == "priHtPos" {
+               if let url = Bundle.main.url(forResource: "ELUAHtPos", withExtension: "html") {
+                   let request = URLRequest(url: url)
+                   self.recoringOnwpage = "ELUAHtPos"
+                       webPOSMView.load(request)
+               }
+           }else{
+               self.dismiss(animated: true)
            }
-       }else{
-           self.dismiss(animated: true)
+           return
        }
+       
+       self.navigationController?.popViewController(animated: true)
+       
     }
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
            switch message.name {

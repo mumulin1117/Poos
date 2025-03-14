@@ -10,11 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     static var posmalllBuff = Array<Dictionary<String,String>>()
-    static var posmIlikeing = Array<Dictionary<String,String>>()
-    static var posmLikeingme = Array<Dictionary<String,String>>()
+    static var posmIlikeing = Set<Dictionary<String,String>>()
+    static var posmLikeingme = Set<Dictionary<String,String>>()
     
     
-    static var lognCacheing:UIImage = UIImage(named: "posImagvc6")!
+    static var lognCacheing:UIImage = UIImage(named: "zhanugijtmgOIUj")!
     override func viewDidLoad() {
         super.viewDidLoad()
        //是否已经下载过app
@@ -70,9 +70,11 @@ class ViewController: UIViewController {
             let curentuser = UserDefaults.standard.object(forKey: "statusUserloagPOSM") as? [String:String]
             if curentuser?["posmOID"] == "poosder@gmail.com" {
                 ViewController.lognCacheing = UIImage(named: "posImagvc6")!
-                ViewController.posmIlikeing = Array(ViewController.posmalllBuff.prefix(1))
-                ViewController.posmLikeingme = Array(ViewController.posmalllBuff.suffix(1))
+                ViewController.posmIlikeing = Set(ViewController.posmalllBuff.prefix(1))
+                ViewController.posmLikeingme = Set(ViewController.posmalllBuff.suffix(1))
             }
+            
+            ViewController.lognCacheing = UIImage(named: "zhanugijtmgOIUj")!
         }else{
             
            
