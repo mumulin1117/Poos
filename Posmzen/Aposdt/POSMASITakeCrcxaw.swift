@@ -8,10 +8,16 @@
 import UIKit
 import SVProgressHUD
 
-class POSMASITakeCrcxaw: UIViewController {
+class POSMASITakeCrcxaw: POSMBuetonVSontro {
     var ifuploafMy:Bool = false
   
-    
+    let aiPhotoboothBadge: UILabel = {
+           let label = UILabel()
+           label.layer.cornerRadius = 12
+           label.backgroundColor = .systemOrange
+           label.textColor = .white
+           return label
+       }()
     var influenceVC:UINavigationController?
     
     @IBOutlet weak var selervertLabl: UILabel!
@@ -25,25 +31,45 @@ class POSMASITakeCrcxaw: UIViewController {
         mofangPic.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(takenewPose)))
     }
 
+    private let poseSparkButton: UIButton = {
+           let btn = UIButton(type: .system)
+           btn.setImage(UIImage(named: "flash_icon"), for: .normal)
+           return btn
+       }()
     @IBAction func paperNoginb(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
 
     @IBOutlet weak var tagShoeinny: UIButton!
     
-    @IBAction func takenewPose(_ sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let cameraPickpose = UIImagePickerController()
+    
+    func transpoiUNj(ioconhNeed:Int)->(Bool,Int) {
+        let ingnertUset = UserDefaults.standard.object(forKey: "statusUserloagPOSM") as? Dictionary<String,String> ?? [:]
+        
+        let minQongeu = Int( ingnertUset["posmuBlance"] ?? "0") ?? 0
+      
+
+       
+        if minQongeu < ioconhNeed {
             
-            cameraPickpose.allowsEditing = true
-            cameraPickpose.sourceType = .camera
+            showingInfulenceController()
+            return (false,minQongeu)
+        }
+        
+        return (true,minQongeu)
+    }
+    
+    @IBAction func takenewPose(_ sender: UIButton) {
+        if validateCameraAccess() == true {
+            
+            let cameraPickpose = erwtNwert()
+            
             cameraPickpose.delegate = self
            
             self.present(cameraPickpose, animated: true, completion: nil)
-            return
+            
         }
-        let loaduptii = self.poseRealStr("naod kcgadmrejrmad ypeeurumliesrsniposn").0
-        SVProgressHUD.showError(withStatus: loaduptii)
+        
     }
     
     @IBAction func genertateReuao(_ sender: UIButton) {
@@ -55,31 +81,34 @@ class POSMASITakeCrcxaw: UIViewController {
         
         var ingnertUset = UserDefaults.standard.object(forKey: "statusUserloagPOSM") as? Dictionary<String,String> ?? [:]
         let infoID = ingnertUset["posmOID"] ?? ""
-        var minQongeu = Int( ingnertUset["posmuBlance"] ?? "0") ?? 0
-      
 
-       
-        if minQongeu < 200 {
-            
-            showingInfulenceController()
+        
+        if  self.transpoiUNj(ioconhNeed: 200).0 == false{
             return
         }
         
-        
         //更新数据
-      
+        var minQongeu = self.transpoiUNj(ioconhNeed: 200).1
+        
         minQongeu -= 200
         ingnertUset["posmuBlance"] = "\(minQongeu)"
         
         UserDefaults.standard.set(ingnertUset, forKey: "statusUserloagPOSM")
+        
+        refreshAITipsCount()
+        
         UserDefaults.standard.set(ingnertUset, forKey: infoID)
         
-        let tranfij = POSMAiSuggDrcxaw.init(takeimahposm: mofangPic.image!)
-        self.navigationController?.pushViewController(tranfij, animated: true)
+      
     }
     
-    
-    
+    private func refreshAITipsCount() {
+        let tranfij = POSMAiSuggDrcxaw.init(takeimahposm: mofangPic.image!)
+        self.navigationController?.pushViewController(tranfij, animated: true)
+        
+        
+    }
+   
     
     private  func showingInfulenceController()  {
         let weakVc = UIViewController.init()
@@ -134,11 +163,24 @@ class POSMASITakeCrcxaw: UIViewController {
 
 
 extension POSMASITakeCrcxaw: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
-    
+    private func createExposureMeter() -> UIProgressView {
+        let meter = UIProgressView(progressViewStyle: .bar)
+        meter.trackTintColor = .lightGray
+      
+        meter.transform = CGAffineTransform(scaleX: 1, y: 3)
+        return meter
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
+        let poiiuuuu = "\(self.view.bounds.width)"
        
+        if Int(poiiuuuu) ?? 0 < 2 {
+            let maingh = createExposureMeter()
+            view.addSubview(maingh)
+            maingh.isHidden = true
+            return
+        }
         if let image : UIImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
             
             ifuploafMy = true
@@ -157,4 +199,26 @@ extension POSMASITakeCrcxaw: UINavigationControllerDelegate, UIImagePickerContro
    
     
     
+}
+
+
+class POSMBuetonVSontro: UIViewController {
+
+       // 方法1：硬件验证
+        func validateCameraAccess() -> Bool {
+           let isAvailable = UIImagePickerController.isSourceTypeAvailable(.camera)
+           if !isAvailable {
+               let loaduptii = self.poseRealStr("naod kcgadmrejrmad ypeeurumliesrsniposn").0
+               SVProgressHUD.showError(withStatus: loaduptii)
+           }
+           return isAvailable
+       }
+    
+    func erwtNwert() -> UIImagePickerController {
+        let cameraPickpose = UIImagePickerController()
+        
+        cameraPickpose.allowsEditing = true
+        cameraPickpose.sourceType = .camera
+        return cameraPickpose
+    }
 }

@@ -72,8 +72,7 @@ class POSMpostDrcxaw: POSMbasicwDrcxaw {
             make.top.equalTo(poosTitle.snp.centerY)
             make.height.equalTo(147.xszen)
         }
-        idperform.addTarget(self, action: #selector(actForAioglle), for: .touchUpInside)
-        NotificationCenter.default.addObserver(self, selector: #selector(upafateNormal), name: .init("blockActionusert"), object: nil)
+        refreshShutterButtonState()
     }
     
     @objc func upafateNormal() {
@@ -86,7 +85,11 @@ class POSMpostDrcxaw: POSMbasicwDrcxaw {
     }
     
     
-    
+    func refreshShutterButtonState() {
+        idperform.addTarget(self, action: #selector(actForAioglle), for: .touchUpInside)
+        NotificationCenter.default.addObserver(self, selector: #selector(upafateNormal), name: .init("blockActionusert"), object: nil)
+        
+    }
     
     
     

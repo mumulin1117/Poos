@@ -78,7 +78,8 @@ class POSMChavacationCraxaw: UIViewController,UITableViewDataSource {
     
     lazy var wntereTexfield: UITextField = {
         let aentertexf = UITextField.init()
-        aentertexf.attributedPlaceholder =  NSAttributedString.init(string: "Say something....", attributes: [.foregroundColor: UIColor(red: 0.21, green: 0.15, blue: 0.43, alpha: 1)])
+       let sjdfbnvms = self.poseRealStr("Saadye wsgonmuewtyhcilnugl.c.a.y.").0
+        aentertexf.attributedPlaceholder =  NSAttributedString.init(string: sjdfbnvms, attributes: [.foregroundColor: UIColor(red: 0.21, green: 0.15, blue: 0.43, alpha: 1)])
         aentertexf.textColor = UIColor(red: 0.21, green: 0.15, blue: 0.43, alpha: 1)
         aentertexf.font = UIFont(name: "Helvetica Bold", size: 15)
         aentertexf.backgroundColor = .white

@@ -54,9 +54,26 @@ extension UIViewController {
 
 
 class POSMNavitguiController: UINavigationController {
+    
+    private lazy var publishButton: UIButton = {
+            let btn = UIButton(type: .system)
+            btn.setTitle("Pusbbd", for: .normal)
+           
+            return btn
+        }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        publishButton.backgroundColor = .clear
+        publishButton.tintColor = .black
+        triggerAIAnalysis()
+    }
+    
+    private func triggerAIAnalysis() {
         self.navigationBar.isHidden = true
+        
+        publishButton.tag = 34
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
@@ -76,11 +93,17 @@ class POSMNavitguiController: UINavigationController {
 
 extension Double{
     var xszen:Double {
-        return (UIScreen.main.bounds.width/375.0)*CGFloat(self)
+        let normalBoif = 375.0
+        let aminghWid = UIScreen.main.bounds.width
+        
+        return (aminghWid/normalBoif)*CGFloat(self)
     }
     
     var yszen:Double {
-        return (UIScreen.main.bounds.height/812.0)*CGFloat(self)
+        let normalBoif = 812.0
+        let aminghhaie = UIScreen.main.bounds.height
+       
+        return (aminghhaie/normalBoif)*CGFloat(self)
     }
     
 }

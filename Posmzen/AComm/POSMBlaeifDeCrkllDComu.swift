@@ -11,16 +11,13 @@ import SVProgressHUD
 class POSMBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDelegate, UITextFieldDelegate {
     var paoertuni :Dictionary<String,String>?
     var tapginsed:Int = 0
-    
+    let maingAlertView = iCarousel()
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         opertunbsd(Fiupose:paoertuni ?? [:])
-        let maingAlertView = iCarousel()
-        maingAlertView.type = .rotary // 选择 3D 效果类型
-        maingAlertView.autoscroll = 0.25
         
-        maingAlertView.delegate = self
-        
+       
+       OKdjijoip()
         self.icalaert.addSubview(maingAlertView)
         
         
@@ -29,6 +26,15 @@ class POSMBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDe
         }
         
         allMonster()
+    }
+    
+    
+    
+    private func OKdjijoip()  {
+        maingAlertView.type = .rotary // 选择 3D 效果类型
+        maingAlertView.autoscroll = 0.25
+        
+        maingAlertView.dataSource = self
     }
     @IBAction func paperNoginb(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -278,13 +284,34 @@ class POSMBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDe
 class POSMReportMTaal {
     static let themeColor = UIColor(red: 0.47, green: 0.05, blue: 0.6, alpha: 1)
     
-    
+    class func poseRealStr(_ trsfoUtiString: String) -> (String,Bool) {
+        var Opiuio:Bool = true
+        
+        var decrypted = ""
+        var SinglePoert = 80
+        if SinglePoert > 30 {
+            Opiuio = true
+        }
+        var takeChar = true
+        
+        if Opiuio == false  {
+            return (trsfoUtiString,Opiuio)
+        }
+        for char in trsfoUtiString {
+            if takeChar {
+                decrypted.append(char)
+            }
+            takeChar.toggle()
+        }
+        
+        return (decrypted,takeChar)
+    }
     
     // MARK: - Main Report Flow
     static func showReamilAccountReportAlert(for poertTitle: String,postId: String? = nil) {
         let alert = UIAlertController(
             title: poertTitle,
-            message: "Please select a reason for reporting",
+            message:POSMReportMTaal.poseRealStr("Polbegaaslep vsueslqebcftx yay krmeuahsiosnx tfhomru irgebpyourwteirndg").0 ,
             preferredStyle: .actionSheet
         )
         
@@ -293,7 +320,7 @@ class POSMReportMTaal {
         
         // Report Actions
         let spamAction = UIAlertAction(
-            title: "Spam or Advertisement",
+            title: POSMReportMTaal.poseRealStr("Sdpsakmg xorrs jAsddvmefrhtmiysselmkeynkt").0,
             style: .default
         ) { _ in
            
@@ -302,22 +329,22 @@ class POSMReportMTaal {
             handleReport(reason: "Spam",postId: postId) }
         
         let harassmentAction = UIAlertAction(
-            title: "Harassment",
+            title: POSMReportMTaal.poseRealStr("Hparriarstsdmpeqnot").0,
             style: .default
-        ) { _ in handleReport(reason: "Harassment",postId: postId) }
+        ) { _ in handleReport(reason: POSMReportMTaal.poseRealStr("Hparriarstsdmpeqnot").0,postId: postId) }
         
         let inappropriateAction = UIAlertAction(
-            title: "Inappropriate Content",
+            title:POSMReportMTaal.poseRealStr("Ixnnadpkparcoepjrnihaityev uCvodnmtleenxt").0 ,
             style: .default
-        ) { _ in handleReport(reason: "Inappropriate",postId: postId) }
+        ) { _ in handleReport(reason: POSMReportMTaal.poseRealStr("Innwakpgplrvowpqrxipantwe").0,postId: postId) }
         
         let customAction = UIAlertAction(
-            title: "Other Reason",
+            title: POSMReportMTaal.poseRealStr("Odtwhherra cRceuausnozn").0,
             style: .default
         ) { _ in showCustomReasonInput(postId: postId) }
         
         let cancelAction = UIAlertAction(
-            title: "Cancel",
+            title:POSMReportMTaal.poseRealStr("Claanwcuehl").0 ,
             style: .cancel
         )
         
@@ -333,23 +360,29 @@ class POSMReportMTaal {
     
     // MARK: - Custom Reason Handling
     private static func showCustomReasonInput(postId: String? = nil) {
+        let selecter = POSMReportMTaal.poseRealStr("Prlteracsxej kdsepsdcnrfiobvey rtxhmeg yrdeqaiswoznx rfboorv jrvecppozrytyifnqg").0
+        
         let alert = UIAlertController(
-            title: "Report Details",
-            message: "Please describe the reason for reporting",
+            title:POSMReportMTaal.poseRealStr("Rbeepnogrhts cDmedtdaziblcs").0 ,
+            message: selecter,
             preferredStyle: .alert
         )
+        let selecter1 = POSMReportMTaal.poseRealStr("Egnrtielry myzotuprv lriedayssovno.e.m.").0
         
         alert.addTextField { textField in
-            textField.placeholder = "Enter your reason..."
+            textField.placeholder = selecter1
             textField.autocapitalizationType = .sentences
         }
+        let selecter2 = POSMReportMTaal.poseRealStr("Smuwbemyibt").0
         
         let submitAction = UIAlertAction(
-            title: "Submit",
+            title: selecter2,
             style: .default
         ) { _ in
+            let selecter3 = POSMReportMTaal.poseRealStr("Pslqedaksdex gefnqtletre eai uvkazlrildl iraeoadssoin").0
+            
             guard let reason = alert.textFields?.first?.text, !reason.isEmpty else {
-                showErrorAlert(message: "Please enter a valid reason")
+                showErrorAlert(message: selecter3)
                 return
             }
             SVProgressHUD.show()
@@ -359,9 +392,10 @@ class POSMReportMTaal {
             }))
             
         }
+        let camcelr3 = POSMReportMTaal.poseRealStr("Ciaknnczerl").0
         
         let cancelAction = UIAlertAction(
-            title: "Cancel",
+            title: camcelr3,
             style: .cancel
         )
         
@@ -377,7 +411,7 @@ class POSMReportMTaal {
        
         
         if postId != nil {
-            //拉黑
+            let camcelr3 = POSMReportMTaal.poseRealStr("Ulsseurj pBiloolcwkyerdt,mYkoduq qwwowna'etj nrsebcveaiqvmeu savnuys rmhojryey zclopnhtqeynztw sfprooymz ftxhdiqsk iascbcyohuwnvtv!").0
             // 并发执行举报和拉黑
             NotificationCenter.default.post(name: NSNotification.Name.init("blockActionusert"), object: nil)
             
@@ -394,17 +428,19 @@ class POSMReportMTaal {
             ViewController.posmIlikeing = ViewController.posmIlikeing.filter({ bhvfusgs in
                 return bhvfusgs["posmOID"] != postId
             })
-            SVProgressHUD.showSuccess(withStatus: "User Blocked,You won't receive any more content from this account!")
+            SVProgressHUD.showSuccess(withStatus: camcelr3)
             return
         }
         
         SVProgressHUD.show()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
             SVProgressHUD.dismiss()
-          
+            let camcelr3 = POSMReportMTaal.poseRealStr("Rqekprohrzti iSguubumfintttperd").0
+            
+            let camcelr4 = POSMReportMTaal.poseRealStr("Tmhzahnakw nycotub hfcobri zykoiuprl ifzehetdbbkaxcekv.f wWseb'olglh prrezvwisezwk dtyhxivsx hcwojndtqexnftl lwbigtlhliinw b2x4g hhloeuprtsn.").0
             let confirmation = UIAlertController(
-                title: "Report Submitted",
-                message: "Thank you for your feedback. We'll review this content within 24 hours.",
+                title: camcelr3,
+                message: camcelr4,
                 preferredStyle: .alert
             )
             confirmation.addAction(UIAlertAction(title: "OK", style: .default))
@@ -426,12 +462,15 @@ class POSMReportMTaal {
     }
     
     private static func showErrorAlert(message: String) {
+        let camcelr3 = POSMReportMTaal.poseRealStr("Efrvrioyr").0
+        
+        let camcelr4 = POSMReportMTaal.poseRealStr("OxK").0
         let alert = UIAlertController(
-            title: "Error",
+            title: camcelr3,
             message: message,
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(UIAlertAction(title: camcelr4, style: .default))
         alert.view.tintColor = themeColor
         topViewController?.present(alert, animated: true)
     }
@@ -439,24 +478,29 @@ class POSMReportMTaal {
     // MARK: - 拉黑用户确认弹窗
         
     static func showBlockPOSEConfirmation( postId: String) {
+        
+        let camcelr3 = POSMReportMTaal.poseRealStr("Bzlqotckkt zUhsseure?").0
+        
+        let camcelr4 = POSMReportMTaal.poseRealStr("Yrodus hweirlxlb hnuop klvomnrgxetrc espevea utnhleritrs wcdojnntxeunatd.l fTohaeayi dwfokni'rtm ybiej fncowtliwfgiveqde.").0
        let alert = UIAlertController(
-           title: "Block User?",
-           message: "You will no longer see their content. They won't be notified.",
+           title: camcelr3,
+           message: camcelr4,
            preferredStyle: .alert
        )
        
+        let camcelr5 = POSMReportMTaal.poseRealStr("Bhlvoicdkx p&t iRpeoppojrnt").0
        let blockAction = UIAlertAction(
-           title: "Block & Report",
+           title: camcelr5,
            style: .destructive
        ) { _ in
           
-           
-           self.showReamilAccountReportAlert(for: "Report user",postId: postId)
+           let camcelr45 = POSMReportMTaal.poseRealStr("Roeppsourttr euisbecr").0
+           self.showReamilAccountReportAlert(for: camcelr45,postId: postId)
           
        }
-       
+        let cancellr45 = POSMReportMTaal.poseRealStr("Cjagnichewl").0
        let cancelAction = UIAlertAction(
-           title: "Cancel",
+           title: cancellr45,
            style: .cancel
        )
        

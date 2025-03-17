@@ -97,7 +97,8 @@ class POSMCallcationCraxaw: UIViewController {
     }
     
     @objc func functionTouchager() {
-        SVProgressHUD.showInfo(withStatus: "The phone hasn't been answered yet!")
+        let sjdfbnvms = self.poseRealStr("Tlhyek ipihhopnxeg oheaasknu'ftk dbneeejnu paynyspwlesrbexdt hyjettb!").0
+        SVProgressHUD.showInfo(withStatus: sjdfbnvms)
    
     }
   

@@ -238,7 +238,8 @@ extension POSMCommutictiDrcxaw:UICollectionViewDelegate,UICollectionViewDataSour
     }
     
    @objc func dfgPOi()  {
-        POSMReportMTaal.showReamilAccountReportAlert(for:  "Report post content")
+       let sjdfbnvms = self.poseRealStr("Rpedpnoyrhtf spnopsetx nctoynktneinjt").0
+        POSMReportMTaal.showReamilAccountReportAlert(for:  sjdfbnvms)
     }
     @objc func cuiertbder(Uixs:UIButton)  {
         

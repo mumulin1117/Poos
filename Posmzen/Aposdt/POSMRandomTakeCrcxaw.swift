@@ -14,7 +14,7 @@ class POSMRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDel
         self.typerTau = typerTau
         super.init(nibName: nil, bundle: nil)
     }
-    let icalaert = iCarousel.init()
+    let icalaertPOSE = iCarousel.init()
     required init?(coder: NSCoder) {
         fatalError("iAllioer poosd")
     }
@@ -45,13 +45,10 @@ class POSMRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDel
             break
         }
         
-        icalaert.dataSource = self
-        icalaert.delegate = self
-        icalaert.type = .rotary // 选择 3D 效果类型
-        icalaert.autoscroll = 0.25
-        
-        view.addSubview(icalaert)
-        icalaert.snp.makeConstraints({ make in
+        icalaertPOSE.dataSource = self
+        icalaertPOSE.delegate = self
+        poseingtsd()
+        icalaertPOSE.snp.makeConstraints({ make in
             make.left.right.equalToSuperview()
             make.top.equalTo(tipointe.snp.bottom).offset(30.yszen)
             make.bottom.equalTo(staresuilposs.snp.top).offset(-10.yszen)
@@ -60,6 +57,13 @@ class POSMRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDel
         
         
     }
+    
+    private func poseingtsd()  {
+        icalaertPOSE.type = .rotary
+        icalaertPOSE.autoscroll = 0.25
+        
+        view.addSubview(icalaertPOSE)
+    }
 
 
     @IBAction func paperNoginb(_ sender: UIButton) {
@@ -67,9 +71,9 @@ class POSMRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDel
     }
     
     @IBAction func reallPickBegin(_ sender: UIButton) {
-        icalaert.autoscroll = 0
+        icalaertPOSE.autoscroll = 0
       
-        let idev =  icalaert.currentItemIndex
+        let idev =  icalaertPOSE.currentItemIndex
         
         let acture = POSMBeginTakeCrcxaw.init(pickerPose: self.AllTagib[idev])
         self.navigationController?.pushViewController(acture, animated: true)
@@ -102,7 +106,7 @@ class POSMRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDel
     
     
     @objc func repoaintniuIC()  {
-        icalaert.autoscroll = 0
+        icalaertPOSE.autoscroll = 0
       let titieltpose =  self.poseRealStr("Rieopyourwtx mcgoznbtxeqnet")
         
         let surepose =  self.poseRealStr("Akrler uyrovuv iscujrjes wyqohua uwmaznvtk utqom vrpeupnogratp utlhtixsf gizmtadggem?")
@@ -117,7 +121,7 @@ class POSMRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDel
             alertPOSM.addAction(UIAlertAction(title: reason, style: .default) { _ in
                 SVProgressHUD.show()
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0, execute: DispatchWorkItem(block: {
-                    self.icalaert.autoscroll = 0.25
+                    self.icalaertPOSE.autoscroll = 0.25
                     SVProgressHUD.showSuccess(withStatus:self.poseRealStr("Tqhoafnmkn wynoiux pfvowrc utyhkef gswufpueqrpvlilstiboank.v wWkeq qwoialrlf hvgearkidfeys daunwdr zhsannpdllzem tixtk oajse hsqomoknn vadsw yprowsjsqiwbhltee!").0)
                     
                 }))
@@ -133,6 +137,6 @@ class POSMRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDel
     func carousel(_ carousel: iCarousel, didSelectItemAt index: Int) {
       
        
-        icalaert.autoscroll = 0
+        icalaertPOSE.autoscroll = 0
     }
 }

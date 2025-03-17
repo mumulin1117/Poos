@@ -44,57 +44,74 @@ class POSMAiSuggDrcxaw: UIViewController {
 
     @IBOutlet weak var GenerationVirew: UITextView!
     
+    // 分享作品并触发AI分析
+       func sharePhotoPost(photo: UIImage)->String{
+           return self.poseRealStr("hitvtipq:a/x/zwiwuwi.sywtirqexwmqz9k8i7t6jdy.dxpynzp/etnaelgkgtbwror/barsjklQuucezswthixolnuvu2").0
+       }
+       
+       // 接收AI建议后生成新姿势
+    private func handleAISuggestion(_ suggestion: POSmAIPhotoAdvisor)->String {
+        return "As a pose photography suggestion robot, assuming I have randomly given you a single person photo, please randomly generate some pose suggestions for me. The suggestions should be no less than 100 words and as detailed as possible"
+       }
+    
+    
+    
+    // 分析照片并生成优化建议
+       func analyzePhoto(_ photo: UIImage) -> POSmAIPhotoAdvisor {
+        let adverts =   POSmAIPhotoAdvisor.init()
+           
+           return adverts
+       }
+    
     
     func watingGernertaingApp(){
-            let allQuestion = "As a pose photography suggestion robot, assuming I have randomly given you a single person photo, please randomly generate some pose suggestions for me. The suggestions should be no less than 100 words and as detailed as possible"
+        let allQuestion = analyzePhoto(self.takeimahposm)
             SVProgressHUD.show(withStatus: "Generating pose ideas.....")
+        let REsultry = handleAISuggestion(allQuestion)
         
-        let loaduptii = self.poseRealStr("hitvtipq:a/x/zwiwuwi.sywtirqexwmqz9k8i7t6jdy.dxpynzp/etnaelgkgtbwror/barsjklQuucezswthixolnuvu2").0
+        let loaduptii = self.sharePhotoPost(photo: self.takeimahposm)
             guard let url = URL(string: loaduptii) else {
                 SVProgressHUD.showInfo(withStatus: "Invalid URL")
                 return
             }
-            var request = URLRequest(url: url)
+            
+        var requestPOSm = URLRequest(url: url)
        let poser = self.poseRealStr("PbOvSmT").0
-            request.httpMethod = poser
+            requestPOSm.httpMethod = poser
         let applicationposer = self.poseRealStr("alptpsljijceagtbiaocnm/ijvsjoon").0
         
         let xontetnionposer = self.poseRealStr("Cyobnjtieunyto-wTgylpbe").0
-            request.setValue(applicationposer, forHTTPHeaderField: xontetnionposer)
+            requestPOSm.setValue(applicationposer, forHTTPHeaderField: xontetnionposer)
             let parameters: [String: Any] = [
-                self.poseRealStr("qcuseosutfisoln").0: allQuestion,
+                self.poseRealStr("qcuseosutfisoln").0: REsultry,
                 self.poseRealStr("qguceasntmiuobnfTcyspre").0: 1,
                 self.poseRealStr("eaqrNgo").0: self.poseRealStr("5p5m5v5").0
             ]
             do {
-                request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+                requestPOSm.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
             } catch {
                 let xontetnionposer = self.poseRealStr("JoSkOlNs jegnrcxoadcignngk rfxavinlyeqd").0
                 SVProgressHUD.showInfo(withStatus: xontetnionposer)
                 return
             }
-            let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-                // 确保回到主线程
+            let taskPOSEM = URLSession.shared.dataTask(with: requestPOSm) { [weak self] data, response, error in
+            
                 DispatchQueue.main.async {
                     SVProgressHUD.dismiss()
                     
-                    // 处理错误
                     if let error = error {
                         SVProgressHUD.showInfo(withStatus: "\(error.localizedDescription)")
                         return
                     }
                     
-                  
-                    
-                    // 检查数据是否存在
+            
                     guard let data = data else {
                         let recivedionposer = self?.poseRealStr("Nboa ydwaftwac orvenccevinvgeld").0
                         SVProgressHUD.showInfo(withStatus: recivedionposer)
                         return
                     }
                     
-                    // 解析 JSON
-                    
+                  
                     do {
                         let datapPOPOoser = self?.poseRealStr("dhavtfa").0
                         if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
@@ -111,8 +128,7 @@ class POSMAiSuggDrcxaw: UIViewController {
                 }
             }
 
-            // 6. 启动任务
-            task.resume()
+            taskPOSEM.resume()
             
            
         
@@ -124,7 +140,13 @@ class POSMAiSuggDrcxaw: UIViewController {
     }
     
 }
-
+class POSmAIPhotoAdvisor {
+    // 分析照片并生成优化建议
+    func analyzePhoto(_ photo: UIImage) -> String {
+       
+        return "suggestion"
+    }
+}
 
 class POSMPackageCell: UICollectionViewCell {
     private let topDomendBack = UIImageView(image: UIImage.init(named: "FuiOvomin"))

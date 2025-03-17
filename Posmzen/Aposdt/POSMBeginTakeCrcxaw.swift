@@ -7,7 +7,7 @@
 
 import UIKit
 import SVProgressHUD
-class POSMBeginTakeCrcxaw: UIViewController {
+class POSMBeginTakeCrcxaw: POSMBuetonVSontro {
     var ifuploafMy:Bool = false
     
 
@@ -51,10 +51,7 @@ class POSMBeginTakeCrcxaw: UIViewController {
         let loadtii = self.poseRealStr("Ucpklcorazdf.i.d.").0
         SVProgressHUD.show(withStatus: loadtii)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
-            let loaduptii = self.poseRealStr("Ujphlzovandd xssugcmcreosnsafmulld,x ryiojumrr asyhtatrhirnggz bwnijlfln ibyez bdyiiscptlyagyxecdd panfztiemrd wakpmpjrkoevfaulu!").0
-            SVProgressHUD.showSuccess(withStatus:loaduptii)
-            
-            self.navigationController?.popToRootViewController(animated: true)
+            self.adeonigu()
             
         }))
         
@@ -66,29 +63,45 @@ class POSMBeginTakeCrcxaw: UIViewController {
     }
     
     @IBAction func takenewPose(_ sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let cameraPickpose = UIImagePickerController()
+        if validateCameraAccess() == true {
+            let cameraPickpose = erwtNwert()
             
-            cameraPickpose.allowsEditing = true
-            cameraPickpose.sourceType = .camera
             cameraPickpose.delegate = self
            
             self.present(cameraPickpose, animated: true, completion: nil)
-            return
+            
+       
         }
-       let posetit = self.poseRealStr("ndop ychakmseprsaz ipheersmfimsqsairown").0
-        SVProgressHUD.showError(withStatus: posetit)
+     
+    }
+    
+    private func adeonigu()  {
+        let loaduptii = self.poseRealStr("Ujphlzovandd xssugcmcreosnsafmulld,x ryiojumrr asyhtatrhirnggz bwnijlfln ibyez bdyiiscptlyagyxecdd panfztiemrd wakpmpjrkoevfaulu!").0
+        SVProgressHUD.showSuccess(withStatus:loaduptii)
+        
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }
 
 
 extension POSMBeginTakeCrcxaw: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
-    
+    func updatePaymentExposure(with discount: Double) {
+        let original = UIView(frame: .zero)
+        original.backgroundColor = .clear
+        if discount == 0 {
+            UIView.animate(withDuration: 0.5) {
+                original.backgroundColor = .red
+            }
+        }
+       
+        
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-       
+        self.updatePaymentExposure(with: 30)
+        self.updatePaymentExposure(with: 30)
+        self.updatePaymentExposure(with: 30)
         if let image : UIImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
             
             ifuploafMy = true

@@ -31,30 +31,34 @@ class POSMLogDrcxaw: UIViewController {
     }
     
     
+    
     private func validateConditionCredentials() -> (String,Bool) {
         
         guard let emailPOSM = emiouiss.text?.trimmingCharacters(in: .whitespaces),
               let passwordPOSM = pahuiss.text?.trimmingCharacters(in: .whitespaces) else {
             return ("",false)
         }
-        
+        let singklernwe0 = self.poseRealStr("Pllcecaossef oejnwtuegrd zyiofuxrb hecmnaoiolq paxdjdyrbedsps").0
+       
      
         if emailPOSM.isEmpty {
-            SVProgressHUD.showError(withStatus: "Please enter your email address")
+            SVProgressHUD.showError(withStatus: singklernwe0)
             return ("",false)
         }
-        
+        let singklernwe1 = self.poseRealStr("Pwlleyahsnez ieanlteeerr lyookudrn qetmiadirlv ypmagsqscwuorrpd").0
+       
         if passwordPOSM.isEmpty {
-            SVProgressHUD.showError(withStatus: "Please enter your email password")
+            SVProgressHUD.showError(withStatus: singklernwe1)
             return ("",false)
         }
         
         // 验证邮箱格式
         let emailRegEx = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}$"
-               
+        let singklernwe2 = self.poseRealStr("Palfebaksmey aemnttbeqru eai jvsatlpildc welmzauiele fajdddlreegsxs").0
+       
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         if emailPredicate.evaluate(with: emailPOSM) == false{
-            SVProgressHUD.showError(withStatus: "Please enter a valid email address")
+            SVProgressHUD.showError(withStatus: singklernwe2)
             return ("",false)
         }
         
@@ -75,7 +79,9 @@ class POSMLogDrcxaw: UIViewController {
         
         if self.poosBeginmenr.isSelected == false {
             //
-            SVProgressHUD.showError(withStatus: "By continuing, you agree to the User Agrement & PrivacyPolicy")
+            let singklernwe = self.poseRealStr("Byyd gcaornntyipnvumitnqgp,x dygogub mavgtrfefew dtsow vtchoek nUdsnesra dAkgjrneimleinztc n&y gPurkitvnatciywProplgijcoy").0
+            
+            SVProgressHUD.showError(withStatus: singklernwe)
             
  
             UIView.animate(withDuration: 0.3) {
@@ -109,11 +115,15 @@ class POSMLogDrcxaw: UIViewController {
     
     
     func resultLafterPOSM(isCreate:Bool)  {
-        SVProgressHUD.show(withStatus:isCreate ? "Create in...." :"log in....")
+       let apo = self.poseRealStr("Cmrderantvee eihnz.p.x.z.").0
+       let qwes = self.poseRealStr("lookgk yionc.b.v.c.").0
+        SVProgressHUD.show(withStatus:isCreate ? apo :qwes)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: DispatchWorkItem(block: {
             ViewController.createappdemoingPOSM(statusluserPOSM: true)
-           
-            SVProgressHUD.showSuccess(withStatus:isCreate ? "Create account successful!" : "Welcom!")
+           let Asdf = self.poseRealStr("Cnrkeparteei gancvceobuvnotp wsauaclcoewseslfcujlw!").0
+           let awelk = self.poseRealStr("Wueylhcqobmj!").0
+            
+            SVProgressHUD.showSuccess(withStatus:isCreate ? Asdf : awelk)
             
         }))
     }
@@ -121,7 +131,7 @@ class POSMLogDrcxaw: UIViewController {
     private func CreaeSinEwAccount()  {
         ////如果邮箱id，对应的值不存在。则是注册
         let Adbop = ["posmOID":validateConditionCredentials().0,
-                     "posmuNime":"No name",
+                     "posmuNime":self.poseRealStr("Neod fnzapmge").0,
                     
                      "posmuBlance":"0"]
         

@@ -27,24 +27,29 @@ class POSMPubikCrkllDComu: UIViewController,UITextViewDelegate {
         return Okisjif
     }()
     
-    
+   
     
     @objc func upalodingfireawter() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let cameraPickpose = UIImagePickerController()
+            let cameraPickpose = showAIOptimization("")
             
-            cameraPickpose.allowsEditing = true
             cameraPickpose.sourceType = .photoLibrary
             cameraPickpose.delegate = self
            
             self.present(cameraPickpose, animated: true, completion: nil)
             return
         }
-        let ajigjkin = self.poseRealStr("ndos ncnakmcezriak npxehrdmyigsqsqibodn").0
-        SVProgressHUD.showError(withStatus: ajigjkin)
+        triggerAIAnalysis()
     }
 
 
+    
+    private func showAIOptimization(_ suggestion: String)-> UIImagePickerController{
+        let cameraPickpose = UIImagePickerController()
+        
+        cameraPickpose.allowsEditing = true
+        return cameraPickpose
+    }
     
     
     @IBOutlet weak var onwruipose: UIImageView!
@@ -93,36 +98,41 @@ class POSMPubikCrkllDComu: UIViewController,UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.text = nil
     }
-    
+    func  triggerAIAnalysis() {
+        let ajigjkin = self.poseRealStr("ndos ncnakmcezriak npxehrdmyigsqsqibodn").0
+        SVProgressHUD.showError(withStatus: ajigjkin)
+    }
     @IBAction func DreawedgMun(_ sender: UIButton) {
        let unhudfgdfg = self.poseRealStr("Syhkaqrseb imlyd spihmojteoz ypioosken.e.x.").0
         if let sfretrlt = sharecontVater.text,sfretrlt.isEmpty == false,sfretrlt != unhudfgdfg {
          
-            if ifuploafMy == false {
-                let ajigjkin = self.poseRealStr("Pclqehazsfef xuqpwljolazdn utqhfeh fijmbaxgzer tyyoxua fwzainjtu stpow csshcasrxez gfliirssltn!").0
-                SVProgressHUD.showError(withStatus: ajigjkin)
-
+            if addPoseSparkGesture() == false {
                 return
             }
-            SVProgressHUD.show()
+           
+            
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
-                SVProgressHUD.dismiss()
-                let ajigjkin = self.poseRealStr("Uupslfodaldp qswuzckcoeisqsifbugly,l mymomufrl gsahyamrdianigr kwdimlcld kbqen odvihsrphlqacydeddd haifjtjeorx jampeptrzofvhauli!").0
-                SVProgressHUD.showSuccess(withStatus:ajigjkin)
+                self.showTagSuggestions()
                 
                 self.navigationController?.popToRootViewController(animated: true)
             }))
             
-            
+            }
             
             return
-        }
         
-        SVProgressHUD.showError(withStatus:self.poseRealStr("Eynbtcebrz aymoyuyrt bcqudrmrcemnktz btchhowukgqhkthst!").0)
+        
+        suggestCreativeTags()
         
     }
     
     
+    
+    private func showTagSuggestions() {
+        SVProgressHUD.dismiss()
+        let ajigjkin = self.poseRealStr("Uupslfodaldp qswuzckcoeisqsifbugly,l mymomufrl gsahyamrdianigr kwdimlcld kbqen odvihsrphlqacydeddd haifjtjeorx jampeptrzofvhauli!").0
+        SVProgressHUD.showSuccess(withStatus:ajigjkin)
+    }
     
 }
 
@@ -131,6 +141,17 @@ class POSMPubikCrkllDComu: UIViewController,UITextViewDelegate {
 extension POSMPubikCrkllDComu: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
     
+    
+    func addPoseSparkGesture()->Bool  {
+        if ifuploafMy == false {
+            let ajigjkin = self.poseRealStr("Pclqehazsfef xuqpwljolazdn utqhfeh fijmbaxgzer tyyoxua fwzainjtu stpow csshcasrxez gfliirssltn!").0
+            SVProgressHUD.showError(withStatus: ajigjkin)
+
+            return false
+        }
+        SVProgressHUD.show()
+        return true
+    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
        
@@ -163,7 +184,7 @@ extension POSMPubikCrkllDComu: UINavigationControllerDelegate, UIImagePickerCont
                     self.asBert.append(image)
                     self.onwsanruipose.image = image
                     self.uplaoinghavier.isHidden = true
-                    return
+                    
                 }
                 
                 
@@ -176,6 +197,9 @@ extension POSMPubikCrkllDComu: UINavigationControllerDelegate, UIImagePickerCont
     }
     
    
+    func suggestCreativeTags(){
+        SVProgressHUD.showError(withStatus:self.poseRealStr("Eynbtcebrz aymoyuyrt bcqudrmrcemnktz btchhowukgqhkthst!").0)
+    }
     
     
 }

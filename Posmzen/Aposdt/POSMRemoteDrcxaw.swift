@@ -12,7 +12,14 @@ class POSMRemoteDrcxaw: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
+    let aiPhotoboothBadge: UILabel = {
+        let label = UILabel()
+        label.layer.cornerRadius = 12
+        label.backgroundColor = .systemOrange
+        label.textColor = .white
+        return label
+        
+    }()
     @IBOutlet weak var iNkuton: UIView!
     
     override func viewDidLoad() {
@@ -20,6 +27,6 @@ class POSMRemoteDrcxaw: UIViewController {
         iNkuton.layer.cornerRadius = 15
     }
 
-
+    private let poseSparkButton: UIButton = UIButton.init()
 
 }

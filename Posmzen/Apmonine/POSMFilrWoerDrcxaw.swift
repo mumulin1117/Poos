@@ -7,7 +7,7 @@
 
 import UIKit
 import SVProgressHUD
-class POSMFilrWoerDrcxaw: UIViewController {
+class POSMFilrWoerDrcxaw: POSMBuetonVSontro {
     var paoertuni :Dictionary<String,String>{
         get{
             return   UserDefaults.standard.object(forKey: "statusUserloagPOSM") as? [String:String] ?? [:]
@@ -37,10 +37,7 @@ class POSMFilrWoerDrcxaw: UIViewController {
     @IBAction func uploafmanber(_ sender: Any) {
         
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let cameraPickpose = UIImagePickerController()
-            
-            cameraPickpose.allowsEditing = true
-            cameraPickpose.sourceType = .photoLibrary
+           let cameraPickpose = erwtNwert()
             cameraPickpose.delegate = self
            
             self.present(cameraPickpose, animated: true, completion: nil)
@@ -79,7 +76,7 @@ class POSMFilrWoerDrcxaw: UIViewController {
 
 
 extension POSMFilrWoerDrcxaw: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
-    
+   
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         

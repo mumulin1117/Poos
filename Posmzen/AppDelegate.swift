@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-       
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+       let detafaulet = "Default Configuration"
+        return UISceneConfiguration(name: detafaulet, sessionRole: connectingSceneSession.role)
     }
 }
 

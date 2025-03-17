@@ -19,6 +19,7 @@ class POSMELUACrcxaw: UIViewController,WKScriptMessageHandler ,WKNavigationDeleg
         contentController.add(self, name: "responseHandler")
         contentController.add(self, name: "linkHandler")
         config.userContentController = contentController
+        
         let webView = WKWebView(frame: .zero, configuration: config)
         webView.navigationDelegate = self
         webView.backgroundColor = .white
@@ -45,6 +46,7 @@ class POSMELUACrcxaw: UIViewController,WKScriptMessageHandler ,WKNavigationDeleg
        
        
         if let url = Bundle.main.url(forResource: laoingDagvc, withExtension: "html") {
+            
             webPOSMView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
         view.addSubview(webPOSMView)
