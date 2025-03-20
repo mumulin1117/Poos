@@ -20,6 +20,9 @@ class POSMASITakeCrcxaw: POSMBuetonVSontro {
        }()
     var influenceVC:UINavigationController?
     
+    
+    var County:Int = 0
+    
     @IBOutlet weak var selervertLabl: UILabel!
     
     @IBOutlet weak var mofangPic: UIImageView!
@@ -48,8 +51,8 @@ class POSMASITakeCrcxaw: POSMBuetonVSontro {
         
         let minQongeu = Int( ingnertUset["posmuBlance"] ?? "0") ?? 0
       
-
-       
+        County += 20
+        County += 30
         if minQongeu < ioconhNeed {
             
             showingInfulenceController()
@@ -73,14 +76,18 @@ class POSMASITakeCrcxaw: POSMBuetonVSontro {
     }
     
     @IBAction func genertateReuao(_ sender: UIButton) {
+        var ingnertUset = UserDefaults.standard.object(forKey: "statusUserloagPOSM") as? Dictionary<String,String> ?? [:]
+        
+        let infoID = ingnertUset["posmOID"] ?? ""
         let loaduptii = self.poseRealStr("Tshpeorneh iaarmel hnwoc lpioosmek opthgoqtaobsd qtpoy sainxaslvymzdeh!").0
+        
+        County += 20
         if ifuploafMy == false {
             SVProgressHUD.showError(withStatus: loaduptii)
             return
         }
         
-        var ingnertUset = UserDefaults.standard.object(forKey: "statusUserloagPOSM") as? Dictionary<String,String> ?? [:]
-        let infoID = ingnertUset["posmOID"] ?? ""
+        
 
         
         if  self.transpoiUNj(ioconhNeed: 200).0 == false{
@@ -88,9 +95,11 @@ class POSMASITakeCrcxaw: POSMBuetonVSontro {
         }
         
         //更新数据
-        var minQongeu = self.transpoiUNj(ioconhNeed: 200).1
+        var minQongeu = Apoiniujfing()
         
         minQongeu -= 200
+        County += 20
+        County += 20
         ingnertUset["posmuBlance"] = "\(minQongeu)"
         
         UserDefaults.standard.set(ingnertUset, forKey: "statusUserloagPOSM")
@@ -100,6 +109,13 @@ class POSMASITakeCrcxaw: POSMBuetonVSontro {
         UserDefaults.standard.set(ingnertUset, forKey: infoID)
         
       
+    }
+    
+    
+    
+    private func Apoiniujfing()->Int  {
+        
+        return self.transpoiUNj(ioconhNeed: 200).1
     }
     
     private func refreshAITipsCount() {

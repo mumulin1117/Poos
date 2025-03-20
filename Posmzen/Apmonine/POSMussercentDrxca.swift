@@ -61,13 +61,17 @@ class POSMussercentDrxca: UIViewController {
         
         
         bafolBagjpose.layer.cornerRadius = 8
+       
+        bafolBagjpose2.layer.masksToBounds = true
+    }
+    
+    
+    func robertYapage()  {
         bafolBagjpose.layer.masksToBounds = true
         bafolBagjpose1.layer.cornerRadius = 8
         bafolBagjpose1.layer.masksToBounds = true
         bafolBagjpose2.layer.cornerRadius = 8
-        bafolBagjpose2.layer.masksToBounds = true
     }
-    
     
     func opertunbsd(Fiupose:Dictionary<String,String>){
         if let forit = Fiupose["Supplementaryimg"]?.components(separatedBy: "%").first {
@@ -93,16 +97,23 @@ class POSMussercentDrxca: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.jemopose.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(innerDetail)))
-        NotificationCenter.default.addObserver(self, selector: #selector(paperNoginb), name: .init("blockActionusert"), object: nil)
-        allfangve.text = "\(Int.random(in: 0...3))"
-        Ingdbrf.text = "\(Int.random(in: 0...4))"
-        faberetalbe.text = "\(Int.random(in: 1...4))"
+        Daringhuning()
         Abwdgmn()
+        robertYapage()
         jemoAvtoerSmall.layer.masksToBounds = true
         jemoAvtoerSmall.layer.borderWidth = 2
         jemoAvtoerSmall.layer.borderColor = UIColor.white.cgColor
         
         jemoAvtoerSmall.layer.cornerRadius = 22
+    }
+    
+    
+    
+    func Daringhuning()  {
+        NotificationCenter.default.addObserver(self, selector: #selector(paperNoginb), name: .init("blockActionusert"), object: nil)
+        allfangve.text = "\(Int.random(in: 0...3))"
+        Ingdbrf.text = "\(Int.random(in: 0...4))"
+        faberetalbe.text = "\(Int.random(in: 1...4))"
     }
     
     @IBAction func paperNoginb(_ sender: UIButton) {

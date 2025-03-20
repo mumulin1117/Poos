@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import SVProgressHUD
 class POSMELUACrcxaw: UIViewController,WKScriptMessageHandler ,WKNavigationDelegate{
     var recoringOnwpage:String = "ELUAHtPos"
     
@@ -43,7 +44,7 @@ class POSMELUACrcxaw: UIViewController,WKScriptMessageHandler ,WKNavigationDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        SVProgressHUD.show()
        
         if let url = Bundle.main.url(forResource: laoingDagvc, withExtension: "html") {
             
@@ -80,6 +81,9 @@ class POSMELUACrcxaw: UIViewController,WKScriptMessageHandler ,WKNavigationDeleg
        
        self.navigationController?.popViewController(animated: true)
        
+    }
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        SVProgressHUD.dismiss()
     }
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
            switch message.name {

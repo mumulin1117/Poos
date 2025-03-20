@@ -140,3 +140,33 @@ class POSMRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDel
         icalaertPOSE.autoscroll = 0
     }
 }
+
+
+
+extension POSMFilrWoerDrcxaw: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
+   
+    func alertingHowing(iiuy:UIImage)  {
+        self.minPusotkj.image = iiuy
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+       
+        if let image : UIImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+            
+           
+            DispatchQueue.main.async {
+          
+                self.alertingHowing(iiuy: image)
+                picker.dismiss(animated: true)
+            }
+        }
+    
+       
+        
+    }
+    
+   
+    
+    
+}

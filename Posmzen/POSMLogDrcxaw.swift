@@ -20,43 +20,51 @@ class POSMLogDrcxaw: UIViewController {
     
     @IBOutlet weak var UIseftouch: UILabel!
     
-
+    private var Xifielw:UIButton = UIButton.init()
+    
     
     private func xcNsitae()  {
         pahuiss.leftViewMode = .always
+        
+        emiouiss.leftView = UIView(frame: CGRect.init(x: 0, y: 0, width: 20, height: 50))
+        
         emiouiss.leftViewMode = .always
-        emiouiss.leftView = UIView(frame: CGRect.init(x: 0, y: 0, width: 50, height: 50))
-        pahuiss.leftView = UIView(frame: CGRect.init(x: 0, y: 0, width: 50, height: 50))
+        let maingu = UIView(frame: .zero)
+        maingu.isHidden = true
+        self.view.addSubview(maingu)
+        pahuiss.leftView = UIView(frame: CGRect.init(x: 0, y: 0, width: 20, height: 50))
         
     }
     
     
     
     private func validateConditionCredentials() -> (String,Bool) {
+        var pos:[Int] = [23,34]
         
-        guard let emailPOSM = emiouiss.text?.trimmingCharacters(in: .whitespaces),
-              let passwordPOSM = pahuiss.text?.trimmingCharacters(in: .whitespaces) else {
+        guard pos.isEmpty == false,let emailPOSM = emiouiss.text?.trimmingCharacters(in: .whitespaces),
+              let passwordPOSM = pahuiss.text?.trimmingCharacters(in: .whitespaces),pos.first ?? 0 > 1 else {
             return ("",false)
         }
         let singklernwe0 = self.poseRealStr("Pllcecaossef oejnwtuegrd zyiofuxrb hecmnaoiolq paxdjdyrbedsps").0
        
      
-        if emailPOSM.isEmpty {
+        if emailPOSM.isEmpty,pos.first ?? 0 > 1 {
             SVProgressHUD.showError(withStatus: singklernwe0)
             return ("",false)
         }
         let singklernwe1 = self.poseRealStr("Pwlleyahsnez ieanlteeerr lyookudrn qetmiadirlv ypmagsqscwuorrpd").0
        
-        if passwordPOSM.isEmpty {
+        if passwordPOSM.isEmpty,pos.first ?? 0 > 1 {
             SVProgressHUD.showError(withStatus: singklernwe1)
             return ("",false)
         }
         
-        // 验证邮箱格式
-        let emailRegEx = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}$"
+      
+        
+        pos.append(45)
         let singklernwe2 = self.poseRealStr("Palfebaksmey aemnttbeqru eai jvsatlpildc welmzauiele fajdddlreegsxs").0
        
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", mnhyujiufyo())
         if emailPredicate.evaluate(with: emailPOSM) == false{
             SVProgressHUD.showError(withStatus: singklernwe2)
             return ("",false)
@@ -67,7 +75,10 @@ class POSMLogDrcxaw: UIViewController {
         
     }
     
-    
+    func mnhyujiufyo()->String  {
+        Xifielw.setTitle("SELF MATCHES %@", for: .normal)
+        return "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}$"
+    }
     
     
     
@@ -115,11 +126,9 @@ class POSMLogDrcxaw: UIViewController {
     
     
     func resultLafterPOSM(isCreate:Bool)  {
-       let apo = self.poseRealStr("Cmrderantvee eihnz.p.x.z.").0
-       let qwes = self.poseRealStr("lookgk yionc.b.v.c.").0
-        SVProgressHUD.show(withStatus:isCreate ? apo :qwes)
+        laogininite(isCreate: isCreate)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: DispatchWorkItem(block: {
-            ViewController.createappdemoingPOSM(statusluserPOSM: true)
+            self.poiuyttr()
            let Asdf = self.poseRealStr("Cnrkeparteei gancvceobuvnotp wsauaclcoewseslfcujlw!").0
            let awelk = self.poseRealStr("Wueylhcqobmj!").0
             
@@ -128,8 +137,14 @@ class POSMLogDrcxaw: UIViewController {
         }))
     }
     
+    func laogininite(isCreate:Bool)  {
+        let apo = self.poseRealStr("Cmrderantvee eihnz.p.x.z.").0
+        let qwes = self.poseRealStr("lookgk yionc.b.v.c.").0
+         SVProgressHUD.show(withStatus:isCreate ? apo :qwes)
+    }
+    
     private func CreaeSinEwAccount()  {
-        ////如果邮箱id，对应的值不存在。则是注册
+        
         let Adbop = ["posmOID":validateConditionCredentials().0,
                      "posmuNime":self.poseRealStr("Neod fnzapmge").0,
                     
@@ -137,11 +152,15 @@ class POSMLogDrcxaw: UIViewController {
         
       
         
-        UserDefaults.standard.set(Adbop, forKey: "statusUserloagPOSM")//设置当前的登陆帐号
+        UserDefaults.standard.set(Adbop, forKey: "statusUserloagPOSM")
         UserDefaults.standard.set(Adbop, forKey: validateConditionCredentials().0)//存储到已经存在的账户
     }
     
     
+    
+    private func poiuyttr()  {
+        ViewController.createappdemoingPOSM(statusluserPOSM: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         xcNsitae()

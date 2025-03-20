@@ -137,6 +137,9 @@ class POSMBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDe
     }
 
     private func Abwdgmn()  {
+        jemoAvtoer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(TOafijol)))
+        
+        jemoNameSeting.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(TOafijol)))
         jemoAvtoer.layer.cornerRadius = 20
         poseInjuioView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -195,14 +198,18 @@ class POSMBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDe
     
     
     @IBAction func Followerager(_ sender: UIButton) {
+       
+        TOafijol()
+    }
+    
+  
+    
+   @objc func TOafijol() {
         let ginsdrng = POSMussercentDrxca.init()
         ginsdrng.paoertuni = self.paoertuni
         ginsdrng.tapginsed = tapginsed
         self.navigationController?.pushViewController(ginsdrng, animated: true)
-        
     }
-    
-  
     
     
     

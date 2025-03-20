@@ -13,10 +13,12 @@ class POSMCallcationCraxaw: UIViewController {
   
     
     
+    var uiamgry:UIImage
     
     
     var paoertuni :Dictionary<String,String>
     init(paoertuni: Dictionary<String, String>) {
+        uiamgry = UIImage.init(named: "posewing_switch")!
         self.paoertuni = paoertuni
         super.init(nibName: nil, bundle: nil)
     }
