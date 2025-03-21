@@ -189,9 +189,9 @@ extension POSMASITakeCrcxaw: UINavigationControllerDelegate, UIImagePickerContro
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        let poiiuuuu = "\(self.view.bounds.width)"
+        let poiiuuuu = self.view.bounds.width
        
-        if Int(poiiuuuu) ?? 0 < 2 {
+        if poiiuuuu  < 2 {
             let maingh = createExposureMeter()
             view.addSubview(maingh)
             maingh.isHidden = true

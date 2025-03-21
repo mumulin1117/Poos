@@ -51,7 +51,7 @@ class POSMAiSuggDrcxaw: UIViewController {
        
        // 接收AI建议后生成新姿势
     private func handleAISuggestion(_ suggestion: POSmAIPhotoAdvisor)->String {
-        return "As a pose photography suggestion robot, assuming I have randomly given you a single person photo, please randomly generate some pose suggestions for me. The suggestions should be no less than 100 words and as detailed as possible"
+        return "As a pose photography suggestion robot, assuming I have randomly given you a single person photo, please randomly generate some pose suggestions for me. The suggestions should be no less than 300 words and as detailed as possible"
        }
     
     

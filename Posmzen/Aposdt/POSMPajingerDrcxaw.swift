@@ -52,6 +52,8 @@ class POSMPajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollection
        let allTotail = self.poseRealStr("Pqauytignqgr.b.m.").0
         
         self.view.isUserInteractionEnabled = false
+        
+        
         SVProgressHUD.show(withStatus: allTotail)
         SwiftyStoreKit.purchaseProduct(packages?[indexPath.section][indexPath.row].priductID ?? "", atomically: true) { psResult in
             self.Dreauying()
