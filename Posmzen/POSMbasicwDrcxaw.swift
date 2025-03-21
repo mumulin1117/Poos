@@ -20,7 +20,7 @@ extension UIViewController {
     func addNewMainback() {
         let amin = UIImage(named: "mainBackcx")
         let coxde = UIImageView(image: amin)
-        coxde.contentMode = .scaleAspectFill
+        coxde.contentMode = .scaleToFill
         view.addSubview(coxde)
         coxde.snp.makeConstraints { make in
             make.edges.equalToSuperview()

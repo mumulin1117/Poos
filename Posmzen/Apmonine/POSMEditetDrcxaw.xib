@@ -23,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackcx" translatesAutoresizingMaskIntoConstraints="NO" id="j0n-5y-fzr">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackcx" translatesAutoresizingMaskIntoConstraints="NO" id="j0n-5y-fzr">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SM3-qD-f25">
@@ -176,7 +176,7 @@
                 <constraint firstItem="XFR-Z6-sCZ" firstAttribute="top" secondItem="6XR-w3-IGC" secondAttribute="top" id="oaF-M2-nFt"/>
                 <constraint firstItem="Wqk-lo-w7W" firstAttribute="trailing" secondItem="S9R-J8-5n8" secondAttribute="trailing" id="vZv-ai-M1y"/>
                 <constraint firstItem="j0n-5y-fzr" firstAttribute="top" secondItem="Rut-1F-qwp" secondAttribute="top" id="voc-8d-HxQ"/>
-                <constraint firstItem="j0n-5y-fzr" firstAttribute="trailing" secondItem="6XR-w3-IGC" secondAttribute="trailing" id="xi1-4B-9GI"/>
+                <constraint firstItem="j0n-5y-fzr" firstAttribute="trailing" secondItem="Rut-1F-qwp" secondAttribute="trailing" id="xi1-4B-9GI"/>
             </constraints>
             <point key="canvasLocation" x="43.511450381679388" y="19.014084507042256"/>
         </view>

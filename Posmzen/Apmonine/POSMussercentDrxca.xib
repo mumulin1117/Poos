@@ -33,7 +33,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackcx" translatesAutoresizingMaskIntoConstraints="NO" id="lun-Xp-MB5">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackcx" translatesAutoresizingMaskIntoConstraints="NO" id="lun-Xp-MB5">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ChV-xx-55n">
@@ -286,7 +286,7 @@
                 <constraint firstItem="ChV-xx-55n" firstAttribute="top" secondItem="fEo-t2-zV7" secondAttribute="top" id="nIg-V0-bw1"/>
                 <constraint firstItem="lun-Xp-MB5" firstAttribute="top" secondItem="fEo-t2-zV7" secondAttribute="top" id="otk-Km-iiB"/>
                 <constraint firstItem="lun-Xp-MB5" firstAttribute="leading" secondItem="W6V-Zx-s1Y" secondAttribute="leading" id="uTh-56-aOP"/>
-                <constraint firstItem="lun-Xp-MB5" firstAttribute="trailing" secondItem="W6V-Zx-s1Y" secondAttribute="trailing" id="yPc-cy-VgK"/>
+                <constraint firstItem="lun-Xp-MB5" firstAttribute="trailing" secondItem="fEo-t2-zV7" secondAttribute="trailing" id="yPc-cy-VgK"/>
                 <constraint firstItem="5Xt-Kf-6h7" firstAttribute="leading" secondItem="W6V-Zx-s1Y" secondAttribute="leading" constant="18" id="yc5-oI-GOp"/>
             </constraints>
             <point key="canvasLocation" x="55.725190839694655" y="62.676056338028175"/>

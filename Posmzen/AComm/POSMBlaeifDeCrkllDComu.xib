@@ -35,7 +35,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackcx" translatesAutoresizingMaskIntoConstraints="NO" id="v1D-Wb-9Jo">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackcx" translatesAutoresizingMaskIntoConstraints="NO" id="v1D-Wb-9Jo">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usx-XV-rvj">
@@ -276,14 +276,14 @@
                 <constraint firstItem="tbz-MR-bff" firstAttribute="top" secondItem="edf-dn-bx6" secondAttribute="top" constant="10" id="eoU-Qb-XxA"/>
                 <constraint firstAttribute="bottom" secondItem="v1D-Wb-9Jo" secondAttribute="bottom" id="ezi-FC-dZt"/>
                 <constraint firstItem="3J1-F7-GPD" firstAttribute="trailing" secondItem="tbz-MR-bff" secondAttribute="trailing" constant="15" id="fgO-Xr-Ff9"/>
-                <constraint firstItem="v1D-Wb-9Jo" firstAttribute="trailing" secondItem="3J1-F7-GPD" secondAttribute="trailing" id="jRd-Fz-O65"/>
+                <constraint firstItem="v1D-Wb-9Jo" firstAttribute="trailing" secondItem="6MF-qW-Lvs" secondAttribute="trailing" id="jRd-Fz-O65"/>
                 <constraint firstItem="Jj4-FV-OhF" firstAttribute="centerY" secondItem="oSw-7V-MPx" secondAttribute="centerY" id="k4e-Vr-tZL"/>
                 <constraint firstItem="ZvI-eZ-WjA" firstAttribute="leading" secondItem="3J1-F7-GPD" secondAttribute="leading" constant="16" id="lZg-fn-inp"/>
                 <constraint firstItem="v1D-Wb-9Jo" firstAttribute="top" secondItem="6MF-qW-Lvs" secondAttribute="top" id="qyn-jp-EnR"/>
                 <constraint firstItem="oSw-7V-MPx" firstAttribute="centerY" secondItem="tbz-MR-bff" secondAttribute="centerY" id="u0o-9Q-pj6"/>
                 <constraint firstAttribute="bottom" secondItem="edf-dn-bx6" secondAttribute="bottom" id="u2W-i9-ign"/>
             </constraints>
-            <point key="canvasLocation" x="56" y="63"/>
+            <point key="canvasLocation" x="55.725190839694655" y="62.676056338028175"/>
         </view>
     </objects>
     <resources>

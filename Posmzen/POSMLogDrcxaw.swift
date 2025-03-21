@@ -17,6 +17,7 @@ class POSMLogDrcxaw: UIViewController {
     
     @IBOutlet weak var emiouiss: UITextField!
     
+    @IBOutlet weak var newiLakbe: UILabel!
     
     @IBOutlet weak var UIseftouch: UILabel!
     
@@ -25,7 +26,7 @@ class POSMLogDrcxaw: UIViewController {
     
     private func xcNsitae()  {
         pahuiss.leftViewMode = .always
-        
+        newiLakbe.text = self.poseRealStr("Njou drvexlnagtleudz baocfcgonuonztv?q dWien'vlslb acrraeuaftxeb botnaeq kaeumtkolmoawthiicaamlelqyq.").0
         emiouiss.leftView = UIView(frame: CGRect.init(x: 0, y: 0, width: 20, height: 50))
         
         emiouiss.leftViewMode = .always
@@ -70,6 +71,12 @@ class POSMLogDrcxaw: UIViewController {
             return ("",false)
         }
         
+        let sodfgkos = self.poseRealStr("Pzalsusxwqoyrkdc nmhufsztq thvagvyee caote nlwesahsttq bspipxa jddiugsiqtps").0
+        
+        if passwordPOSM.count < 6 {
+            SVProgressHUD.showError(withStatus: sodfgkos)
+            return (emailPOSM,false)
+        }
        
         return (emailPOSM,true)
         
@@ -83,6 +90,8 @@ class POSMLogDrcxaw: UIViewController {
     
     
     @IBAction func loaginClofulClick(_ sender: UIButton) {
+        
+        self.view.endEditing(true)
         if sender == self.poosBeginmenr {
             self.poosBeginmenr.isSelected = !self.poosBeginmenr.isSelected
             return

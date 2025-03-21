@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackcx" translatesAutoresizingMaskIntoConstraints="NO" id="e2N-ys-sXO">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackcx" translatesAutoresizingMaskIntoConstraints="NO" id="e2N-ys-sXO">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amQ-aM-VCt">
@@ -89,9 +89,9 @@
                 <constraint firstAttribute="bottom" secondItem="e2N-ys-sXO" secondAttribute="bottom" id="2Gh-Us-Vam"/>
                 <constraint firstItem="sDq-7e-DwL" firstAttribute="leading" secondItem="amQ-aM-VCt" secondAttribute="trailing" constant="10" id="Dcu-R2-8Uf"/>
                 <constraint firstItem="Ut7-kb-5v3" firstAttribute="top" secondItem="amQ-aM-VCt" secondAttribute="bottom" constant="32" id="P2X-9i-lsk"/>
-                <constraint firstItem="e2N-ys-sXO" firstAttribute="leading" secondItem="YGE-ZE-fyc" secondAttribute="leading" id="T2Z-8T-WnZ"/>
+                <constraint firstItem="e2N-ys-sXO" firstAttribute="leading" secondItem="3hD-0E-Jv0" secondAttribute="leading" id="T2Z-8T-WnZ"/>
                 <constraint firstItem="Ut7-kb-5v3" firstAttribute="leading" secondItem="YGE-ZE-fyc" secondAttribute="leading" constant="15" id="X0n-Lk-luk"/>
-                <constraint firstItem="e2N-ys-sXO" firstAttribute="trailing" secondItem="YGE-ZE-fyc" secondAttribute="trailing" id="foD-0V-Bsi"/>
+                <constraint firstItem="e2N-ys-sXO" firstAttribute="trailing" secondItem="3hD-0E-Jv0" secondAttribute="trailing" id="foD-0V-Bsi"/>
                 <constraint firstItem="amQ-aM-VCt" firstAttribute="leading" secondItem="YGE-ZE-fyc" secondAttribute="leading" constant="18" id="hew-lq-Xfk"/>
                 <constraint firstItem="YGE-ZE-fyc" firstAttribute="trailing" secondItem="Ut7-kb-5v3" secondAttribute="trailing" constant="15" id="vZt-xE-apP"/>
                 <constraint firstItem="amQ-aM-VCt" firstAttribute="top" secondItem="YGE-ZE-fyc" secondAttribute="top" id="wBG-XO-r9a"/>
@@ -103,7 +103,7 @@
     </objects>
     <resources>
         <image name="Hubergyu" width="40" height="40"/>
-        <image name="mainBackcx" width="375" height="812"/>
+        <image name="mainBackcx" width="371" height="812"/>
         <image name="posmxuanzhong" width="128" height="128"/>
         <image name="syuimsation" width="60" height="60"/>
         <systemColor name="systemBackgroundColor">

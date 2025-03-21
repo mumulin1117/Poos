@@ -80,8 +80,8 @@
                 <constraint firstItem="HAq-by-NUe" firstAttribute="top" secondItem="bAJ-oK-V56" secondAttribute="top" id="jmr-ef-LQN"/>
                 <constraint firstItem="LWF-2R-LiH" firstAttribute="bottom" secondItem="79I-Fg-Nbu" secondAttribute="bottom" constant="10" id="p35-TV-maI"/>
                 <constraint firstItem="LWF-2R-LiH" firstAttribute="trailing" secondItem="79I-Fg-Nbu" secondAttribute="trailing" constant="19" id="qij-sg-QQk"/>
-                <constraint firstItem="HAq-by-NUe" firstAttribute="leading" secondItem="LWF-2R-LiH" secondAttribute="leading" id="rJ3-Vz-RVB"/>
-                <constraint firstItem="HAq-by-NUe" firstAttribute="trailing" secondItem="LWF-2R-LiH" secondAttribute="trailing" id="twY-sp-Tlw"/>
+                <constraint firstItem="HAq-by-NUe" firstAttribute="leading" secondItem="bAJ-oK-V56" secondAttribute="leading" id="rJ3-Vz-RVB"/>
+                <constraint firstItem="HAq-by-NUe" firstAttribute="trailing" secondItem="bAJ-oK-V56" secondAttribute="trailing" id="twY-sp-Tlw"/>
             </constraints>
             <point key="canvasLocation" x="46.564885496183201" y="20.422535211267608"/>
         </view>

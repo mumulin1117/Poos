@@ -12,9 +12,18 @@ class POSMRootwDrcxaw: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let reamilapp = animateLensChange()
+        reamilapp.configureWithOpaqueBackground()
         reamilapp.backgroundColor = UIColor(red: 0.2, green: 0.15, blue: 0.42, alpha: 0.5000)
-        tabBar.standardAppearance = reamilapp
-        tabBar.isTranslucent = false
+        UITabBar.appearance().standardAppearance = reamilapp
+        UITabBar.appearance().scrollEdgeAppearance = reamilapp
+        if let tabBar = self.tabBarController?.tabBar {
+            let tabAppearance = UITabBarAppearance()
+            tabAppearance.configureWithOpaqueBackground()
+            tabAppearance.backgroundColor = UIColor(red: 0.2, green: 0.15, blue: 0.42, alpha: 0.5000)
+            
+            tabBar.standardAppearance = tabAppearance
+            tabBar.scrollEdgeAppearance = tabAppearance
+        }
         addShutterHapticFeedback()
        
     }

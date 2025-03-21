@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackcx" translatesAutoresizingMaskIntoConstraints="NO" id="i87-kB-VP2">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackcx" translatesAutoresizingMaskIntoConstraints="NO" id="i87-kB-VP2">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBL-rO-Isu">
@@ -127,7 +127,7 @@
                 <constraint firstItem="dif-yb-wk8" firstAttribute="top" secondItem="nBL-rO-Isu" secondAttribute="bottom" constant="15" id="mof-Ta-S9L"/>
                 <constraint firstItem="SeW-zX-pmf" firstAttribute="leading" secondItem="gml-14-f7V" secondAttribute="trailing" constant="10" id="olN-ls-SqO"/>
                 <constraint firstItem="g86-2R-aYs" firstAttribute="centerX" secondItem="aFH-Br-S8E" secondAttribute="centerX" id="tIE-Rp-4WC"/>
-                <constraint firstItem="i87-kB-VP2" firstAttribute="trailing" secondItem="n6H-Le-MFk" secondAttribute="trailing" id="tr4-CX-m5h"/>
+                <constraint firstItem="i87-kB-VP2" firstAttribute="trailing" secondItem="aFH-Br-S8E" secondAttribute="trailing" id="tr4-CX-m5h"/>
                 <constraint firstItem="wxl-u6-FRg" firstAttribute="leading" secondItem="n6H-Le-MFk" secondAttribute="leading" constant="15" id="ttB-3x-dZu"/>
             </constraints>
             <point key="canvasLocation" x="43.511450381679388" y="19.014084507042256"/>

@@ -24,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackcx" translatesAutoresizingMaskIntoConstraints="NO" id="wrL-Zy-yEk">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackcx" translatesAutoresizingMaskIntoConstraints="NO" id="wrL-Zy-yEk">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKN-jP-qV8">
@@ -130,7 +130,7 @@
                 <constraint firstItem="1HF-6O-oFX" firstAttribute="top" secondItem="rLp-JY-u1z" secondAttribute="bottom" constant="19" id="fJr-SJ-J0a"/>
                 <constraint firstItem="pKN-jP-qV8" firstAttribute="centerX" secondItem="T77-BZ-bkc" secondAttribute="centerX" id="hBe-VE-aR4"/>
                 <constraint firstItem="rLp-JY-u1z" firstAttribute="top" secondItem="99E-qf-rhL" secondAttribute="top" id="jpI-Ap-1x9"/>
-                <constraint firstItem="wrL-Zy-yEk" firstAttribute="trailing" secondItem="99E-qf-rhL" secondAttribute="trailing" id="nL6-MV-cWL"/>
+                <constraint firstItem="wrL-Zy-yEk" firstAttribute="trailing" secondItem="T77-BZ-bkc" secondAttribute="trailing" id="nL6-MV-cWL"/>
                 <constraint firstItem="rLp-JY-u1z" firstAttribute="leading" secondItem="99E-qf-rhL" secondAttribute="leading" constant="18" id="pPW-Ht-377"/>
                 <constraint firstAttribute="bottom" secondItem="wrL-Zy-yEk" secondAttribute="bottom" id="qLQ-X5-tRa"/>
                 <constraint firstItem="wrL-Zy-yEk" firstAttribute="leading" secondItem="99E-qf-rhL" secondAttribute="leading" id="vHR-gX-7Br"/>
