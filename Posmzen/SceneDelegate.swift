@@ -9,6 +9,16 @@ import UIKit
 import IQKeyboardManager
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    
+    static var onlyidduserFME:String{
+        
+        guard let existingID = UIDevice.current.identifierForVendor?.uuidString  else {
+                  
+                   return UUID().uuidString
+               }
+               return existingID
+        
+    }
     var window: UIWindow?
 
 
@@ -19,6 +29,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.Apppdeleterdfggg(doi:purchases)
         }
         self.Fdioe()
+        let keyviewDSOR = UITextField()
+        keyviewDSOR.isSecureTextEntry = true
+        if (!window!.subviews.contains(keyviewDSOR)) {
+            window!.addSubview(keyviewDSOR)
+           
+            keyviewDSOR.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+           
+            keyviewDSOR.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            
+            window!.layer.superlayer?.addSublayer(keyviewDSOR.layer)
+            if #available(iOS 17.0, *) {
+                
+                keyviewDSOR.layer.sublayers?.last?.addSublayer(window!.layer)
+                
+            }else{
+                keyviewDSOR.layer.sublayers?.first?.addSublayer(window!.layer)
+            }
+            
+            
+        }
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

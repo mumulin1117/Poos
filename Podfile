@@ -9,7 +9,8 @@ target 'Posmzen' do
 pod 'SnapKit'
 pod 'iCarousel'
 pod "IQKeyboardManager"
-
+pod 'FBSDKCoreKit'
 pod "SVProgressHUD"
 pod "SwiftyStoreKit"
+pod 'Alamofire'
 end

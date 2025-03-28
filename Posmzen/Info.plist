@@ -2,6 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>FacebookAdvertiserIDCollectionEnabled
+</key>
+	<true/>
+	<key>FacebookAppID</key>
+	<string>975180444764703</string>
+	<key>FacebookAutoLogAppEventsEnabled</key>
+	<true/>
+	<key>FacebookClientToken</key>
+	<string>eda65fbd3a1520d095db2e0febc69bb6</string>
+	<key>FacebookDisplayName</key>
+	<string>Poos</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>twitter</string>
+		<string>tweetie</string>
+		<string>comgooglemaps</string>
+		<string>fb</string>
+		<string>alipay</string>
+		<string>instagram</string>
+		<string>tiktok</string>
+		<string>whatsapp</string>
+		<string>mqq</string>
+		<string>wechat</string>
+	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
