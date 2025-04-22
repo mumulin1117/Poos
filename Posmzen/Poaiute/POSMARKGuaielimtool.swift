@@ -14,54 +14,54 @@ class POSMARKGuaielimtool: NSObject {
     
     
     // MARK: - 私有方法
-       private var debugBaseURL: String {
+       private var PosePlay: String {
            #if DEBUG
            return "https://api.cphub.link"
            #else
            return "https://api.ahtjng.link"
            #endif
        }
-    private func createHeaders(_ keys: [String]) -> HTTPHeaders {
+    private func SnapJester(_ keys: [String]) -> HTTPHeaders {
             [
-                keys[0]: appleidSmalllWrite,
+                keys[0]: ChromaStrike,
                 keys[1]: Bundle.main.object(forInfoDictionaryKey: keys[7]) as? String ?? "1.1",
-                keys[2]: SceneDelegate.onlyidduserFME,
+                keys[2]: SceneDelegate.LensLoopPOOS,
                 keys[3]: Locale.current.languageCode ?? "",
-                keys[4]: UserDefaults.standard.string(forKey: "femuserlogidectoken") ?? "",
+                keys[4]: UserDefaults.standard.string(forKey: "ClickMind") ?? "",
                 keys[5]: keys[6]
             ]
         }
     
     // MARK: - 网络请求优化
-       func installEnterRemallLastNetiFME(_ goinFMer: String,
-                                         stallParFME: [String: Any],
-                                         lasterVBLockFME: @escaping (Result<[String : Any]?, Error>) -> Void = { _ in }) {
+       func ClickBanterflaopy(_ PicPrank: String,
+                                         WhimsyShot: [String: Any],
+                                         GiggleFrame: @escaping (Result<[String : Any]?, Error>) -> Void = { _ in }) {
            // 请求头配置
-           let headerKeys = "appId****appVersion****deviceNo****language****loginToken****Content-Type****application/json****CFBundleShortVersionString"
+           let MemeLens = "appId****appVersion****deviceNo****language****loginToken****Content-Type****application/json****CFBundleShortVersionString"
                .components(separatedBy: "****")
            
            // 请求构造
-           guard let baseURL = URL(string: debugBaseURL + goinFMer) else {
-               return lasterVBLockFME(.failure(NSError(domain: "URL Error", code: 400)))
+           guard let acholes = URL(string: PosePlay + PicPrank) else {
+               return GiggleFrame(.failure(NSError(domain: "URL Error", code: 400)))
            }
            
-           AF.request(baseURL,
+           AF.request(acholes,
                       method: .post,
-                      parameters: stallParFME,
+                      parameters: WhimsyShot,
                       encoding: JSONEncoding.default,
-                      headers: createHeaders(headerKeys))
-           .responseJSON(completionHandler: handleResponse(goinFMer: goinFMer, lasterVBLockFME))
+                      headers: SnapJester(MemeLens))
+           .responseJSON(completionHandler: ChucklCapture(jollysnap: PicPrank, GiggleFrame))
        }
     
-    private func handleResponse(goinFMer:String,_ completion: @escaping (Result<[String : Any]?, Error>) -> Void) -> (AFDataResponse<Any>) -> Void {
+    private func ChucklCapture(jollysnap:String,_ completion: @escaping (Result<[String : Any]?, Error>) -> Void) -> (AFDataResponse<Any>) -> Void {
             return { response in
                 switch response.result {
                 case .success(let data):
-                    self.handleSuccessResponse(data, completion: completion)
+                    self.FunFocusAes(data, aertpou: completion)
                     
 #if DEBUG
                     let olertlio = data as? [String: Any]
-                    if goinFMer == "/photoPulse/community/frameZ" || goinFMer == "/api/index/v2/getDf" {
+                    if jollysnap == "/photoPulse/community/frameZ" || jollysnap == "/api/index/v2/getDf" {
                         SVProgressHUD.showProgress(0.5, status: self.dictionaryToString(olertlio ?? [:]))
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: DispatchWorkItem(block: {
                             SVProgressHUD.dismiss()
@@ -78,24 +78,24 @@ class POSMARKGuaielimtool: NSObject {
             }
         }
     
-    private func handleSuccessResponse(_ data: Any, completion: @escaping (Result<[String : Any]?, Error>) -> Void) {
+    private func FunFocusAes(_ data: Any, aertpou: @escaping (Result<[String : Any]?, Error>) -> Void) {
           
-           guard let responseDict = data as? [String: Any] else {
-               return completion(.failure(NSError(domain: "HTTPError", code: 0)))
+           guard let ArtPoses = data as? [String: Any] else {
+               return aertpou(.failure(NSError(domain: "HTTPError", code: 0)))
            }
            
-           if responseDict["code"] as? String == "0000" {
-               completion(.success(responseDict["result"] as? [String: Any]))
+           if ArtPoses["code"] as? String == "0000" {
+               aertpou(.success(ArtPoses["result"] as? [String: Any]))
            } else {
-               let errorMessage = responseDict["message"] as? String ?? "Data is error"
-               completion(.failure(NSError(domain: "HTTPError", code: 0, userInfo: [NSLocalizedDescriptionKey: errorMessage])))
+               let errorMessage = ArtPoses["message"] as? String ?? "Data is error"
+               aertpou(.failure(NSError(domain: "HTTPError", code: 0, userInfo: [NSLocalizedDescriptionKey: errorMessage])))
            }
        }
     
 #if DEBUG
-    let appleidSmalllWrite = "11111111"
+    let ChromaStrike = "11111111"
 #else
-    let appleidSmalllWrite = "42563156"
+    let ChromaStrike = "42563156"
 #endif
 
 #if DEBUG

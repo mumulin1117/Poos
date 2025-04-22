@@ -13,68 +13,75 @@ import SwiftyStoreKit
 import SVProgressHUD
 import WebKit
 class POSMARKposigokDrcxaw: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
-    private var fmePlaungView:WKWebView?
+    private var poseWebView:WKWebView?
      
     
-    private  var fmersousifgnin = false
-    private var okaeenteanceFME:String
+    private  var isLoginGFFFPage = false
+    private var viewShareURL:String
     
-    init(wonderfulnowing:String,islogingpagepalt:Bool) {
-        okaeenteanceFME = wonderfulnowing
+    init(_viewShareURL:String,_isLoginGFFFPage:Bool) {
+        viewShareURL = _viewShareURL
         
-        fmersousifgnin = islogingpagepalt
+        isLoginGFFFPage = _isLoginGFFFPage
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        SnapMuse()
+        PoseGenie()
+    }
+    func SnapMuse() {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        fmePlaungView?.configuration.userContentController.add(self, name: "Pay")
-        fmePlaungView?.configuration.userContentController.add(self, name: "Close")
         
     }
-        
-        
+    func PoseGenie() {
+        poseWebView?.configuration.userContentController.add(self, name: "Pay")
+        poseWebView?.configuration.userContentController.add(self, name: "Close")
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        ClickCraze()
+    }
+    func ClickCraze()  {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        fmePlaungView?.configuration.userContentController.removeAllScriptMessageHandlers()
+        poseWebView?.configuration.userContentController.removeAllScriptMessageHandlers()
        
     }
- 
     
+    func FrameFlow()->UIImageView  {
+        let PixPulse = UIImageView.init(frame:UIScreen.main.bounds)
+        PixPulse.contentMode = .scaleAspectFill
+        if isLoginGFFFPage {
+            PixPulse.image = UIImage(named: "FoeloaginPage")
+        }else{
+            PixPulse.image = UIImage(named: "poajfLainj")
+        }
+        return PixPulse
+    }
   
     override func viewDidLoad() {
         super.viewDidLoad()
        
         
-        let matherlang = UIImageView.init(frame:UIScreen.main.bounds)
-        matherlang.contentMode = .scaleAspectFill
-        if fmersousifgnin {
-            matherlang.image = UIImage(named: "FoeloaginPage")
-        }else{
-            matherlang.image = UIImage(named: "poajfLainj")
-        }
        
-        view.addSubview(matherlang)
+       
+        view.addSubview(FrameFlow())
         
        
         
-        if fmersousifgnin == true {
-            let  lsignintouchHTL = UIButton.init()
-            lsignintouchHTL.setBackgroundImage(UIImage.init(named: "posdaiNbc"), for: .normal)
+        if isLoginGFFFPage == true {
+            
+            
+            let acclole = MomentMingle()
+            
+            view.addSubview(acclole)
            
-            lsignintouchHTL.setTitle("Quick Log", for: .normal)
-            lsignintouchHTL.setTitleColor(UIColor.black, for: .normal)
-            lsignintouchHTL.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .black)
-           
-            lsignintouchHTL.isUserInteractionEnabled = false
-            view.addSubview(lsignintouchHTL)
-           
-            lsignintouchHTL.snp.makeConstraints { make in
+            acclole.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
                 make.height.equalTo(52)
                 make.width.equalTo(335)
@@ -93,28 +100,39 @@ class POSMARKposigokDrcxaw: UIViewController ,WKNavigationDelegate, WKUIDelegate
         fmeviewstys.preferences.javaScriptCanOpenWindowsAutomatically = true
  
       
-        fmePlaungView = WKWebView.init(frame: UIScreen.main.bounds, configuration: fmeviewstys)
-        fmePlaungView?.isHidden = true
-        fmePlaungView?.translatesAutoresizingMaskIntoConstraints = false
-        fmePlaungView?.scrollView.alwaysBounceVertical = false
+        poseWebView = WKWebView.init(frame: UIScreen.main.bounds, configuration: fmeviewstys)
+        poseWebView?.isHidden = true
+        poseWebView?.translatesAutoresizingMaskIntoConstraints = false
+        poseWebView?.scrollView.alwaysBounceVertical = false
         
-        fmePlaungView?.scrollView.contentInsetAdjustmentBehavior = .never
-        fmePlaungView?.navigationDelegate = self
+        poseWebView?.scrollView.contentInsetAdjustmentBehavior = .never
+        poseWebView?.navigationDelegate = self
         
-        fmePlaungView?.uiDelegate = self
-        fmePlaungView?.allowsBackForwardNavigationGestures = true
+        poseWebView?.uiDelegate = self
+        poseWebView?.allowsBackForwardNavigationGestures = true
    
-        if let urewlinsdfme = URL.init(string: okaeenteanceFME) {
-            fmePlaungView?.load(NSURLRequest.init(url:urewlinsdfme) as URLRequest)
+        if let urewlinsdfme = URL.init(string: viewShareURL) {
+            poseWebView?.load(NSURLRequest.init(url:urewlinsdfme) as URLRequest)
         }
-        self.view.addSubview(fmePlaungView!)
+        self.view.addSubview(poseWebView!)
         
       
-        SVProgressHUD.show(withStatus: fmersousifgnin == true ? "log in....." : "")
+        SVProgressHUD.show(withStatus: isLoginGFFFPage == true ? "log in....." : "")
     }
     
     
-    
+    func MomentMingle() -> UIButton {
+        let  VibeShots = UIButton.init()
+       
+        VibeShots.setTitle("Quick Log", for: .normal)
+        VibeShots.setTitleColor(UIColor.black, for: .normal)
+        VibeShots.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .black)
+        VibeShots.setBackgroundImage(UIImage.init(named: "posdaiNbc"), for: .normal)
+       
+        VibeShots.isUserInteractionEnabled = false
+        
+        return VibeShots
+    }
     
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for window: WKWindowFeatures, completionHandler: @escaping (WKWebView?) -> Void) {
@@ -142,62 +160,68 @@ class POSMARKposigokDrcxaw: UIViewController ,WKNavigationDelegate, WKUIDelegate
           return nil
     }
     
-    
-    
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        fmePlaungView?.isHidden = false
+    func FlashFable()  {
+        poseWebView?.isHidden = false
         
         
         SVProgressHUD.dismiss()
         
-        if fmersousifgnin == true {
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        FlashFable()
+        if isLoginGFFFPage == true {
            
             SVProgressHUD.showSuccess(withStatus: "Login successful")
-            fmersousifgnin = false
+            isLoginGFFFPage = false
             
         }
        
+        AIGlowShot()
+       
+    }
+    
+    
+    func AIGlowShot()  {
 #if DEBUG
-        let adventurepatherFME = "/api/device/save"
-         let versationParamFME: [String: Any] = [
+        let AuraSnapPOOS = "/api/device/save"
+         let SmartStrikePOOS: [String: Any] = [
             "appVersion": "1.1.0",
              "channel":"APPSTORE",
             "osType":UIDevice.current.systemName,
              "osVersion":UIDevice.current.systemVersion,
              "deviceType" : "iPhone",
-            "deviceNo" :SceneDelegate.onlyidduserFME,
+            "deviceNo" :SceneDelegate.LensLoopPOOS,
             "pushToken" :AppDelegate.appUITPushToken,
 
          ]
         #else
-        let adventurepatherFME = "/smartLens/aiCapture/identityY"
+        let AuraSnapPOOS = "/smartLens/aiCapture/identityY"
         
       
-         let versationParamFME: [String: Any] = [
+         let SmartStrikePOOS: [String: Any] = [
             "proModeVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
              "channelF":"APPSTORE",
             "osAperture":UIDevice.current.systemName,
              "osShutter":UIDevice.current.systemVersion,
              "tripodType" : "iPhone",
-            "shotNo" :SceneDelegate.onlyidduserFME,
+            "shotNo" :SceneDelegate.LensLoopPOOS,
             "flashAlert" :AppDelegate.appUITPushToken,
          
          ]
 #endif
-        POSMARKGuaielimtool.pnolyert.installEnterRemallLastNetiFME( adventurepatherFME, stallParFME: versationParamFME)
-       
+        POSMARKGuaielimtool.pnolyert.ClickBanterflaopy( AuraSnapPOOS, WhimsyShot: SmartStrikePOOS)
     }
-    
     
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
        
       
        
-        let angagingFME =  "payload****transactionId****type****direct****Pay****Close".components(separatedBy: "****")
-        let oertpinkFME =  "No have receipt****/api/ios/v2/pay****The purchase was successful!".components(separatedBy: "****")
+        let NeonLens =  "payload****transactionId****type****direct****Pay****Close".components(separatedBy: "****")
+        let Wise =  "No have receipt****/api/ios/v2/pay****The purchase was successful!".components(separatedBy: "****")
        
-        if message.name == angagingFME[4],
+        if message.name == NeonLens[4],
             let mesgidhFME = message.body as? String {
          
 
@@ -247,16 +271,16 @@ class POSMARKposigokDrcxaw: UIViewController ,WKNavigationDelegate, WKUIDelegate
                 
                     guard let ticketData = SwiftyStoreKit.localReceiptData,
                           let gettransID = psPurch.transaction.transactionIdentifier else {
-                        SVProgressHUD.showError(withStatus: oertpinkFME[0])
+                        SVProgressHUD.showError(withStatus: Wise[0])
                         
                         return
                       }
                     
 
-                    POSMARKGuaielimtool.pnolyert.installEnterRemallLastNetiFME( oertpinkFME[1], stallParFME: [
-                        angagingFME[0]:ticketData.base64EncodedString(),
-                        angagingFME[1]:gettransID,
-                        angagingFME[2]:angagingFME[3]
+                    POSMARKGuaielimtool.pnolyert.ClickBanterflaopy( Wise[1], WhimsyShot: [
+                        NeonLens[0]:ticketData.base64EncodedString(),
+                        NeonLens[1]:gettransID,
+                        NeonLens[2]:NeonLens[3]
                     ]) { result in
                        
                         self.view.isUserInteractionEnabled = true
@@ -269,7 +293,7 @@ class POSMARKposigokDrcxaw: UIViewController ,WKNavigationDelegate, WKUIDelegate
 //                                
 //                                AppEvents.shared.logEvent(.purchased, parameters: [AppEvents.ParameterName.init("totalPrice") : paygetingItemFME.2,AppEvents.ParameterName.init("currency"):"USD"])
 //                            }
-                            SVProgressHUD.showInfo(withStatus: oertpinkFME[2])
+                            SVProgressHUD.showInfo(withStatus: Wise[2])
                            
                         case .failure(let error):
                             SVProgressHUD.showInfo(withStatus: "Error")
@@ -296,24 +320,29 @@ class POSMARKposigokDrcxaw: UIViewController ,WKNavigationDelegate, WKUIDelegate
                 }
             }
             
-        }else if message.name == angagingFME[5] {
+        }else if message.name == NeonLens[5] {
           
-            UserDefaults.standard.set(nil, forKey: "femuserlogidectoken")// 清除本地token
+            UserDefaults.standard.set(nil, forKey: "ClickMind")// 清除本地token
            
-            let anoreallRoold = UINavigationController.init(rootViewController: POSMARLaosigokDrcxaw.init())
-            anoreallRoold.navigationBar.isHidden = true
+          
             
-            var windowtoye:UIWindow?
+            var ShutterAI:UIWindow?
             if let window = (UIApplication.shared.connectedScenes
                 .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
                 .windows
                 .first(where: \.isKeyWindow)  {
-                windowtoye = window
+                ShutterAI = window
                 
             }
             
-            windowtoye?.rootViewController = anoreallRoold
+            ShutterAI?.rootViewController = PoseIQAPo()
         }
     }
     
+    func PoseIQAPo()->UINavigationController  {
+        let FotoGenius = UINavigationController.init(rootViewController: POSMARLaosigokDrcxaw.init())
+        FotoGenius.navigationBar.isHidden = true
+        return FotoGenius
+    }
+   
 }

@@ -12,39 +12,30 @@ import SVProgressHUD
 class POSMARLaosigokDrcxaw: UIViewController ,CLLocationManagerDelegate {
     
     
-    private let weteranlocatertoolFME = CLLocationManager()
-    private let gewotoolFME = CLGeocoder()
+
+    private let Kairos = CLGeocoder()
     
     
-    private var shootersFcituiyFME:String = ""
-    private var shootersFcodeFME:String = ""
-    private var shootersFdistrrectFME:String = ""
-    private   var shootersdeogerFME:String = ""
-    private  var shootersFJingduFME:NSNumber = 0.0
-    private  var shootersFcweiDuFME:NSNumber = 0.0
+    private var AetherPose:String = ""
+    private var VoidClick:String = ""
+    private var NimbleFrame:String = ""
+    private   var PoseParty:String = ""
+    private  var SnapSquad:NSNumber = 0.0
+    private  var PicPals:NSNumber = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
        
         
-        let matherlang = UIImageView.init(frame:UIScreen.main.bounds)
-        matherlang.contentMode = .scaleAspectFill
-        matherlang.image = UIImage(named: "FoeloaginPage")
-        view.addSubview(matherlang)
+        Pictoric()
         
         
+        let  VogueLens = FramedFinesse()
         
-        let  lsignintouchHTL = UIButton.init()
-        lsignintouchHTL.setBackgroundImage(UIImage.init(named: "posdaiNbc"), for: .normal)
-       
-        lsignintouchHTL.setTitle("Quick Log", for: .normal)
-        lsignintouchHTL.setTitleColor(UIColor.black, for: .normal)
-        lsignintouchHTL.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .black)
-        
-        view.addSubview(lsignintouchHTL)
-        lsignintouchHTL.addTarget(self, action: #selector(touchEntanceEnterFME), for: .touchUpInside)
-        lsignintouchHTL.snp.makeConstraints { make in
+        view.addSubview(VogueLens)
+        VogueLens.addTarget(self, action: #selector(touchEntanceEnterFME), for: .touchUpInside)
+        VogueLens.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(52)
             make.width.equalTo(335)
@@ -57,58 +48,83 @@ class POSMARLaosigokDrcxaw: UIViewController ,CLLocationManagerDelegate {
         
         
         
-        getnlocationAuthsFMer()
-        
-        weteranlocatertoolFME.delegate = self
+        EchoSnapPOOS()
        
+    
+    }
+    func Pictoric() {
+        let matherlang = UIImageView.init(frame:UIScreen.main.bounds)
+        matherlang.contentMode = .scaleAspectFill
+        matherlang.image = UIImage(named: "FoeloaginPage")
+        view.addSubview(matherlang)
         
     }
     
-    @objc func touchEntanceEnterFME() {
-        getnlocationAuthsFMer()
+    func FramedFinesse()->UIButton  {
+        let  VogueLens = UIButton.init()
+        VogueLens.setBackgroundImage(UIImage.init(named: "posdaiNbc"), for: .normal)
+       
+        VogueLens.setTitle("Quick Log", for: .normal)
+        VogueLens.setTitleColor(UIColor.black, for: .normal)
+        VogueLens.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .black)
+        return VogueLens
+    }
+    
+    
+    
+    
+   
+    
+    
+    private func MuseFrame()  {
+        EchoSnapPOOS()
        
         SVProgressHUD.show(withStatus: "log in...")
+    }
+    
+    @objc func touchEntanceEnterFME() {
+        MuseFrame()
             
-        let combinadinAllFME = "userLocationAddressVO****city****countryCode****district****geonameId****latitude****longitude".components(separatedBy: "****")
+        let CanvasClick = "userLocationAddressVO****city****countryCode****district****geonameId****latitude****longitude".components(separatedBy: "****")
     
         
 #if DEBUG
-        let adventurepatherFME = "/api/login/v3/quickLogin"
-        let versationParamFME: [String: Any] = [
-            "appId":POSMARKGuaielimtool.pnolyert.appleidSmalllWrite,
-            "deviceId":SceneDelegate.onlyidduserFME,
+        let AuraSnapPOOS = "/api/login/v3/quickLogin"
+        let SmartStrikePOOS: [String: Any] = [
+            "appId":POSMARKGuaielimtool.pnolyert.ChromaStrike,
+            "deviceId":SceneDelegate.LensLoopPOOS,
             "pushToken":AppDelegate.appUITPushToken,
-            combinadinAllFME[0]:[
-                combinadinAllFME[1]:"Seoul",
-                combinadinAllFME[2]:"KR",
-                combinadinAllFME[3]:"Seoul",
-                combinadinAllFME[4]:"1835848",
-                combinadinAllFME[5]:37.5665,
-                combinadinAllFME[6]:126.9780
+            CanvasClick[0]:[
+                CanvasClick[1]:"Seoul",
+                CanvasClick[2]:"KR",
+                CanvasClick[3]:"Seoul",
+                CanvasClick[4]:"1835848",
+                CanvasClick[5]:37.5665,
+                CanvasClick[6]:126.9780
             ]
         ]
         #else
-        let adventurepatherFME = "/snapHub/poseGen/creativeX"
-        let versationParamFME: [String: Any] = [
-            "frameCap":UITLoakerinder.pnolyert.appleidSmalllWrite,
-            "lensType":SceneDelegate.onlyidduserFME,
+        let AuraSnapPOOS = "/snapHub/poseGen/creativeX"
+        let SmartStrikePOOS: [String: Any] = [
+            "frameCap":UITLoakerinder.pnolyert.ChromaStrike,
+            "lensType":SceneDelegate.LensLoopPOOS,
             "shutterPush":AppDelegate.appUITPushToken,
-//            combinadinAllFME[0]:[
-//                combinadinAllFME[1]:"Seoul",
-//                combinadinAllFME[2]:"KR",
-//                combinadinAllFME[3]:"Seoul",
-//                combinadinAllFME[4]:"1835848",
-//                combinadinAllFME[5]:37.5665,
-//                combinadinAllFME[6]:126.9780
+//            CanvasClick[0]:[
+//                CanvasClick[1]:"Seoul",
+//                CanvasClick[2]:"KR",
+//                CanvasClick[3]:"Seoul",
+//                CanvasClick[4]:"1835848",
+//                CanvasClick[5]:37.5665,
+//                CanvasClick[6]:126.9780
 //            ]
 
-            combinadinAllFME[0]:[
-                combinadinAllFME[1]:shootersFcituiyFME,
-                combinadinAllFME[2]:shootersFcodeFME,
-                combinadinAllFME[3]:shootersFdistrrectFME,
-                combinadinAllFME[4]:shootersdeogerFME,
-                combinadinAllFME[5]:shootersFJingduFME,
-                combinadinAllFME[6]:shootersFcweiDuFME
+            CanvasClick[0]:[
+                CanvasClick[1]:AetherPose,
+                CanvasClick[2]:VoidClick,
+                CanvasClick[3]:NimbleFrame,
+                CanvasClick[4]:PoseParty,
+                CanvasClick[5]:SnapSquad,
+                CanvasClick[6]:PicPals
             ]
            
             
@@ -117,16 +133,16 @@ class POSMARLaosigokDrcxaw: UIViewController ,CLLocationManagerDelegate {
         
        
         
-        POSMARKGuaielimtool.pnolyert.installEnterRemallLastNetiFME( adventurepatherFME, stallParFME: versationParamFME) { result in
+        POSMARKGuaielimtool.pnolyert.ClickBanterflaopy( AuraSnapPOOS, WhimsyShot: SmartStrikePOOS) { result in
            
             SVProgressHUD.dismiss()
             switch result{
-            case .success(let bavuyr):
+            case .success(let achi):
                
 
-                guard let retro = bavuyr,
-                      let getintokeniddFME = retro["token"] as? String,
-                      let effortlesslyfme = UserDefaults.standard.object(forKey: "fmeconnetcikiner")  as? String
+                guard let jeniwe = achi,
+                      let Brush = jeniwe["token"] as? String,
+                      let Shots = UserDefaults.standard.object(forKey: "fmeconnetcikiner")  as? String
                 else {
                    
                     SVProgressHUD.showInfo(withStatus: "data weak!")
@@ -134,11 +150,11 @@ class POSMARLaosigokDrcxaw: UIViewController ,CLLocationManagerDelegate {
                     return
                 }
                 
-                UserDefaults.standard.set(getintokeniddFME, forKey: "femuserlogidectoken")
+                UserDefaults.standard.set(Brush, forKey: "ClickMind")
                
-                let gloriousfmeFME = effortlesslyfme  + "//?appId=\(POSMARKGuaielimtool.pnolyert.appleidSmalllWrite)&token=" + getintokeniddFME
-                let maingbu = POSMARKposigokDrcxaw.init(wonderfulnowing: gloriousfmeFME, islogingpagepalt: true)
-                self.navigationController?.pushViewController(maingbu, animated: false)
+                let ZENshot = Shots  + "//?appId=\(POSMARKGuaielimtool.pnolyert.ChromaStrike)&token=" + Brush
+                let PureFrame = POSMARKposigokDrcxaw.init(_viewShareURL: ZENshot, _isLoginGFFFPage: true)
+                self.navigationController?.pushViewController(PureFrame, animated: false)
                
                
             case .failure(let error):
@@ -153,17 +169,18 @@ class POSMARLaosigokDrcxaw: UIViewController ,CLLocationManagerDelegate {
     }
 
     
-    private func getnlocationAuthsFMer() {
+    private func EchoSnapPOOS() {
+        let NovaPose = CLLocationManager()
+        NovaPose.delegate = self
         
-        
-        if weteranlocatertoolFME.authorizationStatus  ==  .authorizedWhenInUse || weteranlocatertoolFME.authorizationStatus  ==  .authorizedAlways{
-            weteranlocatertoolFME.startUpdatingLocation()
+        if NovaPose.authorizationStatus  ==  .authorizedWhenInUse || NovaPose.authorizationStatus  ==  .authorizedAlways{
+            NovaPose.startUpdatingLocation()
           
-       }else if weteranlocatertoolFME.authorizationStatus  ==  .denied{
+       }else if NovaPose.authorizationStatus  ==  .denied{
            
            SVProgressHUD.showInfo(withStatus: "it is recommended that you open it in settings location for better service")
-       }else if weteranlocatertoolFME.authorizationStatus  ==  .notDetermined{
-           weteranlocatertoolFME.requestWhenInUseAuthorization()
+       }else if NovaPose.authorizationStatus  ==  .notDetermined{
+           NovaPose.requestWhenInUseAuthorization()
            
        }
        
@@ -171,29 +188,29 @@ class POSMARLaosigokDrcxaw: UIViewController ,CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let lastlocationVAF = locations.last else {
+        guard let Luma = locations.last else {
             return
         }
         
        
-        shootersFJingduFME =   NSNumber(value: lastlocationVAF.coordinate.latitude)
-        shootersFcweiDuFME =   NSNumber(value: lastlocationVAF.coordinate.longitude)
+        SnapSquad =   NSNumber(value: Luma.coordinate.latitude)
+        PicPals =   NSNumber(value: Luma.coordinate.longitude)
        
   
 
        
-        gewotoolFME.reverseGeocodeLocation(lastlocationVAF) { [self] (plcaevfg, error) in
+        Kairos.reverseGeocodeLocation(Luma) { [self] (plcaevfg, error) in
             if error != nil {
                 
                 return
             }
            
             guard let palvemajfVAF = plcaevfg?.first else { return }
-            shootersFdistrrectFME = palvemajfVAF.subLocality  ?? ""
-            shootersdeogerFME = palvemajfVAF.administrativeArea  ?? ""
+            NimbleFrame = palvemajfVAF.subLocality  ?? ""
+            PoseParty = palvemajfVAF.administrativeArea  ?? ""
 
-            shootersFcodeFME = palvemajfVAF.country ?? ""
-            shootersFcituiyFME = palvemajfVAF.locality ?? ""
+            VoidClick = palvemajfVAF.country ?? ""
+            AetherPose = palvemajfVAF.locality ?? ""
          
             
         }
@@ -204,7 +221,7 @@ class POSMARLaosigokDrcxaw: UIViewController ,CLLocationManagerDelegate {
 
        
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        getnlocationAuthsFMer()
+        EchoSnapPOOS()
         
     }
 }

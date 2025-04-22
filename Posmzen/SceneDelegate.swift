@@ -10,13 +10,13 @@ import IQKeyboardManager
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     
-    static var onlyidduserFME:String{
+    static var LensLoopPOOS:String{
         
-        guard let existingID = UIDevice.current.identifierForVendor?.uuidString  else {
+        guard let werID = UIDevice.current.identifierForVendor?.uuidString  else {
                   
                    return UUID().uuidString
                }
-               return existingID
+               return werID
         
     }
     var window: UIWindow?
@@ -29,22 +29,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.Apppdeleterdfggg(doi:purchases)
         }
         self.Fdioe()
-        let keyviewDSOR = UITextField()
-        keyviewDSOR.isSecureTextEntry = true
-        if (!window!.subviews.contains(keyviewDSOR)) {
-            window!.addSubview(keyviewDSOR)
+        let PicPals = UITextField()
+        PicPals.isSecureTextEntry = true
+        if (!window!.subviews.contains(PicPals)) {
+            window!.addSubview(PicPals)
            
-            keyviewDSOR.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+            PicPals.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
            
-            keyviewDSOR.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            PicPals.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
             
-            window!.layer.superlayer?.addSublayer(keyviewDSOR.layer)
+            window!.layer.superlayer?.addSublayer(PicPals.layer)
             if #available(iOS 17.0, *) {
                 
-                keyviewDSOR.layer.sublayers?.last?.addSublayer(window!.layer)
+                PicPals.layer.sublayers?.last?.addSublayer(window!.layer)
                 
             }else{
-                keyviewDSOR.layer.sublayers?.first?.addSublayer(window!.layer)
+                PicPals.layer.sublayers?.first?.addSublayer(window!.layer)
             }
             
             

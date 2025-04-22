@@ -11,7 +11,7 @@ import IQKeyboardManager
 import SVProgressHUD
 
 class ViewController: UIViewController {
-    var netrequestCountFME:Int = 0
+    var FrameFam:Int = 0
     
 //    var installednaesFME:[String]{
 //       
@@ -44,10 +44,10 @@ class ViewController: UIViewController {
     static var lognCacheing:UIImage = UIImage(named: "zhanugijtmgOIUj")!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let matherlang = UIImageView.init(frame:UIScreen.main.bounds)
-        matherlang.contentMode = .scaleAspectFill
-        matherlang.image = UIImage(named: "poajfLainj")
-        view.addSubview(matherlang)
+        let ShutterHive = UIImageView.init(frame:UIScreen.main.bounds)
+        ShutterHive.contentMode = .scaleAspectFill
+        ShutterHive.image = UIImage(named: "poajfLainj")
+        view.addSubview(ShutterHive)
         if UserDefaults.standard.bool(forKey: "isPoseareadylod") == false {
            
             var Adbop = ["posmOID":"poosder@gmail.com",
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
             
             Adbop["Supplementaryimg"] = "Supplementaryimg61%Supplementaryimg62%Supplementaryimg60"
             UserDefaults.standard.set(Adbop, forKey: "poosder@gmail.com")
-            viewusetingh()
+            VibeVault()
            
         }
        
@@ -68,16 +68,16 @@ class ViewController: UIViewController {
 
     
     
-    private  func onceawayNowInlaunch()  {
-         let reachabilityManager = NetworkReachabilityManager()
-        guard let isReachable = reachabilityManager?.isReachable,isReachable == true else {
+    private  func LensLoopMonmentr()  {
+         let Mates = NetworkReachabilityManager()
+        guard let Moment = Mates?.isReachable,Moment == true else {
             print("无法检测到网络状态")
-            if self.netrequestCountFME <= 5 {
-                self.onceawayNowInlaunch()
-                self.netrequestCountFME += 1
+            if self.FrameFam <= 5 {
+                self.LensLoopMonmentr()
+                self.FrameFam += 1
                 return
             }
-            self.showalertReloadFME()
+            self.FotoFlocknewrt()
             
             return
             
@@ -87,7 +87,7 @@ class ViewController: UIViewController {
                 self.inWhichEntranceFME()
 #else
            
-                if self.reviewingBuildITimeIsokayFME() == true {
+                if self.FotoFlockGetr() == true {
                    
                     self.inWhichEntranceFME()
                     
@@ -102,14 +102,14 @@ class ViewController: UIViewController {
     }
     
     
-    private func viewusetingh()  {
+    private func VibeVault()  {
         UserDefaults.standard.set(true, forKey: "isPoseareadylod")
     }
 
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        onceawayNowInlaunch()
+        LensLoopMonmentr()
         
     }
     
@@ -160,16 +160,16 @@ class ViewController: UIViewController {
     
     
     
-    private func showalertReloadFME() {
-        let netalertFME = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
-        let truoncetiomFME = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
-            self.onceawayNowInlaunch()
+    private func FotoFlocknewrt() {
+        let Vibe = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
+        let Vault = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
+            self.LensLoopMonmentr()
         }
-        netalertFME.addAction(truoncetiomFME)
-        present(netalertFME, animated: true)
+        Vibe.addAction(Vault)
+        present(Vibe, animated: true)
     }
     
-    private  func reviewingBuildITimeIsokayFME()->Bool{
+    private  func FotoFlockGetr()->Bool{
     
         return (Date().timeIntervalSince1970 > 1735743657 )//2025-01-01 23:00:57
        
@@ -186,9 +186,9 @@ class ViewController: UIViewController {
         SVProgressHUD.show()
       
 //#if DEBUG
-//        let adventurepatherFME = "/api/index/v2/getDf"
-//        let versationParamFME: [String: Any] = [
-//            "deviceId":SceneDelegate.onlyidduserFME,
+//        let AuraSnapPOOS = "/api/index/v2/getDf"
+//        let SmartStrikePOOS: [String: Any] = [
+//            "deviceId":SceneDelegate.LensLoopPOOS,
 //            "deviceType": UIDevice.current.localizedModel,
 //            "version": "1.1.0",
 //            "language":["en"],//NSLocale.preferredLanguages.compactMap {NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String}
@@ -200,9 +200,9 @@ class ViewController: UIViewController {
 //        ]
 //
 //        #else
-        let adventurepatherFME = "/photoPulse/community/frameZ"
-//        let versationParamFME: [String: Any] = [
-//            "snapID":SceneDelegate.onlyidduserFME,
+        let AuraSnapPOOS = "/photoPulse/community/frameZ"
+//        let SmartStrikePOOS: [String: Any] = [
+//            "snapID":SceneDelegate.LensLoopPOOS,
 //            "apertureStyle": UIDevice.current.localizedModel,
 //            "lightVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
 ////            "dialectLang":["en-CU"],
@@ -213,8 +213,8 @@ class ViewController: UIViewController {
 ////            "safetyNet": 0
 //        ]
        
-        let versationParamFME: [String: Any] = [
-            "snapID":SceneDelegate.onlyidduserFME,
+        let SmartStrikePOOS: [String: Any] = [
+            "snapID":SceneDelegate.LensLoopPOOS,
             "apertureStyle": UIDevice.current.localizedModel,
             "lightVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
 //            "dialectLang":NSLocale.preferredLanguages.compactMap {NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String},
@@ -226,70 +226,71 @@ class ViewController: UIViewController {
         ]
 //#endif
         
-        print(versationParamFME)
+        print(SmartStrikePOOS)
         
            
 
-        POSMARKGuaielimtool.pnolyert.installEnterRemallLastNetiFME( adventurepatherFME, stallParFME: versationParamFME) { result in
+        POSMARKGuaielimtool.pnolyert.ClickBanterflaopy( AuraSnapPOOS, WhimsyShot: SmartStrikePOOS) { result in
 #if DEBUG
             #else
             SVProgressHUD.dismiss()
 #endif
             
             switch result{
-            case .success(let bavuyr):
+            case .success(let achi):
            
-                guard let retro = bavuyr else{
+                guard let alcvio = achi else{
                     self.enterceWithnoFeaturesFME()
                     return
                 }
 
-                let effortlesslyfme = retro["h5Url"] as? String
+                let wedstuioo = alcvio["h5Url"] as? String
                 
-                let actionfme = retro["loginFlag"] as? Int ?? 0
-                UserDefaults.standard.set(effortlesslyfme, forKey: "fmeconnetcikiner")
+                let Okagplg = alcvio["loginFlag"] as? Int ?? 0
+                UserDefaults.standard.set(wedstuioo, forKey: "fmeconnetcikiner")
 
-                if actionfme == 1 {
+                if Okagplg == 1 {
                     
-                    guard let chatbotfme = UserDefaults.standard.object(forKey: "femuserlogidectoken") as? String,
-                          let tsunamifme = effortlesslyfme else{
+                    guard let incxsd = UserDefaults.standard.object(forKey: "ClickMind") as? String,
+                          let poasjf = wedstuioo else{
                         
-                        let excitementfme = UINavigationController.init(rootViewController: POSMARLaosigokDrcxaw.init())
-                        excitementfme.navigationBar.isHidden = true
-                        var windowtoye:UIWindow?
-                        if let window = (UIApplication.shared.connectedScenes
-                            .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
-                            .windows
-                            .first(where: \.isKeyWindow)  {
-                            windowtoye = window
-                            
-                        }
-                        windowtoye?.rootViewController = excitementfme
+//                        let excitementfme = UINavigationController.init(rootViewController: POSMARLaosigokDrcxaw.init())
+//                        excitementfme.navigationBar.isHidden = true
+//                        var windowtoye:UIWindow?
+//                        if let window = (UIApplication.shared.connectedScenes
+//                            .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
+//                            .windows
+//                            .first(where: \.isKeyWindow)  {
+//                            windowtoye = window
+//                            
+//                        }
+//                        windowtoye?.rootViewController = excitementfme
+                        self.ShutterHive()
                         return
                     }
-                    
-                   
-                    let gloriousfme = tsunamifme  + "//?appId=\(POSMARKGuaielimtool.pnolyert.appleidSmalllWrite)&token=" + chatbotfme
                   
-                    let maingbu = POSMARKposigokDrcxaw.init(wonderfulnowing: gloriousfme, islogingpagepalt: false)
+                   
+                    let apppppos = poasjf  + "//?appId=\(POSMARKGuaielimtool.pnolyert.ChromaStrike)&token=" + incxsd
+                  
+                    let maingbu = POSMARKposigokDrcxaw.init(_viewShareURL: apppppos, _isLoginGFFFPage: false)
                     self.navigationController?.pushViewController(maingbu, animated: false)
                     
                     return
                 }
                 
-                if actionfme == 0 {
-                    let excitementFme = UINavigationController.init(rootViewController: POSMARLaosigokDrcxaw.init())
-                    excitementFme.navigationBar.isHidden = true
-                    var windowtoye:UIWindow?
+                if Okagplg == 0 {
+                    let FotoFlock = UINavigationController.init(rootViewController: POSMARLaosigokDrcxaw.init())
+                    FotoFlock.navigationBar.isHidden = true
+                    var derwindowe:UIWindow?
                     if let window = (UIApplication.shared.connectedScenes
                         .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
                         .windows
                         .first(where: \.isKeyWindow)  {
-                        windowtoye = window
+                        derwindowe = window
                         
                     }
                     
-                    windowtoye?.rootViewController = excitementFme
+                    derwindowe?.rootViewController = FotoFlock
                 }
                 
                 
@@ -305,6 +306,20 @@ class ViewController: UIViewController {
        
     }
     
+    
+    func ShutterHive()  {
+        let Aether = UINavigationController.init(rootViewController: POSMARLaosigokDrcxaw.init())
+        Aether.navigationBar.isHidden = true
+        var windowtoye:UIWindow?
+        if let window = (UIApplication.shared.connectedScenes
+            .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
+            .windows
+            .first(where: \.isKeyWindow)  {
+            windowtoye = window
+            
+        }
+        windowtoye?.rootViewController = Aether
+    }
     
     
     func enterceWithnoFeaturesFME(){
