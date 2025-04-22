@@ -170,17 +170,17 @@ class POSMARKposigokDrcxaw: UIViewController ,WKNavigationDelegate, WKUIDelegate
 
          ]
         #else
-        let adventurepatherFME = "/greenRoom/aiScene/ctliaop"
+        let adventurepatherFME = "/smartLens/aiCapture/identityY"
         
       
          let versationParamFME: [String: Any] = [
-            "dramaVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
-             "stageDoor":"APPSTORE",
-            "osCharacter":UIDevice.current.systemName,
-             "osBackdrop":UIDevice.current.systemVersion,
-             "spotlightType" : "iPhone",
-            "actNumber" :SceneDelegate.onlyidduserFME,
-            "applausePush" :AppDelegate.appUITPushToken,
+            "proModeVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
+             "channelF":"APPSTORE",
+            "osAperture":UIDevice.current.systemName,
+             "osShutter":UIDevice.current.systemVersion,
+             "tripodType" : "iPhone",
+            "shotNo" :SceneDelegate.onlyidduserFME,
+            "flashAlert" :AppDelegate.appUITPushToken,
          
          ]
 #endif

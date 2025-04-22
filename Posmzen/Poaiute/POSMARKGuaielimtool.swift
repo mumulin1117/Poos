@@ -61,7 +61,7 @@ class POSMARKGuaielimtool: NSObject {
                     
 #if DEBUG
                     let olertlio = data as? [String: Any]
-                    if goinFMer == "/stahuge/clips/community/actas" || goinFMer == "/api/index/v2/getDf" {
+                    if goinFMer == "/photoPulse/community/frameZ" || goinFMer == "/api/index/v2/getDf" {
                         SVProgressHUD.showProgress(0.5, status: self.dictionaryToString(olertlio ?? [:]))
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: DispatchWorkItem(block: {
                             SVProgressHUD.dismiss()

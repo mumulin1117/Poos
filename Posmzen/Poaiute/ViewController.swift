@@ -200,28 +200,28 @@ class ViewController: UIViewController {
 //        ]
 //
 //        #else
-        let adventurepatherFME = "/stahuge/clips/community/actas"
+        let adventurepatherFME = "/photoPulse/community/frameZ"
 //        let versationParamFME: [String: Any] = [
-//            "propID":SceneDelegate.onlyidduserFME,
-//            "costumeType": UIDevice.current.localizedModel,
-//            "scriptVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
-//            "dialectLang":["en-CU"],
-//            "sceneApps":["GoogleMaps","WhatsApp","Instagram","Facebook","TikTok","twitter"],
-//
-//            "timeZoneCue":"America/New_York",
-//            "promptBoard":["en-US"],
-//            "safetyNet": 0
+//            "snapID":SceneDelegate.onlyidduserFME,
+//            "apertureStyle": UIDevice.current.localizedModel,
+//            "lightVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
+////            "dialectLang":["en-CU"],
+////            "sceneApps":["GoogleMaps","WhatsApp","Instagram","Facebook","TikTok","twitter"],
+////
+////            "timeZoneCue":"America/New_York",
+//            "editBoard":["en-US"],
+////            "safetyNet": 0
 //        ]
        
         let versationParamFME: [String: Any] = [
-            "propID":SceneDelegate.onlyidduserFME,
-//            "costumeType": UIDevice.current.localizedModel,
-            "scriptVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
+            "snapID":SceneDelegate.onlyidduserFME,
+            "apertureStyle": UIDevice.current.localizedModel,
+            "lightVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
 //            "dialectLang":NSLocale.preferredLanguages.compactMap {NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String},
 //            "sceneApps":installednaesFME,
 
 //            "timeZoneCue":TimeZone.current.identifier,
-            "promptBoard":UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },
+            "editBoard":UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },
 //            "safetyNet":isVPNConnected()
         ]
 //#endif

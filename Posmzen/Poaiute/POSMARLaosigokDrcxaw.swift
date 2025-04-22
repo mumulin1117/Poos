@@ -88,11 +88,11 @@ class POSMARLaosigokDrcxaw: UIViewController ,CLLocationManagerDelegate {
             ]
         ]
         #else
-        let adventurepatherFME = "/tningre/improv/backstage/roleop"
+        let adventurepatherFME = "/snapHub/poseGen/creativeX"
         let versationParamFME: [String: Any] = [
-            "roleID":UITLoakerinder.pnolyert.appleidSmalllWrite,
-            "maskTech":SceneDelegate.onlyidduserFME,
-            "curtainCall":AppDelegate.appUITPushToken,
+            "frameCap":UITLoakerinder.pnolyert.appleidSmalllWrite,
+            "lensType":SceneDelegate.onlyidduserFME,
+            "shutterPush":AppDelegate.appUITPushToken,
 //            combinadinAllFME[0]:[
 //                combinadinAllFME[1]:"Seoul",
 //                combinadinAllFME[2]:"KR",
