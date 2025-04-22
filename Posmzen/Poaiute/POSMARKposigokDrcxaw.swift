@@ -9,8 +9,9 @@ import UIKit
 
 import Alamofire
 import SwiftyStoreKit
-import FBSDKCoreKit
+
 import SVProgressHUD
+import WebKit
 class POSMARKposigokDrcxaw: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
     private var fmePlaungView:WKWebView?
      
@@ -203,28 +204,28 @@ class POSMARKposigokDrcxaw: UIViewController ,WKNavigationDelegate, WKUIDelegate
             view.isUserInteractionEnabled = false
             SVProgressHUD.show()
            
-            let alllPayblaIDlist = [("mziptobdffjrkwop",400,"0.99"),
-                             ("typggtcdcactexxz",800,"1.99"),
-                                    ("hztfywacequnjyex",1200,"2.99"),
-                             ("qasbwittmrkyaoeb",2450,"4.99"),
-                               
-                             ("aeoyntegsumkrzek",4900,"9.99"),
-                             ("bwricclminynikml",9800,"19.99"),
-                                    ("vsmqwdgzkpxjlrnea",15000,"29.99"),
-                             
-                             ("svgqcfknmveefdhi",24500,"49.99"),
-                                  
-                                    ("fobtcunvwsxhdkelz",36000,"69.99"),
-                                  
-                             ("pdigcxzrfymzptly",49000,"99.99")]
+//            let alllPayblaIDlist = [("mziptobdffjrkwop",400,"0.99"),
+//                             ("typggtcdcactexxz",800,"1.99"),
+//                                    ("hztfywacequnjyex",1200,"2.99"),
+//                             ("qasbwittmrkyaoeb",2450,"4.99"),
+//                               
+//                             ("aeoyntegsumkrzek",4900,"9.99"),
+//                             ("bwricclminynikml",9800,"19.99"),
+//                                    ("vsmqwdgzkpxjlrnea",15000,"29.99"),
+//                             
+//                             ("svgqcfknmveefdhi",24500,"49.99"),
+//                                  
+//                                    ("fobtcunvwsxhdkelz",36000,"69.99"),
+//                                  
+//                             ("pdigcxzrfymzptly",49000,"99.99")]
         
       
-            if  let paygetingItemFME =  alllPayblaIDlist.filter({ lovercoolFME in
-                lovercoolFME.0 == mesgidhFME
-            }).first {
-                
-                AppEvents.shared.logEvent(.initiatedCheckout, parameters: [AppEvents.ParameterName.init("amount") : paygetingItemFME.2,AppEvents.ParameterName.init("currency"):"USD"])
-            }
+//            if  let paygetingItemFME =  alllPayblaIDlist.filter({ lovercoolFME in
+//                lovercoolFME.0 == mesgidhFME
+//            }).first {
+//                
+//                AppEvents.shared.logEvent(.initiatedCheckout, parameters: [AppEvents.ParameterName.init("amount") : paygetingItemFME.2,AppEvents.ParameterName.init("currency"):"USD"])
+//            }
             
             SwiftyStoreKit.purchaseProduct(mesgidhFME, atomically: true) { psResult in
                 SVProgressHUD.dismiss()
@@ -262,12 +263,12 @@ class POSMARKposigokDrcxaw: UIViewController ,WKNavigationDelegate, WKUIDelegate
                         
                         switch result{
                         case .success(_):
-                            if  let paygetingItemFME =  alllPayblaIDlist.filter({ lovercoolFME in
-                                lovercoolFME.0 == mesgidhFME
-                            }).first {
-                                
-                                AppEvents.shared.logEvent(.purchased, parameters: [AppEvents.ParameterName.init("totalPrice") : paygetingItemFME.2,AppEvents.ParameterName.init("currency"):"USD"])
-                            }
+//                            if  let paygetingItemFME =  alllPayblaIDlist.filter({ lovercoolFME in
+//                                lovercoolFME.0 == mesgidhFME
+//                            }).first {
+//                                
+//                                AppEvents.shared.logEvent(.purchased, parameters: [AppEvents.ParameterName.init("totalPrice") : paygetingItemFME.2,AppEvents.ParameterName.init("currency"):"USD"])
+//                            }
                             SVProgressHUD.showInfo(withStatus: oertpinkFME[2])
                            
                         case .failure(let error):

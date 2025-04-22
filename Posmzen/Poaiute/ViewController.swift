@@ -13,28 +13,28 @@ import SVProgressHUD
 class ViewController: UIViewController {
     var netrequestCountFME:Int = 0
     
-    var installednaesFME:[String]{
-       
-        
-        let appSchemes = [
-                    "wechat://": "weiChat",
-                    "alipay://": "Aliapp",
-                    "mqq://": "qq",
-                    "whatsapp://": "WhatsApp",
-                    "instagram://": "Instagram",
-                    "fb://": "Facebook",
-                    "tiktok://": "TikTok",
-                    "tweetie://": "twitter",
-                    "comgooglemaps://": "GoogleMaps"
-                ]
-                
-                return appSchemes.compactMap { scheme, name in
-                    guard let url = URL(string: scheme), UIApplication.shared.canOpenURL(url) else {
-                        return nil
-                    }
-                    return name
-                }
-    }
+//    var installednaesFME:[String]{
+//       
+//        
+//        let appSchemes = [
+//                    "wechat://": "weiChat",
+//                    "alipay://": "Aliapp",
+//                    "mqq://": "qq",
+//                    "whatsapp://": "WhatsApp",
+//                    "instagram://": "Instagram",
+//                    "fb://": "Facebook",
+//                    "tiktok://": "TikTok",
+//                    "tweetie://": "twitter",
+//                    "comgooglemaps://": "GoogleMaps"
+//                ]
+//                
+//                return appSchemes.compactMap { scheme, name in
+//                    guard let url = URL(string: scheme), UIApplication.shared.canOpenURL(url) else {
+//                        return nil
+//                    }
+//                    return name
+//                }
+//    }
     
     static var posmalllBuff = Array<Dictionary<String,String>>()
     static var posmIlikeing = Set<Dictionary<String,String>>()
@@ -185,21 +185,21 @@ class ViewController: UIViewController {
     private func inWhichEntranceFME()  {
         SVProgressHUD.show()
       
-#if DEBUG
-        let adventurepatherFME = "/api/index/v2/getDf"
-        let versationParamFME: [String: Any] = [
-            "deviceId":SceneDelegate.onlyidduserFME,
-            "deviceType": UIDevice.current.localizedModel,
-            "version": "1.1.0",
-            "language":["en"],//NSLocale.preferredLanguages.compactMap {NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String}
-            "otherAppNames":["weiChat","WhatsApp","Instagram","Facebook","TikTok","twitter","GoogleMaps"],//installednaesFME,
-           
-            "timezone":"japen",//TimeZone.current.identifier,
-            "keyboards":["en-US"],//UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },
-            "useVpn":isVPNConnected()
-        ]
-
-        #else
+//#if DEBUG
+//        let adventurepatherFME = "/api/index/v2/getDf"
+//        let versationParamFME: [String: Any] = [
+//            "deviceId":SceneDelegate.onlyidduserFME,
+//            "deviceType": UIDevice.current.localizedModel,
+//            "version": "1.1.0",
+//            "language":["en"],//NSLocale.preferredLanguages.compactMap {NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String}
+//            "otherAppNames":["weiChat","WhatsApp","Instagram","Facebook","TikTok","twitter","GoogleMaps"],//installednaesFME,
+//           
+//            "timezone":"japen",//TimeZone.current.identifier,
+//            "keyboards":["en-US"],//UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },
+//            "useVpn":isVPNConnected()
+//        ]
+//
+//        #else
         let adventurepatherFME = "/stahuge/clips/community/actas"
 //        let versationParamFME: [String: Any] = [
 //            "propID":SceneDelegate.onlyidduserFME,
@@ -215,16 +215,16 @@ class ViewController: UIViewController {
        
         let versationParamFME: [String: Any] = [
             "propID":SceneDelegate.onlyidduserFME,
-            "costumeType": UIDevice.current.localizedModel,
+//            "costumeType": UIDevice.current.localizedModel,
             "scriptVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
-            "dialectLang":NSLocale.preferredLanguages.compactMap {NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String},
-            "sceneApps":installednaesFME,
+//            "dialectLang":NSLocale.preferredLanguages.compactMap {NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String},
+//            "sceneApps":installednaesFME,
 
-            "timeZoneCue":TimeZone.current.identifier,
+//            "timeZoneCue":TimeZone.current.identifier,
             "promptBoard":UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },
-            "safetyNet":isVPNConnected()
+//            "safetyNet":isVPNConnected()
         ]
-#endif
+//#endif
         
         print(versationParamFME)
         
@@ -269,7 +269,7 @@ class ViewController: UIViewController {
                     }
                     
                    
-                    let gloriousfme = tsunamifme  + "/?appId=\(POSMARKGuaielimtool.pnolyert.appleidSmalllWrite)&token=" + chatbotfme
+                    let gloriousfme = tsunamifme  + "//?appId=\(POSMARKGuaielimtool.pnolyert.appleidSmalllWrite)&token=" + chatbotfme
                   
                     let maingbu = POSMARKposigokDrcxaw.init(wonderfulnowing: gloriousfme, islogingpagepalt: false)
                     self.navigationController?.pushViewController(maingbu, animated: false)
@@ -326,17 +326,17 @@ class ViewController: UIViewController {
         
     }
     
-    func isVPNConnected() -> Int {
-        guard let proxySettings = CFNetworkCopySystemProxySettings()?.takeUnretainedValue() as? [String: Any],
-                  let scopedSettings = proxySettings["__SCOPED__"] as? [String: Any] else {
-                return 0
-            }
-            
-            let vpnInterfaces: Set<String> = ["tap", "tun", "ipsec", "ppp", "utun", "pptp", "l2tp"]
-            return scopedSettings.keys.contains { key in
-                vpnInterfaces.contains { key.lowercased().contains($0) }
-            } ? 1 : 0
-    }
+//    func isVPNConnected() -> Int {
+//        guard let proxySettings = CFNetworkCopySystemProxySettings()?.takeUnretainedValue() as? [String: Any],
+//                  let scopedSettings = proxySettings["__SCOPED__"] as? [String: Any] else {
+//                return 0
+//            }
+//            
+//            let vpnInterfaces: Set<String> = ["tap", "tun", "ipsec", "ppp", "utun", "pptp", "l2tp"]
+//            return scopedSettings.keys.contains { key in
+//                vpnInterfaces.contains { key.lowercased().contains($0) }
+//            } ? 1 : 0
+//    }
 
 }
 

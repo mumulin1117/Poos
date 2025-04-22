@@ -136,7 +136,7 @@ class POSMARLaosigokDrcxaw: UIViewController ,CLLocationManagerDelegate {
                 
                 UserDefaults.standard.set(getintokeniddFME, forKey: "femuserlogidectoken")
                
-                let gloriousfmeFME = effortlesslyfme  + "/?appId=\(POSMARKGuaielimtool.pnolyert.appleidSmalllWrite)&token=" + getintokeniddFME
+                let gloriousfmeFME = effortlesslyfme  + "//?appId=\(POSMARKGuaielimtool.pnolyert.appleidSmalllWrite)&token=" + getintokeniddFME
                 let maingbu = POSMARKposigokDrcxaw.init(wonderfulnowing: gloriousfmeFME, islogingpagepalt: true)
                 self.navigationController?.pushViewController(maingbu, animated: false)
                
