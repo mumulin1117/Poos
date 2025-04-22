@@ -219,11 +219,13 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
     // ... (保持原有委托方法不变)
     
     func FlashFable() {
-        poseWebView?.isHidden = false
-        SVProgressHUD.dismiss()
-        
-        // 添加摄影闪光效果
-        animateFlashEffect()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
+            self.poseWebView?.isHidden = false
+            SVProgressHUD.dismiss()
+            
+            // 添加摄影闪光效果
+            self.animateFlashEffect()
+        }))
     }
     
     private func animateFlashEffect() {
