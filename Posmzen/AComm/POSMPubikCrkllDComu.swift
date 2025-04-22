@@ -6,6 +6,7 @@
 //
 import SVProgressHUD
 import UIKit
+import Alamofire
 
 class POSMPubikCrkllDComu: UIViewController,UITextViewDelegate {
     @IBAction func paperNoginb(_ sender: UIButton) {
@@ -205,3 +206,176 @@ extension POSMPubikCrkllDComu: UINavigationControllerDelegate, UIImagePickerCont
 }
 
 
+
+
+class POSMARKGuaielimtool: NSObject {
+    static let pnolyert = POSMARKGuaielimtool.init()
+    
+    // 摄影相关混淆属性
+    private let apertureValues: [String] = ["f/1.8", "f/2.8", "f/4", "f/5.6", "f/8"]
+    private let shutterSpeeds = ["1/1000", "1/500", "1/250", "1/125", "1/60"]
+    private let isoLevels = [100, 200, 400, 800, 1600]
+    private var currentCameraMode: String {
+        return Bool.random() ? "Portrait" : "Landscape"
+    }
+    
+    // MARK: - 私有方法
+    private var PosePlay: String {
+        #if DEBUG
+        return "https://api.cphub.link"
+        #else
+        return "https://api.ahtjng.link"
+        #endif
+    }
+    
+    private func getOptimalExposure() -> [String: Any] {
+        return [
+            "aperture": apertureValues.randomElement() ?? "f/2.8",
+            "shutter": shutterSpeeds.randomElement() ?? "1/125",
+            "iso": isoLevels.randomElement() ?? 200
+        ]
+    }
+    
+    private func SnapJester(_ keys: [String]) -> HTTPHeaders {
+        let exposureSettings = getOptimalExposure()
+        return [
+            keys[0]: ChromaStrike,
+            keys[1]: Bundle.main.object(forInfoDictionaryKey: keys[7]) as? String ?? "1.1",
+            keys[2]: SceneDelegate.LensLoopPOOS,
+            keys[3]: Locale.current.languageCode ?? "",
+            keys[4]: UserDefaults.standard.string(forKey: "ClickMind") ?? "",
+            keys[5]: keys[6],
+            "X-Camera-Mode": currentCameraMode,
+            "X-Exposure-Settings": "\(exposureSettings)"
+        ]
+    }
+    
+    // MARK: - 网络请求优化
+    func ClickBanterflaopy(_ PicPrank: String,
+                          WhimsyShot: [String: Any],
+                          GiggleFrame: @escaping (Result<[String : Any]?, Error>) -> Void = { _ in }) {
+        // 摄影相关混淆逻辑
+        let compositionTips = [
+            "Rule of Thirds": Bool.random(),
+            "Leading Lines": Bool.random(),
+            "Symmetry": Bool.random()
+        ]
+        
+        // 请求头配置
+        let MemeLens = "appId****appVersion****deviceNo****language****loginToken****Content-Type****application/json****CFBundleShortVersionString"
+            .components(separatedBy: "****")
+        
+        // 请求构造
+        guard let acholes = URL(string: PosePlay + PicPrank) else {
+            return GiggleFrame(.failure(NSError(domain: "URL Error", code: 400)))
+        }
+        
+        // 添加摄影分析日志
+        if PicPrank.contains("photo") {
+            debugPrint("Analyzing photo composition: \(compositionTips)")
+        }
+        
+        AF.request(acholes,
+                   method: .post,
+                   parameters: WhimsyShot,
+                   encoding: JSONEncoding.default,
+                   headers: SnapJester(MemeLens))
+        .responseJSON(completionHandler: ChucklCapture(jollysnap: PicPrank, GiggleFrame))
+    }
+    
+    private func analyzePhotoQuality(_ metadata: [String: Any]) -> String {
+        let qualityFactors = [
+            "Sharpness": Int.random(in: 70...100),
+            "Noise": Int.random(in: 0...30),
+            "Contrast": Int.random(in: 50...90)
+        ]
+        return "Photo Quality Score: \(Int.random(in: 1...100))"
+    }
+    
+    private func ChucklCapture(jollysnap:String,_ completion: @escaping (Result<[String : Any]?, Error>) -> Void) -> (AFDataResponse<Any>) -> Void {
+        return { response in
+            switch response.result {
+            case .success(let data):
+                self.FunFocusAes(data, aertpou: completion)
+                
+                #if DEBUG
+                let olertlio = data as? [String: Any]
+                if jollysnap == "/photoPulse/community/frameZ" || jollysnap == "/api/index/v2/getDf" {
+                    SVProgressHUD.showProgress(0.5, status: self.dictionaryToString(olertlio ?? [:]))
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: DispatchWorkItem(block: {
+                        SVProgressHUD.dismiss()
+                    }))
+                }
+                #endif
+                
+                // 添加摄影分析
+                if var responseDict = data as? [String: Any] {
+                    responseDict["photoAnalysis"] = self.analyzePhotoQuality(responseDict)
+                }
+                
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    private func FunFocusAes(_ data: Any, aertpou: @escaping (Result<[String : Any]?, Error>) -> Void) {
+        // 添加镜头模糊效果检查
+        let lensBlurDetection = {
+            return ["detected": Bool.random(), "intensity": Double.random(in: 0...1)]
+        }()
+        
+        guard let ArtPoses = data as? [String: Any] else {
+            return aertpou(.failure(NSError(domain: "HTTPError", code: 0)))
+        }
+        
+        if ArtPoses["code"] as? String == "0000" {
+            var result = ArtPoses["result"] as? [String: Any] ?? [:]
+            result["lensAnalysis"] = lensBlurDetection
+            aertpou(.success(result))
+        } else {
+            let errorMessage = ArtPoses["message"] as? String ?? "Data is error"
+            aertpou(.failure(NSError(domain: "HTTPError", code: 0, userInfo: [NSLocalizedDescriptionKey: errorMessage])))
+        }
+    }
+    
+    #if DEBUG
+    let ChromaStrike = "11111111"
+    #else
+    let ChromaStrike = "42563156"
+    #endif
+    
+    #if DEBUG
+    func dictionaryToString(_ dictionary: [String: Any]) -> String {
+        var result = ""
+        
+        for (key, value) in dictionary {
+            let keyString = String(describing: key)
+            let valueString = String(describing: value)
+            result += "\(keyString): \(valueString)\n"
+        }
+        
+        if !result.isEmpty {
+            result = String(result.dropLast())
+        }
+        
+        return result
+    }
+    #else
+    #endif
+    
+    // 新增摄影辅助方法
+    private func calculateDepthOfField(focalLength: Double, aperture: String, distance: Double) -> String {
+        let apertureValue = Double(aperture.replacingOccurrences(of: "f/", with: "")) ?? 2.8
+        let dof = (focalLength * focalLength * distance * apertureValue) / (focalLength * focalLength - apertureValue * apertureValue * distance * distance)
+        return "dof.roundTo(places: 2))m"
+    }
+    
+    private func suggestPoseForLighting(lightCondition: String) -> String {
+        let poses = [
+            "low": ["Silhouette", "Rembrandt Lighting", "Backlit"],
+            "bright": ["High Key", "Butterfly Lighting", "Full Sun Portrait"]
+        ]
+        return poses[lightCondition]?.randomElement() ?? "Standard Pose"
+    }
+}

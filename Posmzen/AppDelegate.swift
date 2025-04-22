@@ -11,29 +11,27 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     static var appUITPushToken:String = ""
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { okayufir, error in
-            if okayufir {
-                DispatchQueue.main.async {
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
-            }
-        }
-        
+        Azdseruio()
+       
+        kjolinkiwer()
         
         return true
     }
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-       let detafaulet = "Default Configuration"
-        return UISceneConfiguration(name: detafaulet, sessionRole: connectingSceneSession.role)
+      
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-       
-       
-        let pushRemotenotiTokenVAF = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-        AppDelegate.appUITPushToken = pushRemotenotiTokenVAF
+        
+        AppDelegate.appUITPushToken = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        
+    }
+    
+    
+    func analyzeSceneLighting()  {
+        
     }
 }
 
@@ -43,4 +41,50 @@ extension UIApplication{
             .compactMap { $0 as? UIWindowScene }
             .first?.statusBarManager?.statusBarFrame.height ?? 0
     }
+}
+
+
+extension AppDelegate{
+    
+    
+    func Azdseruio()  {
+        UNUserNotificationCenter.current().delegate = self
+    }
+    private func animateVirtualShutter() {
+        let shutterView = UIView(frame: UIScreen.main.bounds)
+          shutterView.backgroundColor = .black
+          shutterView.alpha = 0
+          
+          
+          UIView.animate(withDuration: 0.1) {
+              shutterView.alpha = 0.3
+          } completion: { _ in
+              shutterView.removeFromSuperview()
+          }
+     
+    }
+    
+    
+    func FramedFinesse() -> UIButton {
+           let VogueLens = UIButton()
+           VogueLens.setBackgroundImage(UIImage(named: "posdaiNbc"), for: .normal)
+           VogueLens.setTitle("Quick Log", for: .normal)
+           VogueLens.setTitleColor(UIColor.black, for: .normal)
+           VogueLens.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .black)
+           
+           // 添加按钮摄影效果
+           
+           return VogueLens
+       }
+    
+    func kjolinkiwer()  {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { okayufir, error in
+            if okayufir {
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
+    }
+    
 }

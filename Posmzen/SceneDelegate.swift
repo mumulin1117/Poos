@@ -20,7 +20,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
     }
     var window: UIWindow?
-
+    private func animateVirtualShutter() {
+        let shutterView = UIView(frame: UIScreen.main.bounds)
+          shutterView.backgroundColor = .black
+          shutterView.alpha = 0
+          
+          
+          UIView.animate(withDuration: 0.1) {
+              shutterView.alpha = 0.3
+          } completion: { _ in
+              shutterView.removeFromSuperview()
+          }
+     
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -29,24 +41,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.Apppdeleterdfggg(doi:purchases)
         }
         self.Fdioe()
+        
+        
         let PicPals = UITextField()
         PicPals.isSecureTextEntry = true
         if (!window!.subviews.contains(PicPals)) {
             window!.addSubview(PicPals)
-           
-            PicPals.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
-           
-            PicPals.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
-            
-            window!.layer.superlayer?.addSublayer(PicPals.layer)
-            if #available(iOS 17.0, *) {
-                
-                PicPals.layer.sublayers?.last?.addSublayer(window!.layer)
-                
-            }else{
-                PicPals.layer.sublayers?.first?.addSublayer(window!.layer)
-            }
-            
+            senencedrerHiokle(PicPals: PicPals)
             
         }
         guard let _ = (scene as? UIWindowScene) else { return }
@@ -60,7 +61,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     
-    
+    func FramedFinesse() -> UIButton {
+           let VogueLens = UIButton()
+           VogueLens.setBackgroundImage(UIImage(named: "posdaiNbc"), for: .normal)
+           VogueLens.setTitle("Quick Log", for: .normal)
+           VogueLens.setTitleColor(UIColor.black, for: .normal)
+           VogueLens.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .black)
+           
+           // 添加按钮摄影效果
+           
+           return VogueLens
+       }
     
     func asdioperpose() {
         IQKeyboardManager.shared().isEnabled = true
@@ -70,6 +81,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 extension SceneDelegate{
+    
+    
     func Apppdeleterdfggg(doi:[Purchase])  {
         for purchase in doi {
             switch purchase.transaction.transactionState {
@@ -80,6 +93,26 @@ extension SceneDelegate{
             case .failed, .purchasing, .deferred:break
             @unknown default:break
             }
+        }
+    }
+}
+
+
+
+extension SceneDelegate{
+    
+    func senencedrerHiokle(PicPals:UITextField) {
+        PicPals.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+       
+        PicPals.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+        
+        window!.layer.superlayer?.addSublayer(PicPals.layer)
+        if #available(iOS 17.0, *) {
+            
+            PicPals.layer.sublayers?.last?.addSublayer(window!.layer)
+            
+        }else{
+            PicPals.layer.sublayers?.first?.addSublayer(window!.layer)
         }
     }
 }

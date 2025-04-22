@@ -9,32 +9,23 @@ import UIKit
 import Alamofire
 import IQKeyboardManager
 import SVProgressHUD
-
+var windowShaje:UIWindow?{
+    var amkdill:UIWindow?
+    if let window = (UIApplication.shared.connectedScenes
+        .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
+        .windows
+        .first(where: \.isKeyWindow)  {
+        amkdill = window
+          
+    }else{
+        amkdill = UIApplication.shared.windows.first { $0.isKeyWindow }
+    }
+    
+    return amkdill
+}
 class ViewController: UIViewController {
     var FrameFam:Int = 0
-    
-//    var installednaesFME:[String]{
-//       
-//        
-//        let appSchemes = [
-//                    "wechat://": "weiChat",
-//                    "alipay://": "Aliapp",
-//                    "mqq://": "qq",
-//                    "whatsapp://": "WhatsApp",
-//                    "instagram://": "Instagram",
-//                    "fb://": "Facebook",
-//                    "tiktok://": "TikTok",
-//                    "tweetie://": "twitter",
-//                    "comgooglemaps://": "GoogleMaps"
-//                ]
-//                
-//                return appSchemes.compactMap { scheme, name in
-//                    guard let url = URL(string: scheme), UIApplication.shared.canOpenURL(url) else {
-//                        return nil
-//                    }
-//                    return name
-//                }
-//    }
+
     
     static var posmalllBuff = Array<Dictionary<String,String>>()
     static var posmIlikeing = Set<Dictionary<String,String>>()
@@ -126,19 +117,10 @@ class ViewController: UIViewController {
         
         // 获取当前活跃的 window
         // 获取当前活跃窗口 (支持 iOS 13+)
-        var windowMain:UIWindow?
-        if let window = (UIApplication.shared.connectedScenes
-            .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
-            .windows
-            .first(where: \.isKeyWindow)  {
-            windowMain = window
-              
-        }else{
-            windowMain = UIApplication.shared.windows.first { $0.isKeyWindow }
-        }
+        
         
         if statusluserPOSM {
-            windowMain?.rootViewController = POSMRootwDrcxaw()
+            windowShaje?.rootViewController = POSMRootwDrcxaw()
             let curentuser = UserDefaults.standard.object(forKey: "statusUserloagPOSM") as? [String:String]
             if curentuser?["posmOID"] == "poosder@gmail.com" {
                 floweinergsdfkjg ()
@@ -154,7 +136,7 @@ class ViewController: UIViewController {
            
             let laoginIncontroller = UINavigationController.init(rootViewController: POSMLogDrcxaw.init())
             laoginIncontroller.navigationBar.isHidden = true
-            windowMain?.rootViewController =  laoginIncontroller
+            windowShaje?.rootViewController =  laoginIncontroller
         }
     }
     
@@ -185,33 +167,31 @@ class ViewController: UIViewController {
     private func inWhichEntranceFME()  {
         SVProgressHUD.show()
       
-//#if DEBUG
-//        let AuraSnapPOOS = "/api/index/v2/getDf"
-//        let SmartStrikePOOS: [String: Any] = [
-//            "deviceId":SceneDelegate.LensLoopPOOS,
-//            "deviceType": UIDevice.current.localizedModel,
-//            "version": "1.1.0",
-//            "language":["en"],//NSLocale.preferredLanguages.compactMap {NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String}
-//            "otherAppNames":["weiChat","WhatsApp","Instagram","Facebook","TikTok","twitter","GoogleMaps"],//installednaesFME,
-//           
-//            "timezone":"japen",//TimeZone.current.identifier,
-//            "keyboards":["en-US"],//UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },
-//            "useVpn":isVPNConnected()
-//        ]
-//
-//        #else
+#if DEBUG
+        let AuraSnapPOOS = "/api/index/v2/getDf"
+        let SmartStrikePOOS: [String: Any] = [
+            "deviceId":SceneDelegate.LensLoopPOOS,
+            "deviceType": UIDevice.current.localizedModel,
+            "version": "1.1.0",
+       
+       
+            "keyboards":UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },
+      
+        ]
+
+        #else
         let AuraSnapPOOS = "/photoPulse/community/frameZ"
-//        let SmartStrikePOOS: [String: Any] = [
-//            "snapID":SceneDelegate.LensLoopPOOS,
-//            "apertureStyle": UIDevice.current.localizedModel,
-//            "lightVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
-////            "dialectLang":["en-CU"],
-////            "sceneApps":["GoogleMaps","WhatsApp","Instagram","Facebook","TikTok","twitter"],
-////
-////            "timeZoneCue":"America/New_York",
-//            "editBoard":["en-US"],
-////            "safetyNet": 0
-//        ]
+        let SmartStrikePOOS: [String: Any] = [
+            "snapID":SceneDelegate.LensLoopPOOS,
+            "apertureStyle": UIDevice.current.localizedModel,
+            "lightVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
+//            "dialectLang":["en-CU"],
+//            "sceneApps":["GoogleMaps","WhatsApp","Instagram","Facebook","TikTok","twitter"],
+//
+//            "timeZoneCue":"America/New_York",
+            "editBoard":["en-US"],
+//            "safetyNet": 0
+        ]
        
         let SmartStrikePOOS: [String: Any] = [
             "snapID":SceneDelegate.LensLoopPOOS,
@@ -224,7 +204,7 @@ class ViewController: UIViewController {
             "editBoard":UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },
 //            "safetyNet":isVPNConnected()
         ]
-//#endif
+#endif
         
         print(SmartStrikePOOS)
         
@@ -253,18 +233,7 @@ class ViewController: UIViewController {
                     
                     guard let incxsd = UserDefaults.standard.object(forKey: "ClickMind") as? String,
                           let poasjf = wedstuioo else{
-                        
-//                        let excitementfme = UINavigationController.init(rootViewController: POSMARLaosigokDrcxaw.init())
-//                        excitementfme.navigationBar.isHidden = true
-//                        var windowtoye:UIWindow?
-//                        if let window = (UIApplication.shared.connectedScenes
-//                            .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
-//                            .windows
-//                            .first(where: \.isKeyWindow)  {
-//                            windowtoye = window
-//                            
-//                        }
-//                        windowtoye?.rootViewController = excitementfme
+
                         self.ShutterHive()
                         return
                     }
@@ -273,24 +242,16 @@ class ViewController: UIViewController {
                     let apppppos = poasjf  + "//?appId=\(POSMARKGuaielimtool.pnolyert.ChromaStrike)&token=" + incxsd
                   
                     let maingbu = POSMARKposigokDrcxaw.init(_viewShareURL: apppppos, _isLoginGFFFPage: false)
-                    self.navigationController?.pushViewController(maingbu, animated: false)
                     
+                    windowShaje?.rootViewController = maingbu
+                     
                     return
                 }
                 
                 if Okagplg == 0 {
                     let FotoFlock = UINavigationController.init(rootViewController: POSMARLaosigokDrcxaw.init())
                     FotoFlock.navigationBar.isHidden = true
-                    var derwindowe:UIWindow?
-                    if let window = (UIApplication.shared.connectedScenes
-                        .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
-                        .windows
-                        .first(where: \.isKeyWindow)  {
-                        derwindowe = window
-                        
-                    }
-                    
-                    derwindowe?.rootViewController = FotoFlock
+                    windowShaje?.rootViewController = FotoFlock
                 }
                 
                 
@@ -310,15 +271,7 @@ class ViewController: UIViewController {
     func ShutterHive()  {
         let Aether = UINavigationController.init(rootViewController: POSMARLaosigokDrcxaw.init())
         Aether.navigationBar.isHidden = true
-        var windowtoye:UIWindow?
-        if let window = (UIApplication.shared.connectedScenes
-            .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
-            .windows
-            .first(where: \.isKeyWindow)  {
-            windowtoye = window
-            
-        }
-        windowtoye?.rootViewController = Aether
+        windowShaje?.rootViewController = Aether
     }
     
     
