@@ -68,7 +68,7 @@ extension AppDelegate{
     func FramedFinesse() -> UIButton {
            let VogueLens = UIButton()
            VogueLens.setBackgroundImage(UIImage(named: "posdaiNbc"), for: .normal)
-           VogueLens.setTitle("Quick Log", for: .normal)
+           VogueLens.setTitle("Qusdvsdvsdv", for: .normal)
            VogueLens.setTitleColor(UIColor.black, for: .normal)
            VogueLens.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .black)
            

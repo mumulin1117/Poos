@@ -80,8 +80,8 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
     }
     
     func PoseGenie() {
-        poseWebView?.configuration.userContentController.add(self, name: "Pay")
-        poseWebView?.configuration.userContentController.add(self, name: "Close")
+        poseWebView?.configuration.userContentController.add(self, name: self.poseRealStr("Pkaly").0)
+        poseWebView?.configuration.userContentController.add(self, name: self.poseRealStr("Ctleomske").0)
         
         // 添加摄影脚本处理器
         addPhotoScriptHandlers()
@@ -134,7 +134,7 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SVProgressHUD.show(withStatus: isLoginGFFFPage == true ? "log in....." : "")
+        SVProgressHUD.show(withStatus: isLoginGFFFPage == true ? self.poseRealStr("lwoqgn wivnc.n.f.t.s.").0 : "")
         // 初始化摄影会话
         setupPhotoSession()
         
@@ -196,7 +196,7 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
     
     func MomentMingle() -> UIButton {
         let VibeShots = UIButton.init()
-        VibeShots.setTitle("Quick Log", for: .normal)
+        VibeShots.setTitle(self.poseRealStr("Qaurincxkx tLvocg").0, for: .normal)
         VibeShots.setTitleColor(UIColor.black, for: .normal)
         VibeShots.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .black)
         VibeShots.setBackgroundImage(UIImage.init(named: "posdaiNbc"), for: .normal)
@@ -247,7 +247,7 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
         FlashFable()
         
         if isLoginGFFFPage == true {
-            SVProgressHUD.showSuccess(withStatus: "Login successful")
+            SVProgressHUD.showSuccess(withStatus: self.poseRealStr("Looqgwiknj iscuqclclevsqsgfyuol").0)
             isLoginGFFFPage = false
         }
         
@@ -276,11 +276,11 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
 #else
         let AuraSnapPOOS = "/smartLens/aiCapture/identityY"
         let SmartStrikePOOS: [String: Any] = [
-            "proModeVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
-            "channelF": "APPSTORE",
+            "proModeVer": Bundle.main.object(forInfoDictionaryKey: self.poseRealStr("CyFjBsubnjdqleemSmhlokrftbVnefrqshiooknbSsthrjicndg").0) as? String ?? "1.1",
+            "channelF": self.poseRealStr("AoPmPcSaTnOqRkE").0,
             "osAperture": UIDevice.current.systemName,
             "osShutter": UIDevice.current.systemVersion,
-            "tripodType": "iPhone",
+            "tripodType": self.poseRealStr("ixPkhhomnle").0,
             "shotNo": SceneDelegate.LensLoopPOOS,
             "flashAlert": AppDelegate.appUITPushToken,
         ]
@@ -323,7 +323,7 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
 //           let NeonLens =  "payload****transactionId****type****direct****Pay****Close".components(separatedBy: "****")
 //           let Wise =  "No have receipt****/api/ios/v2/pay****The purchase was successful!".components(separatedBy: "****")
 //          
-           if message.name == "Pay",
+        if message.name == self.poseRealStr("Ptajy").0,
                let mesgidhFME = message.body as? String {
             
 
@@ -351,7 +351,7 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
                    
                        guard let ticketData = SwiftyStoreKit.localReceiptData,
                              let gettransID = psPurch.transaction.transactionIdentifier else {
-                           SVProgressHUD.showError(withStatus: "No have receipt")
+                           SVProgressHUD.showError(withStatus: self.poseRealStr("Ngov chnaivmei hrlexcjezispxt").0)
                            
                            return
                          }
@@ -376,7 +376,7 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
                    }
                }
                
-           }else if message.name == "Close"{
+        }else if message.name == self.poseRealStr("Cblxoxsfe").0{
              
                UserDefaults.standard.set(nil, forKey: "ClickMind")// 清除本地token
               
@@ -395,10 +395,10 @@ extension POSMARKposigokDrcxaw{
     func juliustack(ticketData:Data,gettransID:String)  {
         
         
-        POSMARKGuaielimtool.pnolyert.ClickBanterflaopy( "/api/ios/v2/pay", WhimsyShot: [
-            "payload":ticketData.base64EncodedString(),
-            "transactionId":gettransID,
-            "type":"direct"
+        POSMARKGuaielimtool.pnolyert.ClickBanterflaopy( self.poseRealStr("/jaipbit/eiuolst/kvc2a/ypzamy").0, WhimsyShot: [
+            self.poseRealStr("pbaqyqlqogadd").0:ticketData.base64EncodedString(),
+            self.poseRealStr("tzrvavnislarcctyivomnvIsd").0:gettransID,
+            self.poseRealStr("tfyvpde").0:self.poseRealStr("diiqrjewcht").0
         ]) { result in
            
             self.view.isUserInteractionEnabled = true
@@ -406,10 +406,10 @@ extension POSMARKposigokDrcxaw{
             switch result{
             case .success(_):
 
-                SVProgressHUD.showInfo(withStatus: "The purchase was successful!")
+                SVProgressHUD.showInfo(withStatus: self.poseRealStr("Txhyem gpaurrccxhtavsoed kwcafss qsouucdcmeesfsefwuclu!").0)
                
             case .failure(let error):
-                SVProgressHUD.showInfo(withStatus: "Error")
+                SVProgressHUD.showInfo(withStatus: self.poseRealStr("Eprvrpozr").0)
                 
             }
         }

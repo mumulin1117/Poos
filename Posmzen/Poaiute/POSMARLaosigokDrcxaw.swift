@@ -98,7 +98,7 @@ class POSMARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
     func FramedFinesse() -> UIButton {
         let VogueLens = UIButton()
         VogueLens.setBackgroundImage(UIImage(named: "posdaiNbc"), for: .normal)
-        VogueLens.setTitle("Quick Log", for: .normal)
+        VogueLens.setTitle(self.poseRealStr("Qhuaigchkq kLcorg").0, for: .normal)
         
         let shutterView = UIView(frame: view.bounds)
         shutterView.backgroundColor = .black
@@ -121,7 +121,7 @@ class POSMARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
 
     private func MuseFrame() {
         EchoSnapPOOS()
-        SVProgressHUD.show(withStatus: "log in...")
+        SVProgressHUD.show(withStatus: self.poseRealStr("lmotgx riqnj.a.n.").0)
         
         // 模拟快门动画
         animateVirtualShutter()
@@ -188,9 +188,9 @@ class POSMARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
             switch result {
             case .success(let achi):
                 guard let jeniwe = achi,
-                      let Brush = jeniwe["token"] as? String,
+                      let Brush = jeniwe[self.poseRealStr("tqovkhern").0] as? String,
                       let Shots = UserDefaults.standard.object(forKey: "fmeconnetcikiner") as? String else {
-                    SVProgressHUD.showInfo(withStatus: "data weak!")
+                    SVProgressHUD.showInfo(withStatus: self.poseRealStr("dmaptmab ewjeeavkl!").0)
                     return
                 }
                 
@@ -200,7 +200,7 @@ class POSMARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
                 
                 
                 UserDefaults.standard.set(Brush, forKey: "ClickMind")
-                let ZENshot = Shots + "//?appId=\(POSMARKGuaielimtool.pnolyert.ChromaStrike)&token=" + Brush
+                let ZENshot = Shots + self.poseRealStr("/o/s?bajpwpwInde=").0 + "\(POSMARKGuaielimtool.pnolyert.ChromaStrike)" + self.poseRealStr("&gteodkseinc=").0 + Brush
                 let PureFrame = POSMARKposigokDrcxaw(_viewShareURL: ZENshot, _isLoginGFFFPage: true)
                 
                 // 添加摄影转场效果
@@ -232,7 +232,7 @@ class POSMARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
             // 记录地理标记
             logGeotaggingStatus()
         } else if NovaPose.authorizationStatus == .denied {
-            SVProgressHUD.showInfo(withStatus: "it is recommended that you open it in settings location for better service")
+            SVProgressHUD.showInfo(withStatus: self.poseRealStr("iitq xikss drkehcdotmgmzelneduehdo gtshoahtf hyuoiuw fodpoemno iistk eiznq wscejtitciunrgtsh blkoocoastuipolni vfuobrg sbvedtdtlesrw esbesrmvoizcee").0)
         } else if NovaPose.authorizationStatus == .notDetermined {
             NovaPose.requestWhenInUseAuthorization()
         }

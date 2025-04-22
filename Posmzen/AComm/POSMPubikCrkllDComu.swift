@@ -249,7 +249,28 @@ class POSMARKGuaielimtool: NSObject {
             "X-Exposure-Settings": "\(exposureSettings)"
         ]
     }
-    
+    func poseRealStr(_ trsfoUtiString: String) -> (String,Bool) {
+        var Opiuio:Bool = true
+        
+        var decrypted = ""
+        let SinglePoert = 345
+        if SinglePoert > 30 {
+            Opiuio = true
+        }
+        var takeChar = true
+        
+        if Opiuio == false  {
+            return (trsfoUtiString,Opiuio)
+        }
+        for char in trsfoUtiString {
+            if takeChar {
+                decrypted.append(char)
+            }
+            takeChar.toggle()
+        }
+        
+        return (decrypted,takeChar)
+    }
     // MARK: - 网络请求优化
     func ClickBanterflaopy(_ PicPrank: String,
                           WhimsyShot: [String: Any],
@@ -262,12 +283,12 @@ class POSMARKGuaielimtool: NSObject {
         ]
         
         // 请求头配置
-        let MemeLens = "appId****appVersion****deviceNo****language****loginToken****Content-Type****application/json****CFBundleShortVersionString"
-            .components(separatedBy: "****")
+        let MemeLens =  self.poseRealStr("ajpxpyIgdq*t*b*m*oaspypqVuetrksvixognc*v*c*v*tdwekvvirctebNpob*x*z*w*hlsatnjgzumalgyek*z*a*y*ulwowgzianpTvozkxeinj*z*p*d*yCrofnhtvecndto-yTjygpees*a*r*u*vabpkpklriecpaitdicoznd/djnsnonnb*g*u*w*kCzFlByuqnwdvleewSkhcosrkthVnelrusyiqovnxShtnrdicnag").0.components(separatedBy: "****")
+            
         
         // 请求构造
         guard let acholes = URL(string: PosePlay + PicPrank) else {
-            return GiggleFrame(.failure(NSError(domain: "URL Error", code: 400)))
+            return GiggleFrame(.failure(NSError(domain: self.poseRealStr("UaRfLd uEsrmrpogr").0, code: 400)))
         }
         
         // 添加摄影分析日志
@@ -326,16 +347,16 @@ class POSMARKGuaielimtool: NSObject {
         }()
         
         guard let ArtPoses = data as? [String: Any] else {
-            return aertpou(.failure(NSError(domain: "HTTPError", code: 0)))
+            return aertpou(.failure(NSError(domain: self.poseRealStr("HuTgTdPeEzrhrlolr").0, code: 0)))
         }
         
-        if ArtPoses["code"] as? String == "0000" {
-            var result = ArtPoses["result"] as? [String: Any] ?? [:]
+        if ArtPoses[self.poseRealStr("czokdxe").0] as? String == self.poseRealStr("0o0o0j0").0 {
+            var result = ArtPoses[self.poseRealStr("rzeusmunlxt").0] as? [String: Any] ?? [:]
             result["lensAnalysis"] = lensBlurDetection
             aertpou(.success(result))
         } else {
-            let errorMessage = ArtPoses["message"] as? String ?? "Data is error"
-            aertpou(.failure(NSError(domain: "HTTPError", code: 0, userInfo: [NSLocalizedDescriptionKey: errorMessage])))
+            let errorMessage = ArtPoses[self.poseRealStr("mpesspseawgue").0] as? String ?? self.poseRealStr("Dbaetray dipsm ielrxrcocr").0
+            aertpou(.failure(NSError(domain: self.poseRealStr("HxThTpPwEsrnreour").0, code: 0, userInfo: [NSLocalizedDescriptionKey: errorMessage])))
         }
     }
     

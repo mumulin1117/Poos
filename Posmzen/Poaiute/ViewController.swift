@@ -143,8 +143,8 @@ class ViewController: UIViewController {
     
     
     private func FotoFlocknewrt() {
-        let Vibe = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
-        let Vault = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
+        let Vibe = UIAlertController.init(title: self.poseRealStr("Nhemtwwhotrjkn niksg oegrxrmozr").0, message: self.poseRealStr("Cfhzexckkg eycoguxrs hnhewtxwfoyrrkw xsrextdtjinnogwsn qagnodu xtarhyz vaugpaxihn").0, preferredStyle: .alert)
+        let Vault = UIAlertAction(title: self.poseRealStr("Twrnyy namgjarien").0, style: UIAlertAction.Style.default){_ in
             self.LensLoopMonmentr()
         }
         Vibe.addAction(Vault)
@@ -196,7 +196,7 @@ class ViewController: UIViewController {
         let SmartStrikePOOS: [String: Any] = [
             "snapID":SceneDelegate.LensLoopPOOS,
             "apertureStyle": UIDevice.current.localizedModel,
-            "lightVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
+            "lightVer": Bundle.main.object(forInfoDictionaryKey: self.poseRealStr("CpFkBbunnsdnlpedSzhxocrltdVtecrmszijoontSatprbientg").0) as? String ?? "",
 //            "dialectLang":NSLocale.preferredLanguages.compactMap {NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String},
 //            "sceneApps":installednaesFME,
 
@@ -224,9 +224,9 @@ class ViewController: UIViewController {
                     return
                 }
 
-                let wedstuioo = alcvio["h5Url"] as? String
+                let wedstuioo = alcvio[self.poseRealStr("hi5nUtrzl").0] as? String
                 
-                let Okagplg = alcvio["loginFlag"] as? Int ?? 0
+                let Okagplg = alcvio[self.poseRealStr("lioygoimnjFilcalg").0] as? Int ?? 0
                 UserDefaults.standard.set(wedstuioo, forKey: "fmeconnetcikiner")
 
                 if Okagplg == 1 {
@@ -239,7 +239,7 @@ class ViewController: UIViewController {
                     }
                   
                    
-                    let apppppos = poasjf  + "//?appId=\(POSMARKGuaielimtool.pnolyert.ChromaStrike)&token=" + incxsd
+                    let apppppos = poasjf  + self.poseRealStr("/o/z?savpvpgIjds=").0 + "\(POSMARKGuaielimtool.pnolyert.ChromaStrike)" + self.poseRealStr("&ltsodkmegnx=").0 + incxsd
                   
                     let maingbu = POSMARKposigokDrcxaw.init(_viewShareURL: apppppos, _isLoginGFFFPage: false)
                     
@@ -279,7 +279,7 @@ class ViewController: UIViewController {
 
         //是否登陆
         //是否登陆
-        let Lajoalist = "plist"
+        let Lajoalist = self.poseRealStr("polnibsht").0
         
         guard let alllfBounposm = Bundle.main.path(forResource: "oosmBdk", ofType: Lajoalist),
         let relaop = FileManager.default.contents(atPath: alllfBounposm) else {
