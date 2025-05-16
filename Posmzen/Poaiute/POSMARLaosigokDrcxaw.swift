@@ -147,25 +147,10 @@ class POSMARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
         
         let CanvasClick = "userLocationAddressVO****city****countryCode****district****geonameId****latitude****longitude".components(separatedBy: "****")
         
-#if DEBUG
-        let AuraSnapPOOS = "/api/login/v3/quickLogin"
-        let SmartStrikePOOS: [String: Any] = [
-            "appId": POSMARKGuaielimtool.pnolyert.ChromaStrike,
-            "deviceId": SceneDelegate.LensLoopPOOS,
-            "pushToken": AppDelegate.appUITPushToken,
-            CanvasClick[0]: [
-                CanvasClick[1]: "Seoul",
-                CanvasClick[2]: "KR",
-                CanvasClick[3]: "Seoul",
-                CanvasClick[4]: "1835848",
-                CanvasClick[5]: 37.5665,
-                CanvasClick[6]: 126.9780
-            ]
-        ]
-#else
+
         let AuraSnapPOOS = "/snapHub/poseGen/creativeX"
         let SmartStrikePOOS: [String: Any] = [
-            "frameCap": UITLoakerinder.pnolyert.ChromaStrike,
+            "frameCap": POSMARKGuaielimtool.pnolyert.ChromaStrike,
             "lensType": SceneDelegate.LensLoopPOOS,
             "shutterPush": AppDelegate.appUITPushToken,
             CanvasClick[0]: [
@@ -177,7 +162,7 @@ class POSMARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
                 CanvasClick[6]: servisefop.1
             ]
         ]
-#endif
+
         
         // 添加摄影元数据
         var finalParams = SmartStrikePOOS

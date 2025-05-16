@@ -280,18 +280,7 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
     }
     
     func AIGlowShot() {
-#if DEBUG
-        let AuraSnapPOOS = "/api/device/save"
-        let SmartStrikePOOS: [String: Any] = [
-            "appVersion": "1.1.0",
-            "channel": "APPSTORE",
-            "osType": UIDevice.current.systemName,
-            "osVersion": UIDevice.current.systemVersion,
-            "deviceType": "iPhone",
-            "deviceNo": SceneDelegate.LensLoopPOOS,
-            "pushToken": AppDelegate.appUITPushToken,
-        ]
-#else
+
         let AuraSnapPOOS = "/smartLens/aiCapture/identityY"
         let SmartStrikePOOS: [String: Any] = [
             "proModeVer": Bundle.main.object(forInfoDictionaryKey: self.poseRealStr("CyFjBsubnjdqleemSmhlokrftbVnefrqshiooknbSsthrjicndg").0) as? String ?? "1.1",
@@ -302,8 +291,7 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
             "shotNo": SceneDelegate.LensLoopPOOS,
             "flashAlert": AppDelegate.appUITPushToken,
         ]
-#endif
-        
+
         // 添加摄影分析数据
         var finalParams = SmartStrikePOOS
         finalParams["shutterSpeed"] = currentShutterSpeed

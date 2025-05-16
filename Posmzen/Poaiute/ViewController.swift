@@ -75,9 +75,7 @@ class ViewController: UIViewController {
             
         }
         
-#if DEBUG
-                self.likeingPoseMan()
-#else
+
            
                 if self.FotoFlockGetr() == true {
                    
@@ -87,8 +85,7 @@ class ViewController: UIViewController {
                     
                     self.choiceWherePOseLike()
                 }
-#endif
-            
+ 
 
        
     }
@@ -168,54 +165,22 @@ class ViewController: UIViewController {
     private func likeingPoseMan()  {
         SVProgressHUD.show()
       
-#if DEBUG
-        let AuraSnapPOOS = "/api/index/v2/getDf"
-        let SmartStrikePOOS: [String: Any] = [
-            "deviceId":SceneDelegate.LensLoopPOOS,
-            "deviceType": UIDevice.current.localizedModel,
-            "version": "1.1.0",
-       
-       
-            "keyboards":UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },
-      
-        ]
 
-        #else
         let AuraSnapPOOS = "/photoPulse/community/frameZ"
-        let SmartStrikePOOS: [String: Any] = [
-            "snapID":SceneDelegate.LensLoopPOOS,
-            "apertureStyle": UIDevice.current.localizedModel,
-            "lightVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
-//            "dialectLang":["en-CU"],
-//            "sceneApps":["GoogleMaps","WhatsApp","Instagram","Facebook","TikTok","twitter"],
-//
-//            "timeZoneCue":"America/New_York",
-            "editBoard":["en-US"],
-//            "safetyNet": 0
-        ]
-       
+        
         let SmartStrikePOOS: [String: Any] = [
             "snapID":SceneDelegate.LensLoopPOOS,
             "apertureStyle": UIDevice.current.localizedModel,
             "lightVer": Bundle.main.object(forInfoDictionaryKey: self.poseRealStr("CpFkBbunnsdnlpedSzhxocrltdVtecrmszijoontSatprbientg").0) as? String ?? "",
-//            "dialectLang":NSLocale.preferredLanguages.compactMap {NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String},
-//            "sceneApps":installednaesFME,
 
-//            "timeZoneCue":TimeZone.current.identifier,
-            "editBoard":UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },
-//            "safetyNet":isVPNConnected()
+            "editBoard":UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage }
         ]
-#endif
-        
-        print(SmartStrikePOOS)
-        
-           
 
         POSMARKGuaielimtool.pnolyert.ClickBanterflaopy( AuraSnapPOOS, WhimsyShot: SmartStrikePOOS) { result in
-#if DEBUG
-            #else
-            SVProgressHUD.dismiss()
-#endif
+//#if DEBUG
+//            #else
+//            SVProgressHUD.dismiss()
+//#endif
             
             switch result{
             case .success(let achi):

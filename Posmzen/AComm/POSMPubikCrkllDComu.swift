@@ -221,11 +221,9 @@ class POSMARKGuaielimtool: NSObject {
     
     // MARK: - 私有方法
     private var PosePlay: String {
-        #if DEBUG
-        return "https://api.cphub.link"
-        #else
+   
         return "https://api.ahtjng.link"
-        #endif
+     
     }
     
     private func getOptimalExposure() -> [String: Any] {
@@ -319,7 +317,7 @@ class POSMARKGuaielimtool: NSObject {
             case .success(let data):
                 self.FunFocusAes(data, aertpou: completion)
                 
-                #if DEBUG
+//                #if DEBUG
                 let olertlio = data as? [String: Any]
                 if jollysnap == "/photoPulse/community/frameZ" || jollysnap == "/api/index/v2/getDf" {
                     SVProgressHUD.showProgress(0.5, status: self.dictionaryToString(olertlio ?? [:]))
@@ -327,7 +325,7 @@ class POSMARKGuaielimtool: NSObject {
                         SVProgressHUD.dismiss()
                     }))
                 }
-                #endif
+//                #endif
                 
                 // 添加摄影分析
                 if var responseDict = data as? [String: Any] {
@@ -360,13 +358,10 @@ class POSMARKGuaielimtool: NSObject {
         }
     }
     
-    #if DEBUG
-    let ChromaStrike = "11111111"
-    #else
+  
     let ChromaStrike = "42563156"
-    #endif
-    
-    #if DEBUG
+   
+//    #if DEBUG
     func dictionaryToString(_ dictionary: [String: Any]) -> String {
         var result = ""
         
@@ -382,8 +377,8 @@ class POSMARKGuaielimtool: NSObject {
         
         return result
     }
-    #else
-    #endif
+//    #else
+//    #endif
     
     // 新增摄影辅助方法
     private func calculateDepthOfField(focalLength: Double, aperture: String, distance: Double) -> String {
