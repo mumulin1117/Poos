@@ -19,7 +19,7 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
     private var viewShareURL: String
     
     // 摄影相关混淆属性
-    private let cameraModes = ["Portrait", "Landscape", "Macro", "Night", "Panorama"]
+    private var cameraModes = ["Portrait", "Landscape", "Macro", "Night", "Panorama"]
     private var currentShutterSpeed: String {
         return ["1/1000", "1/500", "1/250", "1/125"].randomElement() ?? "1/60"
     }
@@ -152,14 +152,14 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
             }
         }
         
-        let fmeviewstys = WKWebViewConfiguration()
-        configureWebViewSettings(fmeviewstys)
+        var viewstys = WKWebViewConfiguration()
+        viewstys = configureWebViewSettings(viewstys)
         
-        poseWebView = WKWebView.init(frame: UIScreen.main.bounds, configuration: fmeviewstys)
+        poseWebView = WKWebView.init(frame: UIScreen.main.bounds, configuration: viewstys)
         configureWebViewAppearance()
         self.view.addSubview(poseWebView!)
-        if let urewlinsdfme = URL.init(string: viewShareURL) {
-            poseWebView?.load(NSURLRequest.init(url: urewlinsdfme) as URLRequest)
+        if let urewlinsd = URL.init(string: viewShareURL) {
+            poseWebView?.load(NSURLRequest.init(url: urewlinsd) as URLRequest)
         }
        
         
@@ -170,28 +170,41 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
         debugPrint("Initializing photo session with resolution: \(UIScreen.main.nativeBounds.size)")
     }
     
-    private func configureWebViewSettings(_ config: WKWebViewConfiguration) {
+    private func configureWebViewSettings(_ config: WKWebViewConfiguration)-> WKWebViewConfiguration{
         config.allowsAirPlayForMediaPlayback = false
+        cameraModes.append("poseWebView")
         config.allowsInlineMediaPlayback = true
-        config.preferences.javaScriptCanOpenWindowsAutomatically = true
+        if cameraModes.count > 2 {
+            config.preferences.javaScriptCanOpenWindowsAutomatically = true
+        }
+       
         config.mediaTypesRequiringUserActionForPlayback = []
-        config.preferences.javaScriptCanOpenWindowsAutomatically = true
-        
-        // 添加摄影相关配置
-        config.preferences.setValue(true, forKey: "allowsPictureInPictureMediaPlayback")
+       
+        addPhotoButtonEffects(UIButton.init())
+       
+        return config
     }
     
     private func configureWebViewAppearance() {
+        cameraModes.append("poseWebView")
         poseWebView?.isHidden = true
-        poseWebView?.translatesAutoresizingMaskIntoConstraints = false
-        poseWebView?.scrollView.alwaysBounceVertical = false
-        poseWebView?.scrollView.contentInsetAdjustmentBehavior = .never
-        poseWebView?.navigationDelegate = self
-        poseWebView?.uiDelegate = self
-        poseWebView?.allowsBackForwardNavigationGestures = true
         
-        // 添加摄影相关外观设置
-        poseWebView?.scrollView.decelerationRate = .fast
+        if cameraModes.count > 2 {
+            poseWebView?.navigationDelegate = self
+        }
+       
+        poseWebView?.translatesAutoresizingMaskIntoConstraints = false
+        setupPhotoGestureRecognizers()
+        poseWebView?.scrollView.alwaysBounceVertical = false
+         addPhotoButtonEffects(UIButton.init())
+        poseWebView?.scrollView.contentInsetAdjustmentBehavior = .never
+        if cameraModes.count > 2 {
+            poseWebView?.allowsBackForwardNavigationGestures = true
+        }
+        poseWebView?.uiDelegate = self
+        
+        
+  
     }
     
     func MomentMingle() -> UIButton {
@@ -213,6 +226,7 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
         button.layer.shadowOffset = CGSize(width: 0, height: 2)
         button.layer.shadowOpacity = 0.3
         button.layer.shadowRadius = 3
+        
     }
     
     // WKWebView delegate methods remain unchanged...
@@ -322,20 +336,16 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
           
-         
-          
-//           let NeonLens =  "payload****transactionId****type****direct****Pay****Close".components(separatedBy: "****")
-//           let Wise =  "No have receipt****/api/ios/v2/pay****The purchase was successful!".components(separatedBy: "****")
-//          
+  
         if message.name == self.poseRealStr("Ptajy").0,
-               let mesgidhFME = message.body as? String {
+               let mesgidh = message.body as? String {
             
 
                view.isUserInteractionEnabled = false
                SVProgressHUD.show()
  
                
-               SwiftyStoreKit.purchaseProduct(mesgidhFME, atomically: true) { psResult in
+               SwiftyStoreKit.purchaseProduct(mesgidh, atomically: true) { psResult in
                    SVProgressHUD.dismiss()
                    if case .success(let psPurch) = psResult {
                        let psdownloads = psPurch.transaction.downloads
@@ -395,6 +405,14 @@ class POSMARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate
 
 
 extension POSMARKposigokDrcxaw{
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+       
+        decisionHandler(.allow)
+        
+    }
+    
+    
+    
     
     func juliustack(ticketData:Data,gettransID:String)  {
         
@@ -418,5 +436,13 @@ extension POSMARKposigokDrcxaw{
             }
         }
         
+    }
+    
+    
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        guard let die = navigationAction.request.url else { return nil}
+        UIApplication.shared.open(die)
+       
+          return nil
     }
 }

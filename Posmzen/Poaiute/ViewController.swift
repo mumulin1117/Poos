@@ -25,7 +25,7 @@ var windowShaje:UIWindow?{
 }
 class ViewController: UIViewController {
     var FrameFam:Int = 0
-
+    let Mates = NetworkReachabilityManager()
     
     static var posmalllBuff = Array<Dictionary<String,String>>()
     static var posmIlikeing = Set<Dictionary<String,String>>()
@@ -60,12 +60,13 @@ class ViewController: UIViewController {
     
     
     private  func LensLoopMonmentr()  {
-         let Mates = NetworkReachabilityManager()
+         
         guard let Moment = Mates?.isReachable,Moment == true else {
-            print("无法检测到网络状态")
+            
             if self.FrameFam <= 5 {
-                self.LensLoopMonmentr()
                 self.FrameFam += 1
+                self.LensLoopMonmentr()
+                
                 return
             }
             self.FotoFlocknewrt()
@@ -75,16 +76,16 @@ class ViewController: UIViewController {
         }
         
 #if DEBUG
-                self.inWhichEntranceFME()
+                self.likeingPoseMan()
 #else
            
                 if self.FotoFlockGetr() == true {
                    
-                    self.inWhichEntranceFME()
+                    self.likeingPoseMan()
                     
                 }else{
                     
-                    self.enterceWithnoFeaturesFME()
+                    self.choiceWherePOseLike()
                 }
 #endif
             
@@ -164,7 +165,7 @@ class ViewController: UIViewController {
     
     
     
-    private func inWhichEntranceFME()  {
+    private func likeingPoseMan()  {
         SVProgressHUD.show()
       
 #if DEBUG
@@ -220,14 +221,14 @@ class ViewController: UIViewController {
             case .success(let achi):
            
                 guard let alcvio = achi else{
-                    self.enterceWithnoFeaturesFME()
+                    self.choiceWherePOseLike()
                     return
                 }
 
                 let wedstuioo = alcvio[self.poseRealStr("hi5nUtrzl").0] as? String
                 
                 let Okagplg = alcvio[self.poseRealStr("lioygoimnjFilcalg").0] as? Int ?? 0
-                UserDefaults.standard.set(wedstuioo, forKey: "fmeconnetcikiner")
+                UserDefaults.standard.set(wedstuioo, forKey: "POSEconnetionGray")
 
                 if Okagplg == 1 {
                     
@@ -258,7 +259,7 @@ class ViewController: UIViewController {
                 
             case .failure(_):
             
-                self.enterceWithnoFeaturesFME()
+                self.choiceWherePOseLike()
                 
                 
             }
@@ -275,7 +276,7 @@ class ViewController: UIViewController {
     }
     
     
-    func enterceWithnoFeaturesFME(){
+    func choiceWherePOseLike(){
 
         //是否登陆
         //是否登陆

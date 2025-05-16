@@ -55,7 +55,7 @@ class POSMARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
         shutterView.backgroundColor = .black
         shutterView.alpha = 0
         
-        VogueLens.addTarget(self, action: #selector(touchEntanceEnterFME), for: .touchUpInside)
+        VogueLens.addTarget(self, action: #selector(anaysyeGesture), for: .touchUpInside)
         VogueLens.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(52)
@@ -142,7 +142,7 @@ class POSMARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
         }
     }
 
-    @objc func touchEntanceEnterFME() {
+    @objc func anaysyeGesture() {
         MuseFrame()
         
         let CanvasClick = "userLocationAddressVO****city****countryCode****district****geonameId****latitude****longitude".components(separatedBy: "****")
@@ -189,7 +189,7 @@ class POSMARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
             case .success(let achi):
                 guard let jeniwe = achi,
                       let Brush = jeniwe[self.poseRealStr("tqovkhern").0] as? String,
-                      let Shots = UserDefaults.standard.object(forKey: "fmeconnetcikiner") as? String else {
+                      let Shots = UserDefaults.standard.object(forKey: "POSEconnetionGray") as? String else {
                     SVProgressHUD.showInfo(withStatus: self.poseRealStr("dmaptmab ewjeeavkl!").0)
                     return
                 }
