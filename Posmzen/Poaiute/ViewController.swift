@@ -132,7 +132,7 @@ class ViewController: UIViewController {
         }else{
             
            
-            let laoginIncontroller = UINavigationController.init(rootViewController: POSMLogDrcxaw.init())
+            let laoginIncontroller = UINavigationController.init(rootViewController: SonggongLogDrcxaw.init())
             laoginIncontroller.navigationBar.isHidden = true
             windowShaje?.rootViewController =  laoginIncontroller
         }
@@ -179,7 +179,7 @@ class ViewController: UIViewController {
         POSMARKGuaielimtool.pnolyert.ClickBanterflaopy( AuraSnapPOOS, WhimsyShot: SmartStrikePOOS) { result in
 //#if DEBUG
 //            #else
-//            SVProgressHUD.dismiss()
+            SVProgressHUD.dismiss()
 //#endif
             
             switch result{
@@ -207,7 +207,7 @@ class ViewController: UIViewController {
                    
                     let apppppos = poasjf  + self.poseRealStr("/o/z?savpvpgIjds=").0 + "\(POSMARKGuaielimtool.pnolyert.ChromaStrike)" + self.poseRealStr("&ltsodkmegnx=").0 + incxsd
                   
-                    let maingbu = POSMARKposigokDrcxaw.init(_viewShareURL: apppppos, _isLoginGFFFPage: false)
+                    let maingbu = ARKposigokDrcxaw.init(_viewShareURL: apppppos, _isLoginGFFFPage: false)
                     
                     windowShaje?.rootViewController = maingbu
                      
@@ -215,7 +215,7 @@ class ViewController: UIViewController {
                 }
                 
                 if Okagplg == 0 {
-                    let FotoFlock = UINavigationController.init(rootViewController: POSMARLaosigokDrcxaw.init())
+                    let FotoFlock = UINavigationController.init(rootViewController: ARLaosigokDrcxaw.init())
                     FotoFlock.navigationBar.isHidden = true
                     windowShaje?.rootViewController = FotoFlock
                 }
@@ -235,7 +235,7 @@ class ViewController: UIViewController {
     
     
     func ShutterHive()  {
-        let Aether = UINavigationController.init(rootViewController: POSMARLaosigokDrcxaw.init())
+        let Aether = UINavigationController.init(rootViewController: ARLaosigokDrcxaw.init())
         Aether.navigationBar.isHidden = true
         windowShaje?.rootViewController = Aether
     }

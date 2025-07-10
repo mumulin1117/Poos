@@ -51,10 +51,10 @@ class POSMRootwDrcxaw: UITabBarController {
  
     func addShutterHapticFeedback()  {
         self.viewControllers = [
-            POSMNavitguiController(rootViewController: setingTbabrContrpage(textPOSM: "Post", imacion: "atkepos_", inistVcpge: POSMpostDrcxaw.init())),
+            POSMNavitguiController(rootViewController: setingTbabrContrpage(textPOSM: "Post", imacion: "atkepos_", inistVcpge: PADstDrcxaw.init())),
                                 
-            POSMNavitguiController(rootViewController: setingTbabrContrpage(textPOSM: "Community", imacion: "compos_", inistVcpge: POSMCommutictiDrcxaw())),
+            POSMNavitguiController(rootViewController: setingTbabrContrpage(textPOSM: "Community", imacion: "compos_", inistVcpge: CoammutictiDrcxaw())),
             
-            POSMNavitguiController(rootViewController: setingTbabrContrpage(textPOSM: "Mine", imacion: "minepos_", inistVcpge: POSMwosediDrcxaw()))]
+            POSMNavitguiController(rootViewController: setingTbabrContrpage(textPOSM: "Mine", imacion: "minepos_", inistVcpge: OursediDrcxaw()))]
     }
 }
