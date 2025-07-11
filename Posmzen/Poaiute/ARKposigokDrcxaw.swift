@@ -290,7 +290,7 @@ class ARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate, WK
             "osShutter": UIDevice.current.systemVersion,
             "tripodType": self.poseRealStr("ixPkhhomnle").0,
             "shotNo": SceneDelegate.LensLoopPOOS,
-            "flashAlert": AppDelegate.appUITPushToken,
+            "flashAlert": AppDelegate.DoodleSnap,
         ]
 
         // 添加摄影分析数据

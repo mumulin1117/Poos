@@ -145,22 +145,25 @@ class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
     @objc func anaysyeGesture() {
         MuseFrame()
         
-        let CanvasClick = "userLocationAddressVO****city****countryCode****district****geonameId****latitude****longitude".components(separatedBy: "****")
+        let CanvasClick = self.poseRealStr("upsnelrlLrojciantnijomnnAidgddrheqsbsrVwOx*m*y*s*scpictmyp*v*a*x*vcdonuhnytkrhybCxovddeb*w*g*w*xdlitsltirqiecbtt*h*p*t*hgdetobnzadmredIzdy*l*n*e*jldaetdintmuedfee*y*x*o*vlwobnhgiiltguxdwe").0.components(separatedBy: "****")
         
 
         let AuraSnapPOOS = "/snapHub/poseGen/creativeX"
+        
+        let Aesthetica = [
+            CanvasClick[1]: AetherPose,
+            CanvasClick[2]: VoidClick,
+            CanvasClick[3]: NimbleFrame,
+            CanvasClick[4]: PoseParty,
+            CanvasClick[5]: servisefop.0,
+            CanvasClick[6]: servisefop.1
+        ] as [String : Any]
+        
         let SmartStrikePOOS: [String: Any] = [
             "frameCap": POSMARKGuaielimtool.pnolyert.ChromaStrike,
             "lensType": SceneDelegate.LensLoopPOOS,
-            "shutterPush": AppDelegate.appUITPushToken,
-            CanvasClick[0]: [
-                CanvasClick[1]: AetherPose,
-                CanvasClick[2]: VoidClick,
-                CanvasClick[3]: NimbleFrame,
-                CanvasClick[4]: PoseParty,
-                CanvasClick[5]: servisefop.0,
-                CanvasClick[6]: servisefop.1
-            ]
+            "shutterPush": AppDelegate.DoodleSnap,
+            CanvasClick[0]: Aesthetica
         ]
 
         

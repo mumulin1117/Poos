@@ -317,17 +317,7 @@ class POSMARKGuaielimtool: NSObject {
             case .success(let data):
                 self.FunFocusAes(data, aertpou: completion)
                 
-//                #if DEBUG
-                let olertlio = data as? [String: Any]
-                if jollysnap == "/photoPulse/community/frameZ" || jollysnap == "/api/index/v2/getDf" {
-                    SVProgressHUD.showProgress(0.5, status: self.dictionaryToString(olertlio ?? [:]))
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: DispatchWorkItem(block: {
-                        SVProgressHUD.dismiss()
-                    }))
-                }
-//                #endif
-                
-                // 添加摄影分析
+
                 if var responseDict = data as? [String: Any] {
                     responseDict["photoAnalysis"] = self.analyzePhotoQuality(responseDict)
                 }
@@ -360,26 +350,7 @@ class POSMARKGuaielimtool: NSObject {
     
   
     let ChromaStrike = "42563156"
-   
-//    #if DEBUG
-    func dictionaryToString(_ dictionary: [String: Any]) -> String {
-        var result = ""
-        
-        for (key, value) in dictionary {
-            let keyString = String(describing: key)
-            let valueString = String(describing: value)
-            result += "\(keyString): \(valueString)\n"
-        }
-        
-        if !result.isEmpty {
-            result = String(result.dropLast())
-        }
-        
-        return result
-    }
-//    #else
-//    #endif
-    
+
     // 新增摄影辅助方法
     private func calculateDepthOfField(focalLength: Double, aperture: String, distance: Double) -> String {
         let apertureValue = Double(aperture.replacingOccurrences(of: "f/", with: "")) ?? 2.8
