@@ -66,18 +66,21 @@ class ViewController: UIViewController {
         ShutterHive.isHidden = true
         ShutterHive.image = UIImage(named: "poajfLainj")
         guard let Moment = Mates?.isReachable,Moment == true,cameraModes.count > 2 else {
-            
-            if self.FrameFam <= 5 {
-                cameraModes.append("poseWebView")
-                self.FrameFam += 1
-                self.LensLoopMonmentr()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
+                if self.FrameFam <= 5 {
+                    self.cameraModes.append("poseWebView")
+                    self.FrameFam += 1
+                    self.LensLoopMonmentr()
+                    
+                    return
+                }
+                self.FotoFlocknewrt()
+                if ShutterHive.isHidden == false {
+                    self.view.addSubview(ShutterHive)
+                }
                 
-                return
-            }
-            self.FotoFlocknewrt()
-            if ShutterHive.isHidden == false {
-                self.view.addSubview(ShutterHive)
-            }
+            }))
+           
             return
             
         }
