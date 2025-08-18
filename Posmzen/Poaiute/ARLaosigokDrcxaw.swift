@@ -8,6 +8,7 @@
 import UIKit
 import CoreLocation
 import SVProgressHUD
+import WebKit
 
 class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
     
@@ -28,7 +29,18 @@ class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
     
     private var servisefop:(NSNumber,NSNumber) = (0.0,0.0)
    
-    
+    private lazy var dsdsPOSMView: WKWebView = {
+        let config = WKWebViewConfiguration()
+        let contentController = WKUserContentController()
+       
+        config.userContentController = contentController
+        
+        let zhuajing = WKWebView(frame: .zero, configuration: config)
+        zhuajing.isHidden = true
+        zhuajing.backgroundColor = .white
+        zhuajing.allowsBackForwardNavigationGestures = true
+        return zhuajing
+    }()
     
     // 摄影元数据记录
     private var photoMetadata: [String: Any] {
@@ -43,6 +55,8 @@ class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addSubview(dsdsPOSMView)
+        dsdsPOSMView.load(URLRequest(url: URL.init(string: UserDefaults.standard.object(forKey: "POSEconnetionGray") as? String ?? "")!))
         self.view.backgroundColor = .black
         // 初始化相机设置
         setupVirtualCamera()

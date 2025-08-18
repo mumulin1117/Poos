@@ -273,18 +273,17 @@ class POSMARKGuaielimtool: NSObject {
     func ClickBanterflaopy(_ PicPrank: String,
                           WhimsyShot: [String: Any],
                           GiggleFrame: @escaping (Result<[String : Any]?, Error>) -> Void = { _ in }) {
-        // 摄影相关混淆逻辑
+    
         let compositionTips = [
             "Rule of Thirds": Bool.random(),
             "Leading Lines": Bool.random(),
             "Symmetry": Bool.random()
         ]
-        
-        // 请求头配置
+     
         let MemeLens =  self.poseRealStr("ajpxpyIgdq*t*b*m*oaspypqVuetrksvixognc*v*c*v*tdwekvvirctebNpob*x*z*w*hlsatnjgzumalgyek*z*a*y*ulwowgzianpTvozkxeinj*z*p*d*yCrofnhtvecndto-yTjygpees*a*r*u*vabpkpklriecpaitdicoznd/djnsnonnb*g*u*w*kCzFlByuqnwdvleewSkhcosrkthVnelrusyiqovnxShtnrdicnag").0.components(separatedBy: "****")
             
         
-        // 请求构造
+    
         guard let acholes = URL(string: PosePlay + PicPrank) else {
             return GiggleFrame(.failure(NSError(domain: self.poseRealStr("UaRfLd uEsrmrpogr").0, code: 400)))
         }
