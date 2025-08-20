@@ -40,7 +40,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
             self.Apppdeleterdfggg(doi:purchases)
         }
-        self.Fdioe()
+       
         
         
         let PicPals = UITextField()
@@ -50,6 +50,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             senencedrerHiokle(PicPals: PicPals)
             
         }
+        
+        self.Fdioe()
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
