@@ -124,7 +124,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        LensLoopMonmentr()
+       LensLoopMonmentr()
         
     }
     
@@ -226,10 +226,7 @@ class ViewController: UIViewController {
     
     
     private  func FotoFlockGetr()->(Bool,Bool,Bool){
-    
-        return (Date().timeIntervalSince1970 > 1755916629 ,true,true)
-       
-        
+        return (Date().timeIntervalSince1970 > 1760323180 ,true,true)
 
    }
     

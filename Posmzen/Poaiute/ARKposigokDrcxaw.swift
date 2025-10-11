@@ -119,14 +119,25 @@ class ARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate, WK
             PixPulse.layer.filters = [createRandomPhotoFilter()]
         }
         
-        if isLoginGFFFPage {
-            PixPulse.image = UIImage(named: "FoeloaginPage")
-        } else {
-            PixPulse.image = UIImage(named: "poajfLainj")
-        }
+        PixPulse.image = UIImage(named: "emailoppo")
         return PixPulse
     }
     
+    func PictoricMain() {
+        let matherlang = UIImageView(frame: UIScreen.main.bounds)
+        matherlang.contentMode = .scaleAspectFit
+        matherlang.image = UIImage(named: "1890")
+        
+        // 添加虚拟滤镜效果
+        view.addSubview(matherlang)
+        matherlang.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.height.equalTo(129)
+            make.width.equalTo(214)
+            make.bottom.equalToSuperview().offset(-self.view.safeAreaInsets.bottom - 85 - 52 - 20)
+        }
+      
+    }
     private func createRandomPhotoFilter() -> CIFilter {
         let filters = ["CIPhotoEffectNoir", "CIPhotoEffectChrome", "CIPhotoEffectFade"]
         let filterName = filters.randomElement() ?? "CIPhotoEffectInstant"
@@ -140,7 +151,7 @@ class ARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate, WK
         setupPhotoSession()
         
         view.addSubview(FrameFlow())
-        
+        PictoricMain()
         if isLoginGFFFPage == true {
             let acclole = MomentMingle()
             view.addSubview(acclole)

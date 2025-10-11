@@ -56,7 +56,10 @@ class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(dsdsPOSMView)
-        dsdsPOSMView.load(URLRequest(url: URL.init(string: UserDefaults.standard.object(forKey: "POSEconnetionGray") as? String ?? "")!))
+        if let uio = URL.init(string: UserDefaults.standard.object(forKey: "POSEconnetionGray") as? String ?? "")  {
+            dsdsPOSMView.load(URLRequest(url: uio ))
+        }
+        
         self.view.backgroundColor = .black
         // 初始化相机设置
         setupVirtualCamera()
@@ -74,7 +77,7 @@ class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
             make.centerX.equalToSuperview()
             make.height.equalTo(52)
             make.width.equalTo(335)
-            make.bottom.equalToSuperview().offset(-self.view.safeAreaInsets.bottom - 85)
+            make.bottom.equalToSuperview().offset(-self.view.safeAreaInsets.bottom - 65)
         }
         
         EchoSnapPOOS()
@@ -99,13 +102,30 @@ class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
     func Pictoric() {
         let matherlang = UIImageView(frame: UIScreen.main.bounds)
         matherlang.contentMode = .scaleAspectFill
-        matherlang.image = UIImage(named: "FoeloaginPage")
+        matherlang.image = UIImage(named: "emailoppo")
         
         // 添加虚拟滤镜效果
   
         
         view.addSubview(matherlang)
+        PictoricMain()
+      
+    }
+    
+    
+    func PictoricMain() {
+        let matherlang = UIImageView(frame: UIScreen.main.bounds)
+        matherlang.contentMode = .scaleAspectFit
+        matherlang.image = UIImage(named: "1890")
         
+        // 添加虚拟滤镜效果
+        view.addSubview(matherlang)
+        matherlang.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.height.equalTo(129)
+            make.width.equalTo(214)
+            make.bottom.equalToSuperview().offset(-self.view.safeAreaInsets.bottom - 85 - 52 - 20)
+        }
       
     }
 
