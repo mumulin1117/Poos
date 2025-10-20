@@ -134,24 +134,28 @@ class AoSITakeCrcxaw: POSMBuetonVSontro {
         TrarRecharegeimg.setBackgroundImage(UIImage.init(named: "lesssIogas"), for:.normal)
         TrarRecharegeimg.addTarget(self, action: #selector(pushCoinpAynfluseVd), for: .touchUpInside)
         weakVc.view.addSubview(TrarRecharegeimg)
-        TrarRecharegeimg.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-30)
-            make.width.equalTo(272.xszen)
-            make.height.equalTo(325.xszen)
-        }
+        TrarRecharegeimg.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            TrarRecharegeimg.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            TrarRecharegeimg.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -30),
+            TrarRecharegeimg.widthAnchor.constraint(equalToConstant: 272.xszen),
+            TrarRecharegeimg.heightAnchor.constraint(equalToConstant: 325.xszen)
+        ])
         
         
         let dispaeregeimg = UIButton.init()
         dispaeregeimg.setBackgroundImage(UIImage.init(named: "BNiuiguanj"), for:.normal)
         dispaeregeimg.addTarget(self, action: #selector(dimisSSerInfluseVd), for: .touchUpInside)
         weakVc.view.addSubview(dispaeregeimg)
-        dispaeregeimg.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(TrarRecharegeimg.snp.bottom).offset(80.yszen)
-            make.width.equalTo(32.xszen)
-            make.height.equalTo(32.xszen)
-        }
+        dispaeregeimg.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            dispaeregeimg.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            dispaeregeimg.topAnchor.constraint(equalTo: TrarRecharegeimg.bottomAnchor, constant: 80.yszen),
+            dispaeregeimg.widthAnchor.constraint(equalToConstant: 32.xszen),
+            dispaeregeimg.heightAnchor.constraint(equalToConstant: 32.xszen)
+        ])
         
         let mofaloVC = POSMNavitguiController.init(rootViewController: weakVc)
        

@@ -185,33 +185,48 @@ class POSMPackageCell: UICollectionViewCell {
     
     
     private func mnbhuijn()  {
-        toplanertBack.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(117)
-        }
-        topDomendBack.snp.makeConstraints { make in
-            
-            
-            make.width.height.equalTo(36)
-            make.top.equalToSuperview().offset(21)
-            make.centerX.equalToSuperview()
-        }
+        // toplanertBack 约束
+        toplanertBack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            toplanertBack.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            toplanertBack.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            toplanertBack.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            toplanertBack.heightAnchor.constraint(equalToConstant: 117)
+        ])
+
+        // topDomendBack 约束
+        topDomendBack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topDomendBack.widthAnchor.constraint(equalToConstant: 36),
+            topDomendBack.heightAnchor.constraint(equalToConstant: 36),
+            topDomendBack.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 21),
+            topDomendBack.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
+        ])
         
         
         
-        bottomlanertBack.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(46)
-        }
-        
-        POScoinsLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(topDomendBack.snp.bottom).offset(8)
-        }
-        POSpriceLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.centerY.equalTo(bottomlanertBack)
-        }
+        // bottomlanertBack 约束
+        bottomlanertBack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            bottomlanertBack.leftAnchor.constraint(equalTo: self.contentView.leftAnchor),
+            bottomlanertBack.rightAnchor.constraint(equalTo: self.contentView.rightAnchor),
+            bottomlanertBack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            bottomlanertBack.heightAnchor.constraint(equalToConstant: 46)
+        ])
+
+        // POScoinsLabel 约束
+        POScoinsLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            POScoinsLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            POScoinsLabel.topAnchor.constraint(equalTo: topDomendBack.bottomAnchor, constant: 8)
+        ])
+
+        // POSpriceLabel 约束
+        POSpriceLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            POSpriceLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            POSpriceLabel.centerYAnchor.constraint(equalTo: bottomlanertBack.centerYAnchor)
+        ])
     }
     private func setupkjbjvgvhgcUI() {
         [POScoinsLabel, POSpriceLabel].forEach {

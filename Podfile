@@ -6,7 +6,7 @@ target 'Posmzen' do
   use_frameworks!
 
   # Pods for Posmzen
-pod 'SnapKit'
+#pod 'SnapKit'
 pod 'iCarousel'
 pod "IQKeyboardManager"
 

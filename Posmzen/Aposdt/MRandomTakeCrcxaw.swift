@@ -48,11 +48,14 @@ class MRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDelega
         icalaertPOSE.dataSource = self
         icalaertPOSE.delegate = self
         poseingtsd()
-        icalaertPOSE.snp.makeConstraints({ make in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(tipointe.snp.bottom).offset(30.yszen)
-            make.bottom.equalTo(staresuilposs.snp.top).offset(-10.yszen)
-        })
+        icalaertPOSE.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            icalaertPOSE.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            icalaertPOSE.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            icalaertPOSE.topAnchor.constraint(equalTo: tipointe.bottomAnchor, constant: 30.yszen),
+            icalaertPOSE.bottomAnchor.constraint(equalTo: staresuilposs.topAnchor, constant: -10.yszen)
+        ])
         
         
         
@@ -97,10 +100,14 @@ class MRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDelega
         repotrerJu.addTarget(self, action: #selector(repoaintniuIC), for: .touchUpInside)
         repotrerJu.setImage(UIImage.init(named: "Shihuangjubao"), for: .normal)
         imagixonSingposs.addSubview(repotrerJu)
-        repotrerJu.snp.makeConstraints { make in
-            make.width.height.equalTo(33)
-            make.trailing.top.equalToSuperview().inset(5)
-        }
+        repotrerJu.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            repotrerJu.widthAnchor.constraint(equalToConstant: 33),
+            repotrerJu.heightAnchor.constraint(equalToConstant: 33),
+            repotrerJu.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -5),
+            repotrerJu.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 5)
+        ])
         return imagixonSingposs
     }
     

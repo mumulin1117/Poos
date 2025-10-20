@@ -49,51 +49,66 @@ class CaYerllcationCraxaw: UIViewController {
         
         view.addSubview(swichCHatButton)
         swichCHatButton.setImage(UIImage.init(named: "posewing_switch"), for: .normal)
-        swichCHatButton.snp.makeConstraints { make in
-            make.width.height.equalTo(50.xszen)
-            make.trailing.equalToSuperview().inset(16.xszen)
-            make.top.equalTo(morereportINCHatButton.snp.bottom).offset(41.xszen)
-        }
+        swichCHatButton.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            swichCHatButton.widthAnchor.constraint(equalToConstant: 50.xszen),
+            swichCHatButton.heightAnchor.constraint(equalToConstant: 50.xszen),
+            swichCHatButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.xszen),
+            swichCHatButton.topAnchor.constraint(equalTo: morereportINCHatButton.bottomAnchor, constant: 41.xszen)
+        ])
         swichCHatButton.addTarget(self, action: #selector(functionTouchager), for: .touchUpInside)
         
         
         view.addSubview(macCHatButton)
         macCHatButton.setImage(UIImage.init(named: "macwing_switch"), for: .normal)
-        macCHatButton.snp.makeConstraints { make in
-            make.width.height.equalTo(50.xszen)
-            make.trailing.equalToSuperview().inset(16.xszen)
-            make.top.equalTo(swichCHatButton.snp.bottom).offset(15.xszen)
-        }
+        macCHatButton.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            macCHatButton.widthAnchor.constraint(equalToConstant: 50.xszen),
+            macCHatButton.heightAnchor.constraint(equalToConstant: 50.xszen),
+            macCHatButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.xszen),
+            macCHatButton.topAnchor.constraint(equalTo: swichCHatButton.bottomAnchor, constant: 15.xszen)
+        ])
         macCHatButton.addTarget(self, action: #selector(functionTouchager), for: .touchUpInside)
         
         
         view.addSubview(virofeCHatButton)
         virofeCHatButton.setImage(UIImage.init(named: "videowing_switch"), for: .normal)
-        virofeCHatButton.snp.makeConstraints { make in
-            make.width.height.equalTo(50.xszen)
-            make.trailing.equalToSuperview().inset(16.xszen)
-            make.top.equalTo(macCHatButton.snp.bottom).offset(15.xszen)
-        }
+        virofeCHatButton.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            virofeCHatButton.widthAnchor.constraint(equalToConstant: 50.xszen),
+            virofeCHatButton.heightAnchor.constraint(equalToConstant: 50.xszen),
+            virofeCHatButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.xszen),
+            virofeCHatButton.topAnchor.constraint(equalTo: macCHatButton.bottomAnchor, constant: 15.xszen)
+        ])
         virofeCHatButton.addTarget(self, action: #selector(functionTouchager), for: .touchUpInside)
     }
    
     private func NoNOojhade()  {
         view.addSubview(morereportINCHatButton)
         morereportINCHatButton.setImage(UIImage.init(named: "Guimowerpose"), for: .normal)
-        morereportINCHatButton.snp.makeConstraints { make in
-            make.width.height.equalTo(40.xszen)
-            make.trailing.equalToSuperview().inset(16.xszen)
-            make.centerY.equalTo(idperform)
-        }
+        morereportINCHatButton.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            morereportINCHatButton.widthAnchor.constraint(equalToConstant: 40.xszen),
+            morereportINCHatButton.heightAnchor.constraint(equalToConstant: 40.xszen),
+            morereportINCHatButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.xszen),
+            morereportINCHatButton.centerYAnchor.constraint(equalTo: idperform.centerYAnchor)
+        ])
         morereportINCHatButton.addTarget(self, action: #selector(Acpuretlager), for: .touchUpInside)
         
         view.addSubview(declineCHatButton)
         declineCHatButton.setImage(UIImage.init(named: "guakoiPose"), for: .normal)
-        declineCHatButton.snp.makeConstraints { make in
-            make.width.height.equalTo(100.xszen)
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-view.safeAreaInsets.bottom - 30)
-        }
+        declineCHatButton.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            declineCHatButton.widthAnchor.constraint(equalToConstant: 100.xszen),
+            declineCHatButton.heightAnchor.constraint(equalToConstant: 100.xszen),
+            declineCHatButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            declineCHatButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -self.view.safeAreaInsets.bottom - 30)
+        ])
         declineCHatButton.addTarget(self, action: #selector(AokoiGuni), for: .touchUpInside)
         
     }
@@ -125,9 +140,14 @@ class CaYerllcationCraxaw: UIViewController {
         aminVoverima.layer.masksToBounds = true
         aminVoverima.contentMode = .scaleAspectFill
         view.addSubview(aminVoverima)
-        aminVoverima.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        aminVoverima.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            aminVoverima.topAnchor.constraint(equalTo: self.view.topAnchor),
+            aminVoverima.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            aminVoverima.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            aminVoverima.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
         
         
         AVCaptureDevice.requestAccess(for: .video) { granted in
@@ -159,12 +179,14 @@ class CaYerllcationCraxaw: UIViewController {
         minager.layer.masksToBounds = true
         minager.contentMode = .scaleToFill
         view.addSubview(minager)
-        minager.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(16.xszen)
-            make.width.equalTo(114.xszen)
-            make.height.equalTo(163.xszen)
-            make.top.equalTo(self.virofeCHatButton.snp.bottom).offset(50)
-        }
+        minager.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            minager.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.xszen),
+            minager.widthAnchor.constraint(equalToConstant: 114.xszen),
+            minager.heightAnchor.constraint(equalToConstant: 163.xszen),
+            minager.topAnchor.constraint(equalTo: self.virofeCHatButton.bottomAnchor, constant: 50)
+        ])
        
         
         
@@ -182,17 +204,22 @@ class CaYerllcationCraxaw: UIViewController {
     func loadinGscv()  {
         view.addSubview(idperform)
         view.addSubview(poosTitle)
-        idperform.snp.makeConstraints { make in
-            make.width.height.equalTo(40)
-            make.leading.equalToSuperview().inset(15)
-            make.top.equalToSuperview().offset(UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
-        }
+        idperform.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            idperform.widthAnchor.constraint(equalToConstant: 40),
+            idperform.heightAnchor.constraint(equalToConstant: 40),
+            idperform.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
+            idperform.topAnchor.constraint(equalTo: self.view.topAnchor, constant: UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
+        ])
         
         
-        poosTitle.snp.makeConstraints { make in
-           
-            make.center.equalToSuperview()
-        }
+        poosTitle.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            poosTitle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            poosTitle.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        ])
         
         
        

@@ -75,9 +75,12 @@ class CoammutictiDrcxaw: CSindancwDrcxaw {
         NotificationCenter.default.addObserver(self, selector: #selector(paperNoginb), name: .init("blockActionusert"), object: nil)
         poseEmptyTitle.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         view.addSubview(poseEmptyTitle)
-        poseEmptyTitle.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-        }
+        poseEmptyTitle.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            poseEmptyTitle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            poseEmptyTitle.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        ])
         poseEmptyTitle.isHidden = true
     }
     override func viewDidLoad() {
@@ -92,10 +95,12 @@ class CoammutictiDrcxaw: CSindancwDrcxaw {
         view.addSubview(poosTitle)
         poosTitle.textAlignment = .left
         poosTitle.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        poosTitle.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(16)
-            make.top.equalToSuperview().offset(UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
-        }
+        poosTitle.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            poosTitle.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16),
+            poosTitle.topAnchor.constraint(equalTo: self.view.topAnchor, constant: UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
+        ])
         
         
         
@@ -103,11 +108,14 @@ class CoammutictiDrcxaw: CSindancwDrcxaw {
         
         view.addSubview(remoteNi)
         remoteNi.setImage(UIImage.init(named: "planeFeiji"), for: .normal)
-        remoteNi.snp.makeConstraints { make in
-            make.right.equalToSuperview().inset(15.xszen)
-            make.width.height.equalTo(46.xszen)
-            make.centerY.equalTo(poosTitle)
-        }
+        remoteNi.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            remoteNi.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15.xszen),
+            remoteNi.widthAnchor.constraint(equalToConstant: 46.xszen),
+            remoteNi.heightAnchor.constraint(equalToConstant: 46.xszen),
+            remoteNi.centerYAnchor.constraint(equalTo: poosTitle.centerYAnchor)
+        ])
         remoteNi.addTarget(self, action: #selector(createrINamog), for: .touchUpInside)
         //tyoe
         AddinserThreTyoe()
@@ -143,11 +151,14 @@ class CoammutictiDrcxaw: CSindancwDrcxaw {
         
         topayuCViewPOSM.register(UINib(nibName: "CrkllDComu", bundle: nil), forCellWithReuseIdentifier: "POSMCrkllDComuID")
         self.view.addSubview(topayuCViewPOSM)
-        topayuCViewPOSM.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(acrOllvirw.snp.bottom).offset(10)
-            make.bottom.equalToSuperview()
-        }
+        topayuCViewPOSM.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            topayuCViewPOSM.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            topayuCViewPOSM.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            topayuCViewPOSM.topAnchor.constraint(equalTo: acrOllvirw.bottomAnchor, constant: 10),
+            topayuCViewPOSM.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
     }
     
     
@@ -160,11 +171,14 @@ class CoammutictiDrcxaw: CSindancwDrcxaw {
 //        acrOllvirw.isPagingEnabled = true
         acrOllvirw.showsHorizontalScrollIndicator = false
         self.view.addSubview(acrOllvirw)
-        acrOllvirw.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalTo(self.poosTitle.snp.bottom).offset(20.xszen)
-            make.height.equalTo(40)
-        }
+        acrOllvirw.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            acrOllvirw.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            acrOllvirw.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            acrOllvirw.topAnchor.constraint(equalTo: self.poosTitle.bottomAnchor, constant: 20.xszen),
+            acrOllvirw.heightAnchor.constraint(equalToConstant: 40)
+        ])
         
         for (fihg,iteg) in ["blindsome","singlesome","twosome","multsome"].enumerated() {
             let Scaguobauuton = UIButton.init(frame: CGRect.init(x: 15 + (115 + 6)*Double(fihg), y: 0, width: 115, height: 40))

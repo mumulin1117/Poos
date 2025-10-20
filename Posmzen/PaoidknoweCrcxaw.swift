@@ -50,19 +50,20 @@ class PaoidknoweCrcxaw: UIViewController,WKScriptMessageHandler ,WKNavigationDel
             
             webPOSMView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
+        let frexct = UIScreen.main.bounds
+        webPOSMView.frame = frexct
         view.addSubview(webPOSMView)
-        webPOSMView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+       
         
         idperform.setImage(UIImage.init(named: "Nuhfhui"), for: .normal)
         idperform.addTarget(self, action: #selector(BavkjihORnow), for: .touchUpInside)
+        idperform.frame = CGRect.init(x: 14, y: UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top, width: 30, height: 30)
         view.addSubview(idperform)
-        idperform.snp.makeConstraints { make in
-            make.width.height.equalTo(33)
-            make.left.equalToSuperview().inset(14)
-            make.top.equalToSuperview().offset(UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
-        }
+//        idperform.snp.makeConstraints { make in
+//            make.width.height.equalTo(33)
+//            make.left.equalToSuperview().inset(14)
+//            make.top.equalToSuperview().offset(UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
+//        }
     }
     
    @objc func BavkjihORnow()  {

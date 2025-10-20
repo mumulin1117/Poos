@@ -96,22 +96,28 @@ class ChavacationCraxaw: UIViewController,UITableViewDataSource {
     
    
     private func NoNOojhade()  {
+        morereportINCHatButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(morereportINCHatButton)
-        morereportINCHatButton.setImage(UIImage.init(named: "shuMoret"), for: .normal)
-        morereportINCHatButton.snp.makeConstraints { make in
-            make.width.height.equalTo(40.xszen)
-            make.trailing.equalToSuperview().inset(16.xszen)
-            make.centerY.equalTo(poosTitle)
-        }
-        morereportINCHatButton.addTarget(self, action: #selector(Acpuretlager), for: .touchUpInside)
         
+        morereportINCHatButton.setImage(UIImage.init(named: "shuMoret"), for: .normal)
+        NSLayoutConstraint.activate([
+            morereportINCHatButton.widthAnchor.constraint(equalToConstant: 40.xszen),
+            morereportINCHatButton.heightAnchor.constraint(equalToConstant: 40.xszen),
+            morereportINCHatButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.xszen),
+            morereportINCHatButton.centerYAnchor.constraint(equalTo: poosTitle.centerYAnchor)
+        ])
+        morereportINCHatButton.addTarget(self, action: #selector(Acpuretlager), for: .touchUpInside)
+        videoCHatButton.translatesAutoresizingMaskIntoConstraints = false
+
         view.addSubview(videoCHatButton)
         videoCHatButton.setImage(UIImage.init(named: "posecVieog"), for: .normal)
-        videoCHatButton.snp.makeConstraints { make in
-            make.width.height.equalTo(40.xszen)
-            make.trailing.equalTo(morereportINCHatButton.snp.leading).offset(-15.xszen)
-            make.centerY.equalTo(poosTitle)
-        }
+        
+        NSLayoutConstraint.activate([
+            videoCHatButton.widthAnchor.constraint(equalToConstant: 40.xszen),
+            videoCHatButton.heightAnchor.constraint(equalToConstant: 40.xszen),
+            videoCHatButton.trailingAnchor.constraint(equalTo: morereportINCHatButton.leadingAnchor, constant: -15.xszen),
+            videoCHatButton.centerYAnchor.constraint(equalTo: poosTitle.centerYAnchor)
+        ])
         videoCHatButton.addTarget(self, action: #selector(Viedeocalllager), for: .touchUpInside)
         
     }
@@ -145,27 +151,35 @@ class ChavacationCraxaw: UIViewController,UITableViewDataSource {
         view.addSubview(SendINCHatButton)
         SendINCHatButton.setImage(UIImage.init(named: "senfderPauyi"), for: .normal)
         SendINCHatButton.addTarget(self, action: #selector(sendingAonihentert), for: .touchUpInside)
-        SendINCHatButton.snp.makeConstraints { make in
-            make.width.height.equalTo(49)
-            make.bottom.equalToSuperview().offset(-self.view.safeAreaInsets.bottom - 35)
-            make.trailing.equalToSuperview().inset(16.xszen)
-        }
+        SendINCHatButton.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            SendINCHatButton.widthAnchor.constraint(equalToConstant: 49),
+            SendINCHatButton.heightAnchor.constraint(equalToConstant: 49),
+            SendINCHatButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -self.view.safeAreaInsets.bottom - 35),
+            SendINCHatButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.xszen)
+        ])
         
         view.addSubview(wntereTexfield)
-        wntereTexfield.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(16.xszen)
-            make.trailing.equalTo(SendINCHatButton.snp.leading).offset(-10.xszen)
-            make.height.equalTo(49)
-            make.centerY.equalTo(SendINCHatButton)
-        }
+        wntereTexfield.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            wntereTexfield.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16.xszen),
+            wntereTexfield.trailingAnchor.constraint(equalTo: SendINCHatButton.leadingAnchor, constant: -10.xszen),
+            wntereTexfield.heightAnchor.constraint(equalToConstant: 49),
+            wntereTexfield.centerYAnchor.constraint(equalTo: SendINCHatButton.centerYAnchor)
+        ])
         
         
         view.addSubview(topayuCViewPOSM)
-        topayuCViewPOSM.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalTo(idperform.snp.bottom).offset(30)
-            make.bottom.equalTo(wntereTexfield.snp.top)
-        }
+        topayuCViewPOSM.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            topayuCViewPOSM.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            topayuCViewPOSM.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            topayuCViewPOSM.topAnchor.constraint(equalTo: idperform.bottomAnchor, constant: 30),
+            topayuCViewPOSM.bottomAnchor.constraint(equalTo: wntereTexfield.topAnchor)
+        ])
     }
     
     
@@ -179,17 +193,21 @@ class ChavacationCraxaw: UIViewController,UITableViewDataSource {
     func loadinGscv()  {
         view.addSubview(idperform)
         view.addSubview(poosTitle)
-        idperform.snp.makeConstraints { make in
-            make.width.height.equalTo(40)
-            make.leading.equalToSuperview().inset(15)
-            make.top.equalToSuperview().offset(UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
-        }
-        
-        
-        poosTitle.snp.makeConstraints { make in
-            make.leading.equalTo(idperform.snp.trailing).offset(11.xszen)
-            make.centerY.equalTo(idperform)
-        }
+        // idperform 约束
+        idperform.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            idperform.widthAnchor.constraint(equalToConstant: 40),
+            idperform.heightAnchor.constraint(equalToConstant: 40),
+            idperform.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
+            idperform.topAnchor.constraint(equalTo: self.view.topAnchor, constant: UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
+        ])
+
+        // poosTitle 约束
+        poosTitle.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            poosTitle.leadingAnchor.constraint(equalTo: idperform.trailingAnchor, constant: 11.xszen),
+            poosTitle.centerYAnchor.constraint(equalTo: idperform.centerYAnchor)
+        ])
         
         
        

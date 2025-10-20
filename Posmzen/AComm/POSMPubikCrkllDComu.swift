@@ -76,9 +76,14 @@ class POSMPubikCrkllDComu: UIViewController,UITextViewDelegate {
         sharecontVater.delegate = self
         
         view.addSubview(uplaoinghavier)
-        uplaoinghavier.snp.makeConstraints { make in
-            make.edges.equalTo(onwruipose)
-        }
+        uplaoinghavier.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            uplaoinghavier.topAnchor.constraint(equalTo: onwruipose.topAnchor),
+            uplaoinghavier.leadingAnchor.constraint(equalTo: onwruipose.leadingAnchor),
+            uplaoinghavier.trailingAnchor.constraint(equalTo: onwruipose.trailingAnchor),
+            uplaoinghavier.bottomAnchor.constraint(equalTo: onwruipose.bottomAnchor)
+        ])
         onwruipose.layer.cornerRadius = 15
         onwruipose.layer.masksToBounds = true
         
@@ -165,9 +170,16 @@ extension POSMPubikCrkllDComu: UINavigationControllerDelegate, UIImagePickerCont
                 if self.asBert.count == 0{
                     self.asBert.append(image)
                     self.onwruipose.image = image
-                    self.uplaoinghavier.snp.remakeConstraints { make in
-                        make.edges.equalTo(self.onetwruipose)
-                    }
+                    self.uplaoinghavier.translatesAutoresizingMaskIntoConstraints = false
+
+                    NSLayoutConstraint.deactivate(self.uplaoinghavier.constraints)
+
+                    NSLayoutConstraint.activate([
+                        self.uplaoinghavier.topAnchor.constraint(equalTo: self.onetwruipose.topAnchor),
+                        self.uplaoinghavier.leadingAnchor.constraint(equalTo: self.onetwruipose.leadingAnchor),
+                        self.uplaoinghavier.trailingAnchor.constraint(equalTo: self.onetwruipose.trailingAnchor),
+                        self.uplaoinghavier.bottomAnchor.constraint(equalTo: self.onetwruipose.bottomAnchor)
+                    ])
                     return
                 }
                 
@@ -175,9 +187,18 @@ extension POSMPubikCrkllDComu: UINavigationControllerDelegate, UIImagePickerCont
                 if self.asBert.count == 1{
                     self.asBert.append(image)
                     self.onetwruipose.image = image
-                    self.uplaoinghavier.snp.remakeConstraints { make in
-                        make.edges.equalTo(self.onwsanruipose)
-                    }
+                    self.uplaoinghavier.translatesAutoresizingMaskIntoConstraints = false
+
+                    // 移除现有约束
+                    NSLayoutConstraint.deactivate(self.uplaoinghavier.constraints)
+
+                    // 添加新约束
+                    NSLayoutConstraint.activate([
+                        self.uplaoinghavier.topAnchor.constraint(equalTo: self.onwsanruipose.topAnchor),
+                        self.uplaoinghavier.leadingAnchor.constraint(equalTo: self.onwsanruipose.leadingAnchor),
+                        self.uplaoinghavier.trailingAnchor.constraint(equalTo: self.onwsanruipose.trailingAnchor),
+                        self.uplaoinghavier.bottomAnchor.constraint(equalTo: self.onwsanruipose.bottomAnchor)
+                    ])
                     return
                 }
                 

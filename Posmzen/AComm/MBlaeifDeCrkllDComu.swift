@@ -21,9 +21,14 @@ class MBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDeleg
         self.icalaert.addSubview(maingAlertView)
         
         
-        maingAlertView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        maingAlertView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            maingAlertView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            maingAlertView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            maingAlertView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            maingAlertView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
         
         allMonster()
     }
@@ -141,11 +146,16 @@ class MBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDeleg
         
         jemoNameSeting.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(TOafijol)))
         jemoAvtoer.layer.cornerRadius = 20
-        poseInjuioView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-            make.width.equalTo(UIScreen.main.bounds.width - 32)
-            make.height.equalTo(1200)
-        }
+        poseInjuioView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            poseInjuioView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            poseInjuioView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            poseInjuioView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            poseInjuioView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            poseInjuioView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32),
+            poseInjuioView.heightAnchor.constraint(equalToConstant: 1200)
+        ])
         NotificationCenter.default.addObserver(self, selector: #selector(paperNoginb), name: .init("blockActionusert"), object: nil)
         jemoAvtoer.layer.masksToBounds = true
         

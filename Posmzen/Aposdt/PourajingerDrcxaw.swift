@@ -193,58 +193,75 @@ class PourajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollectionV
     func loadinGscv()  {
         view.addSubview(idperform)
         view.addSubview(poosTitle)
-        idperform.snp.makeConstraints { make in
-            make.width.height.equalTo(40)
-            make.leading.equalToSuperview().inset(15)
-            make.top.equalToSuperview().offset(UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
-        }
+        idperform.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            idperform.widthAnchor.constraint(equalToConstant: 40),
+            idperform.heightAnchor.constraint(equalToConstant: 40),
+            idperform.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
+            idperform.topAnchor.constraint(equalTo: self.view.topAnchor, constant: UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
+        ])
         
         
-        poosTitle.snp.makeConstraints { make in
-            make.leading.equalTo(idperform.snp.trailing).offset(11.xszen)
-            make.centerY.equalTo(idperform)
-        }
-        
+        poosTitle.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            poosTitle.leadingAnchor.constraint(equalTo: idperform.trailingAnchor, constant: 11.xszen),
+            poosTitle.centerYAnchor.constraint(equalTo: idperform.centerYAnchor)
+        ])
         
         let BlanceBackgroun = UIImageView.init(image: UIImage.init(named: "apioderblance"))
         BlanceBackgroun.contentMode = .scaleToFill
         view.addSubview(BlanceBackgroun)
-        BlanceBackgroun.snp.makeConstraints { make in
-            make.left.equalTo(idperform)
-            make.height.equalTo(77)
-            make.width.equalTo(237)
-            make.top.equalTo(idperform.snp.bottom).offset(23)
-        }
+        BlanceBackgroun.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            BlanceBackgroun.leftAnchor.constraint(equalTo: idperform.leftAnchor),
+            BlanceBackgroun.heightAnchor.constraint(equalToConstant: 77),
+            BlanceBackgroun.widthAnchor.constraint(equalToConstant: 237),
+            BlanceBackgroun.topAnchor.constraint(equalTo: idperform.bottomAnchor, constant: 23)
+        ])
         
         let pigBackgroun = UIImageView.init(image: UIImage.init(named: "panfHUf"))
         pigBackgroun.contentMode = .scaleToFill
         view.addSubview(pigBackgroun)
-        pigBackgroun.snp.makeConstraints { make in
-            make.right.equalToSuperview()
-            make.height.equalTo(127)
-            make.width.equalTo(188)
-            make.centerY.equalTo(BlanceBackgroun)
-        }
+        pigBackgroun.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            pigBackgroun.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            pigBackgroun.heightAnchor.constraint(equalToConstant: 127),
+            pigBackgroun.widthAnchor.constraint(equalToConstant: 188),
+            pigBackgroun.centerYAnchor.constraint(equalTo: BlanceBackgroun.centerYAnchor)
+        ])
         
         view.addSubview(pigCoverBackgroun)
         pigCoverBackgroun.isUserInteractionEnabled = true
-        pigCoverBackgroun.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalTo(BlanceBackgroun.snp.bottom).offset(5)
-        }
+        pigCoverBackgroun.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            pigCoverBackgroun.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            pigCoverBackgroun.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            pigCoverBackgroun.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            pigCoverBackgroun.topAnchor.constraint(equalTo: BlanceBackgroun.bottomAnchor, constant: 5)
+        ])
         
         pigCoverBackgroun.addSubview(topayuCViewPOSM)
-        topayuCViewPOSM.snp.makeConstraints { make in
-            make.bottom.equalToSuperview()
-            make.left.right.equalToSuperview().inset(14)
-            make.top.equalTo(pigCoverBackgroun).offset(39.xszen)
-        }
+        topayuCViewPOSM.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            topayuCViewPOSM.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            topayuCViewPOSM.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 14),
+            topayuCViewPOSM.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -14),
+            topayuCViewPOSM.topAnchor.constraint(equalTo: pigCoverBackgroun.topAnchor, constant: 39.xszen)
+        ])
         
         BlanceBackgroun.addSubview(balanceLabel)
-        balanceLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(20)
-            make.centerY.equalToSuperview()
-        }
+        balanceLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            balanceLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
+            balanceLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        ])
     }
 
     

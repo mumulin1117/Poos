@@ -31,12 +31,14 @@ class RelaivintonDrcxia: UIViewController {
                 usegbuttonh.layer.borderWidth = 1
                 
                 view.addSubview(usegbuttonh)
-                usegbuttonh.snp.makeConstraints { make in
-                    make.left.equalToSuperview().offset(15 + (100 + 10)*sje)
-                    make.top.equalTo(poosTitle.snp.bottom).offset(29)
-                    make.width.height.equalTo(100)
-                  
-                }
+                usegbuttonh.translatesAutoresizingMaskIntoConstraints = false
+
+                NSLayoutConstraint.activate([
+                    usegbuttonh.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: CGFloat(15 + (100 + 10) * sje)),
+                    usegbuttonh.topAnchor.constraint(equalTo: poosTitle.bottomAnchor, constant: 29),
+                    usegbuttonh.widthAnchor.constraint(equalToConstant: 100),
+                    usegbuttonh.heightAnchor.constraint(equalToConstant: 100)
+                ])
             }
         }
     }
@@ -88,18 +90,22 @@ class RelaivintonDrcxia: UIViewController {
     func loadinGscv()  {
         view.addSubview(idperform)
         view.addSubview(poosTitle)
-        idperform.snp.makeConstraints { make in
-            make.width.height.equalTo(40)
-            make.leading.equalToSuperview().inset(15)
-            make.top.equalToSuperview().offset(UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
-        }
+        idperform.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            idperform.widthAnchor.constraint(equalToConstant: 40),
+            idperform.heightAnchor.constraint(equalToConstant: 40),
+            idperform.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
+            idperform.topAnchor.constraint(equalTo: self.view.topAnchor, constant: UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
+        ])
         
         
-        poosTitle.snp.makeConstraints { make in
-           
-            make.centerY.equalTo(idperform)
-            make.leading.equalTo(idperform.snp.trailing).offset(10)
-        }
+        poosTitle.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            poosTitle.centerYAnchor.constraint(equalTo: idperform.centerYAnchor),
+            poosTitle.leadingAnchor.constraint(equalTo: idperform.trailingAnchor, constant: 10)
+        ])
         
         
        

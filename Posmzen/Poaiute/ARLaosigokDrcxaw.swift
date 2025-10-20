@@ -73,12 +73,14 @@ class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
         shutterView.alpha = 0
         
         VogueLens.addTarget(self, action: #selector(anaysyeGesture), for: .touchUpInside)
-        VogueLens.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.height.equalTo(52)
-            make.width.equalTo(335)
-            make.bottom.equalToSuperview().offset(-self.view.safeAreaInsets.bottom - 65)
-        }
+        VogueLens.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            VogueLens.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            VogueLens.heightAnchor.constraint(equalToConstant: 52),
+            VogueLens.widthAnchor.constraint(equalToConstant: 335),
+            VogueLens.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -self.view.safeAreaInsets.bottom - 65)
+        ])
         
         EchoSnapPOOS()
         
@@ -120,12 +122,14 @@ class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
         
         // 添加虚拟滤镜效果
         view.addSubview(matherlang)
-        matherlang.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.height.equalTo(129)
-            make.width.equalTo(214)
-            make.bottom.equalToSuperview().offset(-self.view.safeAreaInsets.bottom - 85 - 52 - 20)
-        }
+        matherlang.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            matherlang.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            matherlang.heightAnchor.constraint(equalToConstant: 129),
+            matherlang.widthAnchor.constraint(equalToConstant: 214),
+            matherlang.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -self.view.safeAreaInsets.bottom - 85 - 52 - 20)
+        ])
       
     }
 

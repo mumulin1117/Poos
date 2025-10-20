@@ -36,10 +36,12 @@ class PADstDrcxaw: CSindancwDrcxaw {
         view.addSubview(poosTitle)
         poosTitle.textAlignment = .left
         poosTitle.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        poosTitle.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(16)
-            make.top.equalToSuperview().offset(UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
-        }
+        poosTitle.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            poosTitle.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16),
+            poosTitle.topAnchor.constraint(equalTo: self.view.topAnchor, constant: UIApplication.statusBarHhtPOSM + self.view.safeAreaInsets.top)
+        ])
         
         
         
@@ -50,11 +52,14 @@ class PADstDrcxaw: CSindancwDrcxaw {
         
         view.addSubview(remoteNi)
         remoteNi.setImage(UIImage.init(named: "remotenotiu"), for: .normal)
-        remoteNi.snp.makeConstraints { make in
-            make.right.equalToSuperview().inset(16)
-            make.width.height.equalTo(46)
-            make.centerY.equalTo(poosTitle)
-        }
+        remoteNi.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            remoteNi.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16),
+            remoteNi.widthAnchor.constraint(equalToConstant: 46),
+            remoteNi.heightAnchor.constraint(equalToConstant: 46),
+            remoteNi.centerYAnchor.constraint(equalTo: poosTitle.centerYAnchor)
+        ])
         remoteNi.addTarget(self, action: #selector(actoglle), for: .touchUpInside)
         
         setingColoop()
@@ -67,11 +72,14 @@ class PADstDrcxaw: CSindancwDrcxaw {
         
         view.addSubview(idperform)
         idperform.setBackgroundImage(UIImage.init(named: "idperform"), for: .normal)
-        idperform.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalTo(poosTitle.snp.centerY)
-            make.height.equalTo(147.xszen)
-        }
+        idperform.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            idperform.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            idperform.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            idperform.topAnchor.constraint(equalTo: poosTitle.centerYAnchor),
+            idperform.heightAnchor.constraint(equalToConstant: 147.xszen)
+        ])
         refreshShutterButtonState()
     }
     
@@ -105,11 +113,14 @@ class PADstDrcxaw: CSindancwDrcxaw {
         
         topayuCViewPOSM.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "nortyoCellIFd")
         self.view.addSubview(topayuCViewPOSM)
-        topayuCViewPOSM.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(idperform.snp.bottom).offset(20.xszen)
-            make.height.equalTo(70.xszen)
-        }
+        topayuCViewPOSM.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            topayuCViewPOSM.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            topayuCViewPOSM.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            topayuCViewPOSM.topAnchor.constraint(equalTo: idperform.bottomAnchor, constant: 20.xszen),
+            topayuCViewPOSM.heightAnchor.constraint(equalToConstant: 70.xszen)
+        ])
     }
     
     
@@ -122,10 +133,14 @@ class PADstDrcxaw: CSindancwDrcxaw {
 //        acrOllvirw.isPagingEnabled = true
         acrOllvirw.showsHorizontalScrollIndicator = false
         self.view.addSubview(acrOllvirw)
-        acrOllvirw.snp.makeConstraints { make in
-            make.leading.bottom.trailing.equalToSuperview()
-            make.top.equalTo(self.topayuCViewPOSM.snp.bottom).offset(20.xszen)
-        }
+        acrOllvirw.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            acrOllvirw.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            acrOllvirw.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            acrOllvirw.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            acrOllvirw.topAnchor.constraint(equalTo: self.topayuCViewPOSM.bottomAnchor, constant: 20.xszen)
+        ])
         
         for (fihg,iteg) in ["single_pai","doublei_pai","multipai_pai"].enumerated() {
             let Scaguobauuton = UIImageView.init(frame: CGRect.init(x: 14.xszen + (252.yszen + 9.xszen)*Double(fihg), y: 0, width: 252.yszen, height: 399.yszen))

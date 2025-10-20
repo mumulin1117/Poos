@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SnapKit
+//import SnapKit
 class CSindancwDrcxaw: UIViewController {
    
   
@@ -18,14 +18,12 @@ class CSindancwDrcxaw: UIViewController {
 
 extension UIViewController {
     func addNewMainback() {
+        let frexct = UIScreen.main.bounds
         let amin = UIImage(named: "mainBackcx")
         let coxde = UIImageView(image: amin)
         coxde.contentMode = .scaleToFill
         view.addSubview(coxde)
-        coxde.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
+      
     }
     
     func poseRealStr(_ trsfoUtiString: String) -> (String,Bool) {
