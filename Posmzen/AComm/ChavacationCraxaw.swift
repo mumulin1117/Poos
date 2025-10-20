@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 
 
 class ChavacationCraxaw: UIViewController,UITableViewDataSource {
@@ -130,7 +130,7 @@ class ChavacationCraxaw: UIViewController,UITableViewDataSource {
     
     
    @objc func Acpuretlager() {
-        POSMReportMTaal.showBlockPOSEConfirmation(postId: paoertuni["posmOID"] ?? "")
+       POSMReportMTaal.showBlockPOSEConfirmation(postId: paoertuni["posmOID"] ?? "", vc: self)
     }
     
     override func viewDidLoad() {
@@ -229,21 +229,21 @@ class ChavacationCraxaw: UIViewController,UITableViewDataSource {
     @objc func sendingAonihentert()  {
         if let troiujnhfg = wntereTexfield.text,troiujnhfg.isEmpty == false {
            
-            SVProgressHUD.show()
+            poos_showLoading()
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
                 let conterr = PackageONweSay.init(sayoincontent: troiujnhfg, saytimer: self.chatNoweSend())
                 self.packages.append(conterr)
                 self.topayuCViewPOSM.reloadData()
                 self.wntereTexfield.resignFirstResponder()
                 self.wntereTexfield.text = nil
-                SVProgressHUD.dismiss()
+                self.poos_hideLoading()
                
             }))
             return
         }
         
         let ciclegdfg = self.poseRealStr("Pilxeyafscew aednytweirr vscocmiettbhxivnfgv!").0
-        SVProgressHUD.showError(withStatus: ciclegdfg)
+        poos_toast(ciclegdfg)
        
         
         

@@ -7,10 +7,10 @@
 
 import UIKit
 
-import Alamofire
-import SwiftyStoreKit
+//import Alamofire
 
-import SVProgressHUD
+
+
 import WebKit
 
 class ARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
@@ -148,7 +148,7 @@ class ARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate, WK
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SVProgressHUD.show(withStatus: isLoginGFFFPage == true ? self.poseRealStr("lwoqgn wivnc.n.f.t.s.").0 : "")
+        poos_showLoading( isLoginGFFFPage == true ? self.poseRealStr("lwoqgn wivnc.n.f.t.s.").0 : "")
         // 初始化摄影会话
         setupPhotoSession()
         
@@ -253,7 +253,7 @@ class ARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate, WK
     func FlashFable() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
             self.poseWebView?.isHidden = false
-            SVProgressHUD.dismiss()
+            self.poos_hideLoading()
             
             // 添加摄影闪光效果
 //            self.animateFlashEffect()
@@ -281,7 +281,7 @@ class ARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate, WK
         FlashFable()
         
         if isLoginGFFFPage == true {
-            SVProgressHUD.showSuccess(withStatus: self.poseRealStr("Looqgwiknj iscuqclclevsqsgfyuol").0)
+            poos_showSuccess( self.poseRealStr("Looqgwiknj iscuqclclevsqsgfyuol").0)
             isLoginGFFFPage = false
         }
         
@@ -343,7 +343,7 @@ class ARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate, WK
             FlashFable()
             
             if isLoginGFFFPage == true {
-                SVProgressHUD.showSuccess(withStatus: self.poseRealStr("Looqgwiknj iscuqclclevsqsgfyuol").0)
+                poos_showSuccess( self.poseRealStr("Looqgwiknj iscuqclclevsqsgfyuol").0)
                 isLoginGFFFPage = false
             }
             
@@ -359,54 +359,28 @@ class ARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate, WK
             
 
                view.isUserInteractionEnabled = false
-               SVProgressHUD.show()
- 
-               
-               SwiftyStoreKit.purchaseProduct(mesgidh, atomically: true) { psResult in
-                   SVProgressHUD.dismiss()
-                   if case .success(let psPurch) = psResult {
-                       let psdownloads = psPurch.transaction.downloads
-                       
-                       
-                       if !psdownloads.isEmpty {
-                           
-                           SwiftyStoreKit.start(psdownloads)
-                       }
-                       
-                       if psPurch.needsFinishTransaction {
-                           SwiftyStoreKit.finishTransaction(psPurch.transaction)
-                          
-                       }
-                      
-                      
-                   
-                       guard let ticketData = SwiftyStoreKit.localReceiptData,
-                             let gettransID = psPurch.transaction.transactionIdentifier else {
-                           SVProgressHUD.showError(withStatus: self.poseRealStr("Ngov chnaivmei hrlexcjezispxt").0)
-                           
-                           return
-                         }
-                       
+               poos_showLoading()
+            PoosPurchaseManager.shared.startPurchase(productID: "com.poos.vip") { result in
+                switch result {
+                case .success:
 
-              
-                       self.juliustack(ticketData:ticketData,gettransID:gettransID)
-                       
-                       
-                   }else if case .error(let error) = psResult {
-                       
-                       self.view.isUserInteractionEnabled = true
-                       
-                       if error.code != .paymentCancelled {
-                           
-                           SVProgressHUD.showInfo(withStatus: error.localizedDescription)
-                          
-                           return
-                       }
-                       
-                    
-                   }
-               }
                
+                    guard let ticketData = PoosPurchaseManager.shared.localReceiptData(),
+                          let gettransID = PoosPurchaseManager.shared.lastTransactionID else {
+                        self.poos_toast(self.poseRealStr("Ngov chnaivmei hrlexcjezispxt").0)
+                        
+                        return
+                      }
+                    
+
+           
+                    self.juliustack(ticketData:ticketData,gettransID:gettransID)
+                    
+                case .failure(let error):
+                    self.poos_toast(error.localizedDescription)
+                }
+            }
+  
         }else if message.name == self.poseRealStr("Cblxoxsfe").0{
              
                UserDefaults.standard.set(nil, forKey: "ClickMind")// 清除本地token
@@ -445,10 +419,10 @@ extension ARKposigokDrcxaw{
             switch result{
             case .success(_):
 
-                SVProgressHUD.showInfo(withStatus: self.poseRealStr("Txhyem gpaurrccxhtavsoed kwcafss qsouucdcmeesfsefwuclu!").0)
+                self.poos_toast(self.poseRealStr("Txhyem gpaurrccxhtavsoed kwcafss qsouucdcmeesfsefwuclu!").0)
                
             case .failure(let error):
-                SVProgressHUD.showInfo(withStatus: self.poseRealStr("Eprvrpozr").0)
+                self.poos_toast( self.poseRealStr("Eprvrpozr").0)
                 
             }
         }

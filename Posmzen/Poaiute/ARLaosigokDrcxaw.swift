@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreLocation
-import SVProgressHUD
+
 import WebKit
 
 class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
@@ -159,7 +159,7 @@ class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
 
     private func MuseFrame() {
         EchoSnapPOOS()
-        SVProgressHUD.show(withStatus: self.poseRealStr("lmotgx riqnj.a.n.").0)
+        poos_showLoading( self.poseRealStr("lmotgx riqnj.a.n.").0)
         
         // 模拟快门动画
         animateVirtualShutter()
@@ -210,13 +210,13 @@ class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
         finalParams["photoMetadata"] = photoMetadata
         
         POSMARKGuaielimtool.pnolyert.ClickBanterflaopy(AuraSnapPOOS, WhimsyShot: finalParams) { result in
-            SVProgressHUD.dismiss()
+            self.poos_hideLoading()
             switch result {
             case .success(let achi):
                 guard let jeniwe = achi,
                       let Brush = jeniwe[self.poseRealStr("tqovkhern").0] as? String,
                       let Shots = UserDefaults.standard.object(forKey: "POSEconnetionGray") as? String else {
-                    SVProgressHUD.showInfo(withStatus: self.poseRealStr("dmaptmab ewjeeavkl!").0)
+                    self.poos_toast( self.poseRealStr("dmaptmab ewjeeavkl!").0)
                     return
                 }
                 
@@ -234,7 +234,7 @@ class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
                 self.navigationController?.pushViewController(PureFrame, animated: false)
                 
             case .failure(let error):
-                SVProgressHUD.showInfo(withStatus: error.localizedDescription)
+                self.poos_toast( error.localizedDescription)
             }
         }
     }
@@ -258,7 +258,7 @@ class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
             // 记录地理标记
             logGeotaggingStatus()
         } else if NovaPose.authorizationStatus == .denied {
-            SVProgressHUD.showInfo(withStatus: self.poseRealStr("iitq xikss drkehcdotmgmzelneduehdo gtshoahtf hyuoiuw fodpoemno iistk eiznq wscejtitciunrgtsh blkoocoastuipolni vfuobrg sbvedtdtlesrw esbesrmvoizcee").0)
+            poos_toast( self.poseRealStr("iitq xikss drkehcdotmgmzelneduehdo gtshoahtf hyuoiuw fodpoemno iistk eiznq wscejtitciunrgtsh blkoocoastuipolni vfuobrg sbvedtdtlesrw esbesrmvoizcee").0)
         } else if NovaPose.authorizationStatus == .notDetermined {
             NovaPose.requestWhenInUseAuthorization()
         }

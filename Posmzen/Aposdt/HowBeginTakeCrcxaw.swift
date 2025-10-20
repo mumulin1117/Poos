@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 class HowBeginTakeCrcxaw: POSMBuetonVSontro {
     var ifuploafMy:Bool = false
     
@@ -45,11 +45,11 @@ class HowBeginTakeCrcxaw: POSMBuetonVSontro {
         
         guard ifuploafMy == true else {
             let posetit = self.poseRealStr("Txavkmei fah zfyoblbltoowdiwnigr jpuhxoytbom yfaibrnscta!").0
-            SVProgressHUD.showError(withStatus: posetit)
+            poos_toast( posetit)
             return
         }
         let loadtii = self.poseRealStr("Ucpklcorazdf.i.d.").0
-        SVProgressHUD.show(withStatus: loadtii)
+        poos_showLoading( loadtii)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
             self.adeonigu()
             
@@ -77,7 +77,7 @@ class HowBeginTakeCrcxaw: POSMBuetonVSontro {
     
     private func adeonigu()  {
         let loaduptii = self.poseRealStr("Ujphlzovandd xssugcmcreosnsafmulld,x ryiojumrr asyhtatrhirnggz bwnijlfln ibyez bdyiiscptlyagyxecdd panfztiemrd wakpmpjrkoevfaulu!").0
-        SVProgressHUD.showSuccess(withStatus:loaduptii)
+        poos_showSuccess(loaduptii)
         
         self.navigationController?.popToRootViewController(animated: true)
     }

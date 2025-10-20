@@ -1,34 +1,16 @@
 PODS:
-  - Alamofire (5.10.2)
   - iCarousel (1.8.3)
-  - IQKeyboardManager (6.5.19)
-  - SVProgressHUD (2.3.1):
-    - SVProgressHUD/Core (= 2.3.1)
-  - SVProgressHUD/Core (2.3.1)
-  - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
-  - Alamofire
   - iCarousel
-  - IQKeyboardManager
-  - SVProgressHUD
-  - SwiftyStoreKit
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - iCarousel
-    - IQKeyboardManager
-    - SVProgressHUD
-    - SwiftyStoreKit
 
 SPEC CHECKSUMS:
-  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
-  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
-  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
-  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 806939600b356e7af9bf98ab8c8403021d42f3a4
+PODFILE CHECKSUM: 6b5456bbf071c5f5ab31627c1009a75be13c5409
 
 COCOAPODS: 1.16.2

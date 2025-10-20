@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 class SonggongLogDrcxaw: UIViewController {
 
     @IBOutlet weak var poosBeginmenr: UIButton!
@@ -50,13 +50,13 @@ class SonggongLogDrcxaw: UIViewController {
        
      
         if emailPOSM.isEmpty,pos.first ?? 0 > 1 {
-            SVProgressHUD.showError(withStatus: singklernwe0)
+            poos_toast( singklernwe0)
             return ("",false)
         }
         let singklernwe1 = self.poseRealStr("Pwlleyahsnez ieanlteeerr lyookudrn qetmiadirlv ypmagsqscwuorrpd").0
        
         if passwordPOSM.isEmpty,pos.first ?? 0 > 1 {
-            SVProgressHUD.showError(withStatus: singklernwe1)
+            poos_toast(singklernwe1)
             return ("",false)
         }
         
@@ -67,14 +67,14 @@ class SonggongLogDrcxaw: UIViewController {
        
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", mnhyujiufyo())
         if emailPredicate.evaluate(with: emailPOSM) == false{
-            SVProgressHUD.showError(withStatus: singklernwe2)
+            poos_toast( singklernwe2)
             return ("",false)
         }
         
         let sodfgkos = self.poseRealStr("Pzalsusxwqoyrkdc nmhufsztq thvagvyee caote nlwesahsttq bspipxa jddiugsiqtps").0
         
         if passwordPOSM.count < 6 {
-            SVProgressHUD.showError(withStatus: sodfgkos)
+            poos_toast( sodfgkos)
             return (emailPOSM,false)
         }
        
@@ -101,7 +101,7 @@ class SonggongLogDrcxaw: UIViewController {
             //
             let singklernwe = self.poseRealStr("Byyd gcaornntyipnvumitnqgp,x dygogub mavgtrfefew dtsow vtchoek nUdsnesra dAkgjrneimleinztc n&y gPurkitvnatciywProplgijcoy").0
             
-            SVProgressHUD.showError(withStatus: singklernwe)
+            poos_toast( singklernwe)
             
  
             UIView.animate(withDuration: 0.3) {
@@ -140,8 +140,8 @@ class SonggongLogDrcxaw: UIViewController {
             self.poiuyttr()
            let Asdf = self.poseRealStr("Cnrkeparteei gancvceobuvnotp wsauaclcoewseslfcujlw!").0
            let awelk = self.poseRealStr("Wueylhcqobmj!").0
-            
-            SVProgressHUD.showSuccess(withStatus:isCreate ? Asdf : awelk)
+        
+            self.poos_showSuccess(isCreate ? Asdf : awelk)
             
         }))
     }
@@ -149,7 +149,7 @@ class SonggongLogDrcxaw: UIViewController {
     func laogininite(isCreate:Bool)  {
         let apo = self.poseRealStr("Cmrderantvee eihnz.p.x.z.").0
         let qwes = self.poseRealStr("lookgk yionc.b.v.c.").0
-         SVProgressHUD.show(withStatus:isCreate ? apo :qwes)
+        poos_toast(isCreate ? apo :qwes)
     }
     
     private func CreaeSinEwAccount()  {

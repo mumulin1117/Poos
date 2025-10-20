@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 class FilrWoerDrcxaw: POSMBuetonVSontro {
     var paoertuni :Dictionary<String,String>{
         get{
@@ -44,7 +44,7 @@ class FilrWoerDrcxaw: POSMBuetonVSontro {
             return
         }
         let invidedionposer = self.poseRealStr("nbou fccaqmfetrdao qpkeerqmpirsgstieozn").0
-        SVProgressHUD.showError(withStatus: invidedionposer)
+        poos_toast( invidedionposer)
     }
     
     
@@ -53,7 +53,7 @@ class FilrWoerDrcxaw: POSMBuetonVSontro {
     @IBAction func hmancbtrg(_ sender: Any) {
         
         let invidedionposer = self.poseRealStr("Ekdmigte dsxumczcqepsxslfyuwll!").0
-        SVProgressHUD.showSuccess(withStatus: invidedionposer)
+        poos_showSuccess( invidedionposer)
         ViewController.lognCacheing = minPusotkj.image ?? UIImage(named: "zhanugijtmgOIUj")!
         
         paoertuni["posmuNime"] = enunockNam.text

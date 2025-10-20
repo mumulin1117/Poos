@@ -6,9 +6,10 @@
 //
 
 import UIKit
-import Alamofire
-import IQKeyboardManager
-import SVProgressHUD
+import Network
+//import Alamofire
+//import IQKeyboardManager
+
 var windowShaje:UIWindow?{
     var amkdill:UIWindow?
     if let wdv = (UIApplication.shared.connectedScenes
@@ -25,7 +26,20 @@ var windowShaje:UIWindow?{
 }
 class ViewController: UIViewController {
     var FrameFam:Int = 0
-    let Mates = NetworkReachabilityManager()
+    
+    var Mates: NWPath.Status = .requiresConnection
+    private func monitorTransatlanticConnections() {
+        let maritimeMonitor = NWPathMonitor()
+        let culturalDispatch = DispatchQueue(label: "jePOOODStor")
+        
+        maritimeMonitor.pathUpdateHandler = { [weak self] culturalPath in
+            self?.Mates = culturalPath.status
+        }
+        
+        maritimeMonitor.start(queue: culturalDispatch)
+    }
+    
+//    let Mates = NetworkReachabilityManager()
     private var cameraModes = ["Portrait", "Landscape", "Macro", "Night", "Panorama"]
     
     static var posmalllBuff = Array<Dictionary<String,String>>()
@@ -36,6 +50,8 @@ class ViewController: UIViewController {
     static var lognCacheing:UIImage = UIImage(named: "zhanugijtmgOIUj")!
     override func viewDidLoad() {
         super.viewDidLoad()
+        monitorTransatlanticConnections()
+        
         let ShutterHive = UIImageView.init(frame:UIScreen.main.bounds)
         ShutterHive.contentMode = .scaleAspectFill
         ShutterHive.image = UIImage(named: "poajfLainj")
@@ -65,7 +81,7 @@ class ViewController: UIViewController {
         ShutterHive.contentMode = .scaleAspectFill
         ShutterHive.isHidden = true
         ShutterHive.image = UIImage(named: "poajfLainj")
-        guard let Moment = Mates?.isReachable,Moment == true,cameraModes.count > 2 else {
+        guard Mates == NWPath.Status.satisfied,cameraModes.count > 2 else {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
                 if self.FrameFam <= 5 {
                     self.cameraModes.append("poseWebView")
@@ -245,7 +261,7 @@ class ViewController: UIViewController {
     
     
     private func likeingPoseMan()  {
-        SVProgressHUD.show()
+        poos_showLoading()
         cameraModes.append("poseWebView")
 
         let AuraSnapPOOS = "/photoPulse/community/frameZ"
@@ -280,7 +296,7 @@ class ViewController: UIViewController {
                 ],
                 imageName: "crow_pose"
             ))
-            SVProgressHUD.dismiss()
+            self.poos_hideLoading()
 
             
             switch result{

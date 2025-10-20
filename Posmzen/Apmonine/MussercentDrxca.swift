@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 
 class MussercentDrxca: UIViewController {
     var paoertuni :Dictionary<String,String>?
@@ -123,7 +123,7 @@ class MussercentDrxca: UIViewController {
     
     
     @IBAction func Acpuretlager(_ sender: UIButton) {
-        POSMReportMTaal.showBlockPOSEConfirmation(postId: paoertuni?["posmOID"] ?? "")
+        POSMReportMTaal.showBlockPOSEConfirmation(postId: paoertuni?["posmOID"] ?? "", vc: self)
     }
     
     
@@ -152,9 +152,9 @@ class MussercentDrxca: UIViewController {
     
     
     @IBAction func adinFollowr(_ sender: UIButton) {
-        SVProgressHUD.show()
+        poos_showLoading()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-            SVProgressHUD.dismiss()
+            self.poos_hideLoading()
             sender.isSelected = !sender.isSelected
             if sender.isSelected == true {
                 ViewController.posmIlikeing.insert(self.paoertuni!)

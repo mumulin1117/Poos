@@ -22,6 +22,7 @@ extension UIViewController {
         let amin = UIImage(named: "mainBackcx")
         let coxde = UIImageView(image: amin)
         coxde.contentMode = .scaleToFill
+        coxde.frame = UIScreen.main.bounds
         view.addSubview(coxde)
       
     }

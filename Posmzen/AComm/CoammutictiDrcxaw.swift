@@ -7,7 +7,7 @@
 
 import UIKit
 
-import SVProgressHUD
+
 
 class CoammutictiDrcxaw: CSindancwDrcxaw {
     enum POSEmanmeTy {
@@ -129,9 +129,9 @@ class CoammutictiDrcxaw: CSindancwDrcxaw {
     }
     
     private func addloafingShing() {
-        SVProgressHUD.show()
+        poos_showLoading()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: DispatchWorkItem(block: {
-            SVProgressHUD.dismiss()
+            self.poos_hideLoading()
             self.topayuCViewPOSM.isHidden = false
         }))
     }
@@ -216,9 +216,9 @@ class CoammutictiDrcxaw: CSindancwDrcxaw {
         
         uyi.isSelected = true
         
-        SVProgressHUD.show()
+        poos_showLoading()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: DispatchWorkItem(block: {
-            SVProgressHUD.dismiss()
+            self.poos_hideLoading()
             self.topayuCViewPOSM.reloadData()
             if self.addlManreyData.count == 0 {
                 self.poseEmptyTitle.isHidden = false
@@ -253,7 +253,7 @@ extension CoammutictiDrcxaw:UICollectionViewDelegate,UICollectionViewDataSource 
     
    @objc func dfgPOi()  {
        let sjdfbnvms = self.poseRealStr("Rpedpnoyrhtf spnopsetx nctoynktneinjt").0
-        POSMReportMTaal.showReamilAccountReportAlert(for:  sjdfbnvms)
+       POSMReportMTaal.showReamilAccountReportAlert(for:  sjdfbnvms, vc: self)
     }
     @objc func cuiertbder(Uixs:UIButton)  {
         

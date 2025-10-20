@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import SVProgressHUD
-import SwiftyStoreKit
+
+
 //支付
 class PourajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -35,7 +35,7 @@ class PourajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollectionV
     
     private func Dreauying()  {
         self.view.isUserInteractionEnabled = true
-        SVProgressHUD.dismiss()
+        poos_hideLoading()
     }
     
     var paoertuni :Dictionary<String,String>{
@@ -54,13 +54,11 @@ class PourajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollectionV
         self.view.isUserInteractionEnabled = false
         
         
-        SVProgressHUD.show(withStatus: allTotail)
-        SwiftyStoreKit.purchaseProduct(packages?[indexPath.section][indexPath.row].priductID ?? "", atomically: true) { psResult in
-            self.Dreauying()
-            
-            if case .success(let psPurch) = psResult {
-               
-                self.alLabningu(pspurch: psPurch)
+        poos_showLoading( allTotail)
+        PoosPurchaseManager.shared.startPurchase(productID: "com.poos.vip") { result in
+            switch result {
+            case .success:
+//                self.alLabningu(pspurch: result)
 
             
                 var blaPOSMnces = Int(self.paoertuni["posmuBlance"] ?? "0") ?? 0
@@ -71,18 +69,39 @@ class PourajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollectionV
                 self.resulitingHSowePOSM()
               
                 self.tongbuStem(allMOney:blaPOSMnces)
-
-            }else if case .error(let error) = psResult {
-             
-                if error.code == .paymentCancelled {
-                  
-                    return
-                }
-           
-                SVProgressHUD.showError(withStatus: error.localizedDescription)
-               
+            case .failure(let error):
+                self.poos_toast(error.localizedDescription)
             }
         }
+
+//        SwiftyStoreKit.purchaseProduct(packages?[indexPath.section][indexPath.row].priductID ?? "", atomically: true) { psResult in
+//            self.Dreauying()
+//            
+//            if case .success(let psPurch) = psResult {
+//               
+//                self.alLabningu(pspurch: psPurch)
+//
+//            
+//                var blaPOSMnces = Int(self.paoertuni["posmuBlance"] ?? "0") ?? 0
+//                
+//                blaPOSMnces = blaPOSMnces + (self.packages?[indexPath.section][indexPath.row].coins ?? 0)
+//
+//                self.balanceLabel.text = "My Balance\n\(blaPOSMnces)"
+//                self.resulitingHSowePOSM()
+//              
+//                self.tongbuStem(allMOney:blaPOSMnces)
+//
+//            }else if case .error(let error) = psResult {
+//             
+//                if error.code == .paymentCancelled {
+//                  
+//                    return
+//                }
+//           
+//                self.poos_toast( error.localizedDescription)
+//               
+//            }
+//        }
         
         
         
@@ -115,7 +134,7 @@ class PourajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollectionV
     
     private func resulitingHSowePOSM()  {
         let allToTitletail = self.poseRealStr("Szupcdcfeysasmfbualu fpzahygmtevnhta!").0
-        SVProgressHUD.showSuccess(withStatus: allToTitletail)
+        poos_showSuccess( allToTitletail)
 
     }
     private  lazy var topayuCViewPOSM: UICollectionView = {
@@ -135,16 +154,16 @@ class PourajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollectionV
     let idperform = UIButton.init()
     
     
-    private func alLabningu(pspurch:PurchaseDetails)  {
-        let psdownloads = pspurch.transaction.downloads
-        if !psdownloads.isEmpty {
-            SwiftyStoreKit.start(psdownloads)
-        }
-        
-        if pspurch.needsFinishTransaction {
-            SwiftyStoreKit.finishTransaction(pspurch.transaction)
-        }
-    }
+//    private func alLabningu(pspurch:PurchaseDetails)  {
+//        let psdownloads = pspurch.transaction.downloads
+//        if !psdownloads.isEmpty {
+//            SwiftyStoreKit.start(psdownloads)
+//        }
+//        
+//        if pspurch.needsFinishTransaction {
+//            SwiftyStoreKit.finishTransaction(pspurch.transaction)
+//        }
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.packages  = [

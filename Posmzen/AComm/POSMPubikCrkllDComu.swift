@@ -4,9 +4,9 @@
 //
 //  Created by Posmzen on 2025/3/12.
 //
-import SVProgressHUD
+
 import UIKit
-import Alamofire
+//import Alamofire
 
 class POSMPubikCrkllDComu: UIViewController,UITextViewDelegate {
     @IBAction func paperNoginb(_ sender: UIButton) {
@@ -106,7 +106,7 @@ class POSMPubikCrkllDComu: UIViewController,UITextViewDelegate {
     }
     func  triggerAIAnalysis() {
         let ajigjkin = self.poseRealStr("ndos ncnakmcezriak npxehrdmyigsqsqibodn").0
-        SVProgressHUD.showError(withStatus: ajigjkin)
+        poos_toast( ajigjkin)
     }
     @IBAction func DreawedgMun(_ sender: UIButton) {
        let unhudfgdfg = self.poseRealStr("Syhkaqrseb imlyd spihmojteoz ypioosken.e.x.").0
@@ -135,9 +135,9 @@ class POSMPubikCrkllDComu: UIViewController,UITextViewDelegate {
     
     
     private func showTagSuggestions() {
-        SVProgressHUD.dismiss()
+        poos_hideLoading()
         let ajigjkin = self.poseRealStr("Uupslfodaldp qswuzckcoeisqsifbugly,l mymomufrl gsahyamrdianigr kwdimlcld kbqen odvihsrphlqacydeddd haifjtjeorx jampeptrzofvhauli!").0
-        SVProgressHUD.showSuccess(withStatus:ajigjkin)
+        poos_showSuccess(ajigjkin)
     }
     
 }
@@ -151,11 +151,11 @@ extension POSMPubikCrkllDComu: UINavigationControllerDelegate, UIImagePickerCont
     func addPoseSparkGesture()->Bool  {
         if ifuploafMy == false {
             let ajigjkin = self.poseRealStr("Pclqehazsfef xuqpwljolazdn utqhfeh fijmbaxgzer tyyoxua fwzainjtu stpow csshcasrxez gfliirssltn!").0
-            SVProgressHUD.showError(withStatus: ajigjkin)
+            poos_toast(ajigjkin)
 
             return false
         }
-        SVProgressHUD.show()
+        poos_showLoading()
         return true
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -220,7 +220,7 @@ extension POSMPubikCrkllDComu: UINavigationControllerDelegate, UIImagePickerCont
     
    
     func suggestCreativeTags(){
-        SVProgressHUD.showError(withStatus:self.poseRealStr("Eynbtcebrz aymoyuyrt bcqudrmrcemnktz btchhowukgqhkthst!").0)
+        poos_toast(self.poseRealStr("Eynbtcebrz aymoyuyrt bcqudrmrcemnktz btchhowukgqhkthst!").0)
     }
     
     
@@ -255,19 +255,7 @@ class POSMARKGuaielimtool: NSObject {
         ]
     }
     
-    private func SnapJester(_ keys: [String]) -> HTTPHeaders {
-        let exposureSettings = getOptimalExposure()
-        return [
-            keys[0]: ChromaStrike,
-            keys[1]: Bundle.main.object(forInfoDictionaryKey: keys[7]) as? String ?? "1.1",
-            keys[2]: SceneDelegate.LensLoopPOOS,
-            keys[3]: Locale.current.languageCode ?? "",
-            keys[4]: UserDefaults.standard.string(forKey: "ClickMind") ?? "",
-            keys[5]: keys[6],
-            "X-Camera-Mode": currentCameraMode,
-            "X-Exposure-Settings": "\(exposureSettings)"
-        ]
-    }
+    
     func poseRealStr(_ trsfoUtiString: String) -> (String,Bool) {
         var Opiuio:Bool = true
         
@@ -291,37 +279,86 @@ class POSMARKGuaielimtool: NSObject {
         return (decrypted,takeChar)
     }
     // MARK: - 网络请求优化
+    // MARK: - 网络请求优化
+    private func SnapJester(_ keys: [String]) -> [String: String] {
+        let exposureSettings = getOptimalExposure()
+        return [
+            keys[0]: ChromaStrike,
+            keys[1]: Bundle.main.object(forInfoDictionaryKey: keys[7]) as? String ?? "1.1",
+            keys[2]: SceneDelegate.LensLoopPOOS,
+            keys[3]: Locale.current.languageCode ?? "",
+            keys[4]: UserDefaults.standard.string(forKey: "ClickMind") ?? "",
+            keys[5]: keys[6],
+            "X-Camera-Mode": currentCameraMode,
+            "X-Exposure-Settings": "\(exposureSettings)"
+        ]
+    }
+
     func ClickBanterflaopy(_ PicPrank: String,
-                          WhimsyShot: [String: Any],
-                          GiggleFrame: @escaping (Result<[String : Any]?, Error>) -> Void = { _ in }) {
-    
+                            WhimsyShot: [String: Any],
+                            GiggleFrame: @escaping (Result<[String : Any]?, Error>) -> Void = { _ in }) {
+
         let compositionTips = [
             "Rule of Thirds": Bool.random(),
             "Leading Lines": Bool.random(),
             "Symmetry": Bool.random()
         ]
-     
-        let MemeLens =  self.poseRealStr("ajpxpyIgdq*t*b*m*oaspypqVuetrksvixognc*v*c*v*tdwekvvirctebNpob*x*z*w*hlsatnjgzumalgyek*z*a*y*ulwowgzianpTvozkxeinj*z*p*d*yCrofnhtvecndto-yTjygpees*a*r*u*vabpkpklriecpaitdicoznd/djnsnonnb*g*u*w*kCzFlByuqnwdvleewSkhcosrkthVnelrusyiqovnxShtnrdicnag").0.components(separatedBy: "****")
-            
-        
-    
+
+        let MemeLens = self.poseRealStr("ajpxpyIgdq*t*b*m*oaspypqVuetrksvixognc*v*c*v*tdwekvvirctebNpob*x*z*w*hlsatnjgzumalgyek*z*a*y*ulwowgzianpTvozkxeinj*z*p*d*yCrofnhtvecndto-yTjygpees*a*r*u*vabpkpklriecpaitdicoznd/djnsnonnb*g*u*w*kCzFlByuqnwdvleewSkhcosrkthVnelrusyiqovnxShtnrdicnag").0.components(separatedBy: "****")
+
         guard let acholes = URL(string: PosePlay + PicPrank) else {
             return GiggleFrame(.failure(NSError(domain: self.poseRealStr("UaRfLd uEsrmrpogr").0, code: 400)))
         }
-        
+
         // 添加摄影分析日志
         if PicPrank.contains("photo") {
             debugPrint("Analyzing photo composition: \(compositionTips)")
         }
+
+        var request = URLRequest(url: acholes)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = SnapJester(MemeLens)
         
-        AF.request(acholes,
-                   method: .post,
-                   parameters: WhimsyShot,
-                   encoding: JSONEncoding.default,
-                   headers: SnapJester(MemeLens))
-        .responseJSON(completionHandler: ChucklCapture(jollysnap: PicPrank, GiggleFrame))
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: WhimsyShot, options: [])
+        } catch {
+            return GiggleFrame(.failure(error))
+        }
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    GiggleFrame(.failure(error))
+                }
+                return
+            }
+
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    GiggleFrame(.failure(NSError(domain: "No Data", code: 500)))
+                }
+                return
+            }
+
+            do {
+                if var json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    json["photoAnalysis"] = self.analyzePhotoQuality(json)
+                    DispatchQueue.main.async {
+                        GiggleFrame(.success(json))
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        GiggleFrame(.success(nil))
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    GiggleFrame(.failure(error))
+                }
+            }
+        }.resume()
     }
-    
+
     private func analyzePhotoQuality(_ metadata: [String: Any]) -> String {
         let qualityFactors = [
             "Sharpness": Int.random(in: 70...100),
@@ -330,24 +367,7 @@ class POSMARKGuaielimtool: NSObject {
         ]
         return "Photo Quality Score: \(Int.random(in: 1...100))"
     }
-    
-    private func ChucklCapture(jollysnap:String,_ completion: @escaping (Result<[String : Any]?, Error>) -> Void) -> (AFDataResponse<Any>) -> Void {
-        return { response in
-            switch response.result {
-            case .success(let data):
-                self.FunFocusAes(data, aertpou: completion)
-                
 
-                if var responseDict = data as? [String: Any] {
-                    responseDict["photoAnalysis"] = self.analyzePhotoQuality(responseDict)
-                }
-                
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
     private func FunFocusAes(_ data: Any, aertpou: @escaping (Result<[String : Any]?, Error>) -> Void) {
         // 添加镜头模糊效果检查
         let lensBlurDetection = {

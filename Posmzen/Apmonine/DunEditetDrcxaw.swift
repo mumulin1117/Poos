@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 
 class DunEditetDrcxaw: UIViewController {
 
@@ -56,9 +56,9 @@ class DunEditetDrcxaw: UIViewController {
         let deletePOSEAction = UIAlertAction(
                 title: suredionposer,
                 style: .destructive) { _ in
-                    SVProgressHUD.show()
+                    self.poos_showLoading()
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-                        SVProgressHUD.dismiss()
+                        self.poos_hideLoading()
                         self.reapiUigt()
                     }))
                    

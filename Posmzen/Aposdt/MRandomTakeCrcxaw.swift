@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 import iCarousel
 class MRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDelegate {
     var typerTau:Int
@@ -105,8 +105,8 @@ class MRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDelega
         NSLayoutConstraint.activate([
             repotrerJu.widthAnchor.constraint(equalToConstant: 33),
             repotrerJu.heightAnchor.constraint(equalToConstant: 33),
-            repotrerJu.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -5),
-            repotrerJu.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 5)
+            repotrerJu.trailingAnchor.constraint(equalTo: imagixonSingposs.trailingAnchor, constant: -5),
+            repotrerJu.topAnchor.constraint(equalTo: imagixonSingposs.topAnchor, constant: 5)
         ])
         return imagixonSingposs
     }
@@ -126,10 +126,10 @@ class MRandomTakeCrcxaw: UIViewController , iCarouselDataSource, iCarouselDelega
         let reasons = ["Illegal pose machine information", "Contains sensitive information", "Image quality issues", "Other illegal content"]
         reasons.forEach { reason in
             alertPOSM.addAction(UIAlertAction(title: reason, style: .default) { _ in
-                SVProgressHUD.show()
+                self.poos_showLoading()
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0, execute: DispatchWorkItem(block: {
                     self.icalaertPOSE.autoscroll = 0.25
-                    SVProgressHUD.showSuccess(withStatus:self.poseRealStr("Tqhoafnmkn wynoiux pfvowrc utyhkef gswufpueqrpvlilstiboank.v wWkeq qwoialrlf hvgearkidfeys daunwdr zhsannpdllzem tixtk oajse hsqomoknn vadsw yprowsjsqiwbhltee!").0)
+                    self.poos_showSuccess(self.poseRealStr("Tqhoafnmkn wynoiux pfvowrc utyhkef gswufpueqrpvlilstiboank.v wWkeq qwoialrlf hvgearkidfeys daunwdr zhsannpdllzem tixtk oajse hsqomoknn vadsw yprowsjsqiwbhltee!").0)
                     
                 }))
             })

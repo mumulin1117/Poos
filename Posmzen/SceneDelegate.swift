@@ -4,9 +4,9 @@
 //
 //  Created by Posmzen on 2025/3/10.
 //
-import SwiftyStoreKit
+
 import UIKit
-import IQKeyboardManager
+//import IQKeyboardManager
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     
@@ -37,9 +37,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
-            self.Apppdeleterdfggg(doi:purchases)
-        }
+//        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+//            self.Apppdeleterdfggg(doi:purchases)
+//        }
        
         
         
@@ -76,7 +76,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        }
     
     func asdioperpose() {
-        IQKeyboardManager.shared().isEnabled = true
+//        IQKeyboardManager.shared().isEnabled = true
     }
    
 }
@@ -85,18 +85,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate{
     
     
-    func Apppdeleterdfggg(doi:[Purchase])  {
-        for purchase in doi {
-            switch purchase.transaction.transactionState {
-            case .purchased, .restored:
-                if purchase.needsFinishTransaction {
-                    SwiftyStoreKit.finishTransaction(purchase.transaction)
-                }
-            case .failed, .purchasing, .deferred:break
-            @unknown default:break
-            }
-        }
-    }
+//    func Apppdeleterdfggg(doi:[Purchase])  {
+//        for purchase in doi {
+//            switch purchase.transaction.transactionState {
+//            case .purchased, .restored:
+//                if purchase.needsFinishTransaction {
+//                    SwiftyStoreKit.finishTransaction(purchase.transaction)
+//                }
+//            case .failed, .purchasing, .deferred:break
+//            @unknown default:break
+//            }
+//        }
+//    }
 }
 
 

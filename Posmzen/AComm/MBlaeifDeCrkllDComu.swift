@@ -7,7 +7,7 @@
 
 import UIKit
 import iCarousel
-import SVProgressHUD
+
 class MBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDelegate, UITextFieldDelegate {
     var paoertuni :Dictionary<String,String>?
     var tapginsed:Int = 0
@@ -24,10 +24,10 @@ class MBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDeleg
         maingAlertView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            maingAlertView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            maingAlertView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            maingAlertView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            maingAlertView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            maingAlertView.topAnchor.constraint(equalTo: self.icalaert.topAnchor),
+            maingAlertView.leadingAnchor.constraint(equalTo: self.icalaert.leadingAnchor),
+            maingAlertView.trailingAnchor.constraint(equalTo: self.icalaert.trailingAnchor),
+            maingAlertView.bottomAnchor.constraint(equalTo: self.icalaert.bottomAnchor)
         ])
         
         allMonster()
@@ -187,7 +187,7 @@ class MBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDeleg
     
     
     @IBAction func Acpuretlager(_ sender: UIButton) {
-        POSMReportMTaal.showReamilAccountReportAlert(for: "Report post content")
+        POSMReportMTaal.showReamilAccountReportAlert(for: "Report post content", vc: self)
     }
     
     
@@ -251,14 +251,14 @@ class MBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDeleg
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if let sing = textField.text,sing.isEmpty == false {
-            SVProgressHUD.show()
+            poos_showLoading()
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
                 if self.whiteHuibacolaer2.isHidden == false {
-                    SVProgressHUD.showInfo(withStatus: "Comments too frequent!")
+                    self.poos_toast( "Comments too frequent!")
                     textField.resignFirstResponder()
                     return
                 }
-                SVProgressHUD.dismiss()
+                self.poos_hideLoading()
                 self.whiteHuibacolaer2.isHidden = false
                 self.OiubgrbConten2.text = sing
                 self.paoertuni?["mineuseComment"] = sing
@@ -275,7 +275,7 @@ class MBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDeleg
             return true
         }
         let ciclegdfg = self.poseRealStr("Peluezagseeh gecnvteecrw stqhnea ocmohnvtoeunzte gywoiuh xwhajngtq utpos xpxunbhlziysthp!").0
-        SVProgressHUD.showError(withStatus: ciclegdfg)
+        poos_toast( ciclegdfg)
         
         return true
     }
@@ -325,7 +325,7 @@ class POSMReportMTaal {
     }
     
     // MARK: - Main Report Flow
-    static func showReamilAccountReportAlert(for poertTitle: String,postId: String? = nil) {
+    static func showReamilAccountReportAlert(for poertTitle: String,postId: String? = nil,vc:UIViewController) {
         let alert = UIAlertController(
             title: poertTitle,
             message:POSMReportMTaal.poseRealStr("Polbegaaslep vsueslqebcftx yay krmeuahsiosnx tfhomru irgebpyourwteirndg").0 ,
@@ -343,22 +343,22 @@ class POSMReportMTaal {
            
             
             
-            handleReport(reason: "Spam",postId: postId) }
+            handleReport(reason: "Spam",postId: postId, vc: vc) }
         
         let harassmentAction = UIAlertAction(
             title: POSMReportMTaal.poseRealStr("Hparriarstsdmpeqnot").0,
             style: .default
-        ) { _ in handleReport(reason: POSMReportMTaal.poseRealStr("Hparriarstsdmpeqnot").0,postId: postId) }
+        ) { _ in handleReport(reason: POSMReportMTaal.poseRealStr("Hparriarstsdmpeqnot").0,postId: postId, vc: vc) }
         
         let inappropriateAction = UIAlertAction(
             title:POSMReportMTaal.poseRealStr("Ixnnadpkparcoepjrnihaityev uCvodnmtleenxt").0 ,
             style: .default
-        ) { _ in handleReport(reason: POSMReportMTaal.poseRealStr("Innwakpgplrvowpqrxipantwe").0,postId: postId) }
+        ) { _ in handleReport(reason: POSMReportMTaal.poseRealStr("Innwakpgplrvowpqrxipantwe").0,postId: postId, vc: vc) }
         
         let customAction = UIAlertAction(
             title: POSMReportMTaal.poseRealStr("Odtwhherra cRceuausnozn").0,
             style: .default
-        ) { _ in showCustomReasonInput(postId: postId) }
+        ) { _ in showCustomReasonInput(postId: postId, vc: vc) }
         
         let cancelAction = UIAlertAction(
             title:POSMReportMTaal.poseRealStr("Claanwcuehl").0 ,
@@ -376,7 +376,7 @@ class POSMReportMTaal {
     }
     
     // MARK: - Custom Reason Handling
-    private static func showCustomReasonInput(postId: String? = nil) {
+    private static func showCustomReasonInput(postId: String? = nil,vc:UIViewController) {
         let selecter = POSMReportMTaal.poseRealStr("Prlteracsxej kdsepsdcnrfiobvey rtxhmeg yrdeqaiswoznx rfboorv jrvecppozrytyifnqg").0
         
         let alert = UIAlertController(
@@ -402,10 +402,10 @@ class POSMReportMTaal {
                 showErrorAlert(message: selecter3)
                 return
             }
-            SVProgressHUD.show()
+            vc.poos_showLoading()
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-                SVProgressHUD.dismiss()
-                self.handleReport(reason: "Custom: \(reason)",postId: postId)
+                vc.poos_hideLoading()
+                self.handleReport(reason: "Custom: \(reason)",postId: postId, vc: vc)
             }))
             
         }
@@ -424,7 +424,7 @@ class POSMReportMTaal {
     }
     
     // MARK: - Report Handling
-    private static func handleReport(reason: String,postId: String? = nil) {
+    private static func handleReport(reason: String,postId: String? = nil,vc:UIViewController) {
        
         
         if postId != nil {
@@ -445,13 +445,13 @@ class POSMReportMTaal {
             ViewController.posmIlikeing = ViewController.posmIlikeing.filter({ bhvfusgs in
                 return bhvfusgs["posmOID"] != postId
             })
-            SVProgressHUD.showSuccess(withStatus: camcelr3)
+            vc.poos_showSuccess( camcelr3)
             return
         }
         
-        SVProgressHUD.show()
+        vc.poos_showLoading()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-            SVProgressHUD.dismiss()
+            vc.poos_hideLoading()
             let camcelr3 = POSMReportMTaal.poseRealStr("Rqekprohrzti iSguubumfintttperd").0
             
             let camcelr4 = POSMReportMTaal.poseRealStr("Tmhzahnakw nycotub hfcobri zykoiuprl ifzehetdbbkaxcekv.f wWseb'olglh prrezvwisezwk dtyhxivsx hcwojndtqexnftl lwbigtlhliinw b2x4g hhloeuprtsn.").0
@@ -494,7 +494,7 @@ class POSMReportMTaal {
     
     // MARK: - 拉黑用户确认弹窗
         
-    static func showBlockPOSEConfirmation( postId: String) {
+    static func showBlockPOSEConfirmation( postId: String,vc:UIViewController) {
         
         let camcelr3 = POSMReportMTaal.poseRealStr("Bzlqotckkt zUhsseure?").0
         
@@ -512,7 +512,7 @@ class POSMReportMTaal {
        ) { _ in
           
            let camcelr45 = POSMReportMTaal.poseRealStr("Roeppsourttr euisbecr").0
-           self.showReamilAccountReportAlert(for: camcelr45,postId: postId)
+           self.showReamilAccountReportAlert(for: camcelr45,postId: postId, vc: vc)
           
        }
         let cancellr45 = POSMReportMTaal.poseRealStr("Cjagnichewl").0

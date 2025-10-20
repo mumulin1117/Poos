@@ -8,11 +8,11 @@ target 'Posmzen' do
   # Pods for Posmzen
 #pod 'SnapKit'
 pod 'iCarousel'
-pod "IQKeyboardManager"
+#pod "IQKeyboardManager"
 
-pod "SVProgressHUD"
-pod "SwiftyStoreKit"
-pod 'Alamofire'
+#pod "SVProgressHUD"
+#pod "SwiftyStoreKit"
+#pod 'Alamofire'
 end
 post_install do |installer|
     installer.generated_projects.each do |project|

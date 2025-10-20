@@ -8,7 +8,7 @@
 import UIKit
 import AVFAudio
 import AVFoundation
-import SVProgressHUD
+
 class CaYerllcationCraxaw: UIViewController {
   
     
@@ -115,14 +115,14 @@ class CaYerllcationCraxaw: UIViewController {
     
     @objc func functionTouchager() {
         let sjdfbnvms = self.poseRealStr("Tlhyek ipihhopnxeg oheaasknu'ftk dbneeejnu paynyspwlesrbexdt hyjettb!").0
-        SVProgressHUD.showInfo(withStatus: sjdfbnvms)
+        poos_toast(sjdfbnvms)
    
     }
   
     
     
    @objc func Acpuretlager() {
-        POSMReportMTaal.showBlockPOSEConfirmation(postId: paoertuni["posmOID"] ?? "")
+       POSMReportMTaal.showBlockPOSEConfirmation(postId: paoertuni["posmOID"] ?? "", vc: self)
   
    }
     

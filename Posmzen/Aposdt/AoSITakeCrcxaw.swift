@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 
 class AoSITakeCrcxaw: POSMBuetonVSontro {
     var ifuploafMy:Bool = false
@@ -83,7 +83,7 @@ class AoSITakeCrcxaw: POSMBuetonVSontro {
         
         County += 20
         if ifuploafMy == false {
-            SVProgressHUD.showError(withStatus: loaduptii)
+            poos_toast( loaduptii)
             return
         }
         
@@ -229,7 +229,7 @@ class POSMBuetonVSontro: UIViewController {
            let isAvailable = UIImagePickerController.isSourceTypeAvailable(.camera)
            if !isAvailable {
                let loaduptii = self.poseRealStr("naod kcgadmrejrmad ypeeurumliesrsniposn").0
-               SVProgressHUD.showError(withStatus: loaduptii)
+               poos_toast(loaduptii)
            }
            return isAvailable
        }

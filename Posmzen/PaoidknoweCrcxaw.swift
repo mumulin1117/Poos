@@ -7,7 +7,7 @@
 
 import UIKit
 import WebKit
-import SVProgressHUD
+
 class PaoidknoweCrcxaw: UIViewController,WKScriptMessageHandler ,WKNavigationDelegate{
     var recoringOnwpage:String = "ELUAHtPos"
     
@@ -44,7 +44,7 @@ class PaoidknoweCrcxaw: UIViewController,WKScriptMessageHandler ,WKNavigationDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SVProgressHUD.show()
+        poos_showLoading()
        
         if let url = Bundle.main.url(forResource: laoingDagvc, withExtension: "html") {
             
@@ -84,7 +84,7 @@ class PaoidknoweCrcxaw: UIViewController,WKScriptMessageHandler ,WKNavigationDel
        
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        SVProgressHUD.dismiss()
+        poos_hideLoading()
     }
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
            switch message.name {

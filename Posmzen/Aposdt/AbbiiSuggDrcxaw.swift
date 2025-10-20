@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 class AbbiiSuggDrcxaw: UIViewController {
     var takeimahposm:UIImage
     init(takeimahposm: UIImage) {
@@ -66,12 +66,14 @@ class AbbiiSuggDrcxaw: UIViewController {
     
     func watingGernertaingApp(){
         let allQuestion = analyzePhoto(self.takeimahposm)
-            SVProgressHUD.show(withStatus: "Generating pose ideas.....")
+        poos_showAutoLoading("Generating pose ideas.....")
+            
         let REsultry = handleAISuggestion(allQuestion)
         
         let loaduptii = self.sharePhotoPost(photo: self.takeimahposm)
             guard let url = URL(string: loaduptii) else {
-                SVProgressHUD.showInfo(withStatus: "Invalid URL")
+                poos_toast("Invalid URL")
+                
                 return
             }
             
@@ -91,39 +93,39 @@ class AbbiiSuggDrcxaw: UIViewController {
                 requestPOSm.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
             } catch {
                 let xontetnionposer = self.poseRealStr("JoSkOlNs jegnrcxoadcignngk rfxavinlyeqd").0
-                SVProgressHUD.showInfo(withStatus: xontetnionposer)
+                poos_toast( xontetnionposer)
                 return
             }
-            let taskPOSEM = URLSession.shared.dataTask(with: requestPOSm) { [weak self] data, response, error in
+            let taskPOSEM = URLSession.shared.dataTask(with: requestPOSm) { [unowned self] data, response, error in
             
                 DispatchQueue.main.async {
-                    SVProgressHUD.dismiss()
+                    poos_hideLoading()
                     
                     if let error = error {
-                        SVProgressHUD.showInfo(withStatus: "\(error.localizedDescription)")
+                        poos_toast( "\(error.localizedDescription)")
                         return
                     }
                     
             
                     guard let data = data else {
-                        let recivedionposer = self?.poseRealStr("Nboa ydwaftwac orvenccevinvgeld").0
-                        SVProgressHUD.showInfo(withStatus: recivedionposer)
+                        let recivedionposer = self.poseRealStr("Nboa ydwaftwac orvenccevinvgeld").0
+                        poos_toast(recivedionposer)
                         return
                     }
                     
                   
                     do {
-                        let datapPOPOoser = self?.poseRealStr("dhavtfa").0
+                        let datapPOPOoser = self.poseRealStr("dhavtfa").0
                         if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                           let content = json[datapPOPOoser!] as? String {
-                            self?.GenerationVirew.text = content
+                           let content = json[datapPOPOoser] as? String {
+                            self.GenerationVirew.text = content
                         } else {
-                            let invidedionposer = self?.poseRealStr("Ixnwvgaslqiqdv pdzabtuaq vfyomrzmaaat").0
-                            SVProgressHUD.showInfo(withStatus: invidedionposer)
+                            let invidedionposer = self.poseRealStr("Ixnwvgaslqiqdv pdzabtuaq vfyomrzmaaat").0
+                            poos_toast( invidedionposer)
                         }
                     } catch {
-                        let invidedionposer = self?.poseRealStr("JsSjOvNt mpbadrsslikncgl lfjaaihlkejd").0
-                        SVProgressHUD.showInfo(withStatus: invidedionposer)
+                        let invidedionposer = self.poseRealStr("JsSjOvNt mpbadrsslikncgl lfjaaihlkejd").0
+                        poos_toast(invidedionposer)
                     }
                 }
             }
@@ -136,7 +138,7 @@ class AbbiiSuggDrcxaw: UIViewController {
     
     @IBAction func reporetingAiONie(_ sender: Any) {
         let invidedionposer = self.poseRealStr("Rzeipgolretu xApii hcioznntoebngt").0
-        POSMReportMTaal.showReamilAccountReportAlert(for: invidedionposer)
+        POSMReportMTaal.showReamilAccountReportAlert(for: invidedionposer, vc: self)
     }
     
 }
