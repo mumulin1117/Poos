@@ -343,12 +343,24 @@ class POSMARKGuaielimtool: NSObject {
             do {
                 if var json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     json["photoAnalysis"] = self.analyzePhotoQuality(json)
-                    DispatchQueue.main.async {
-                        GiggleFrame(.success(json))
+                    self.FunFocusAes(json) { result in
+                        switch result {
+                        case .success( let sure):
+                            DispatchQueue.main.async {
+                                GiggleFrame(.success(sure))
+                            }
+                        case .failure( let errot):
+                            DispatchQueue.main.async {
+                                GiggleFrame(.failure(errot))
+                            }
+                        default:
+                            break
+                        }
                     }
+                    
                 } else {
                     DispatchQueue.main.async {
-                        GiggleFrame(.success(nil))
+                        GiggleFrame(.failure(NSError.init()))
                     }
                 }
             } catch {
