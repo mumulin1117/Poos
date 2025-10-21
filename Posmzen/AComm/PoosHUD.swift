@@ -167,7 +167,7 @@ final class PoosHUD: UIView {
 
             if self.superview == nil {
                 parent.addSubview(self)
-                self.translatesAutoresizingMaskIntoConstraints = false
+//                self.translatesAutoresizingMaskIntoConstraints = false
             }
             self.layout(in: parent)
 

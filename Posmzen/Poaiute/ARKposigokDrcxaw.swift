@@ -357,10 +357,10 @@ class ARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate, WK
 
                view.isUserInteractionEnabled = false
                poos_showLoading()
-            PoosPurchaseManager.shared.startPurchase(productID: "com.poos.vip") { result in
+            PoosPurchaseManager.shared.startPurchase(productID: mesgidh) { result in
                 switch result {
                 case .success:
-
+                    self.poos_hideLoading()
                
                     guard let ticketData = PoosPurchaseManager.shared.localReceiptData(),
                           let gettransID = PoosPurchaseManager.shared.lastTransactionID else {
@@ -374,6 +374,7 @@ class ARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate, WK
                     self.juliustack(ticketData:ticketData,gettransID:gettransID)
                     
                 case .failure(let error):
+                    self.poos_hideLoading()
                     self.poos_toast(error.localizedDescription)
                 }
             }
