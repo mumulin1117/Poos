@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import Alamofire
+
 
 class POSMPubikCrkllDComu: UIViewController,UITextViewDelegate {
     @IBAction func paperNoginb(_ sender: UIButton) {

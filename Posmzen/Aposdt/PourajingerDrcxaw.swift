@@ -8,7 +8,6 @@
 import UIKit
 
 
-//支付
 class PourajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return packages?.count ?? 0
@@ -58,9 +57,7 @@ class PourajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollectionV
         PoosPurchaseManager.shared.startPurchase(productID: "com.poos.vip") { result in
             switch result {
             case .success:
-//                self.alLabningu(pspurch: result)
 
-            
                 var blaPOSMnces = Int(self.paoertuni["posmuBlance"] ?? "0") ?? 0
                 
                 blaPOSMnces = blaPOSMnces + (self.packages?[indexPath.section][indexPath.row].coins ?? 0)
@@ -74,36 +71,7 @@ class PourajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollectionV
             }
         }
 
-//        SwiftyStoreKit.purchaseProduct(packages?[indexPath.section][indexPath.row].priductID ?? "", atomically: true) { psResult in
-//            self.Dreauying()
-//            
-//            if case .success(let psPurch) = psResult {
-//               
-//                self.alLabningu(pspurch: psPurch)
-//
-//            
-//                var blaPOSMnces = Int(self.paoertuni["posmuBlance"] ?? "0") ?? 0
-//                
-//                blaPOSMnces = blaPOSMnces + (self.packages?[indexPath.section][indexPath.row].coins ?? 0)
-//
-//                self.balanceLabel.text = "My Balance\n\(blaPOSMnces)"
-//                self.resulitingHSowePOSM()
-//              
-//                self.tongbuStem(allMOney:blaPOSMnces)
-//
-//            }else if case .error(let error) = psResult {
-//             
-//                if error.code == .paymentCancelled {
-//                  
-//                    return
-//                }
-//           
-//                self.poos_toast( error.localizedDescription)
-//               
-//            }
-//        }
-        
-        
+
         
     }
     

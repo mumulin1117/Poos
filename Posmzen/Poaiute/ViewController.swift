@@ -7,8 +7,7 @@
 
 import UIKit
 import Network
-//import Alamofire
-//import IQKeyboardManager
+
 
 var windowShaje:UIWindow?{
     var amkdill:UIWindow?

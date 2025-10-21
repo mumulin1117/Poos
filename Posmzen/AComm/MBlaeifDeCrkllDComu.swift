@@ -6,40 +6,48 @@
 //
 
 import UIKit
-import iCarousel
 
-class MBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDelegate, UITextFieldDelegate {
+
+class MBlaeifDeCrkllDComu: UIViewController ,UIScrollViewDelegate, UITextFieldDelegate {
     var paoertuni :Dictionary<String,String>?
     var tapginsed:Int = 0
-    let maingAlertView = iCarousel()
+//    let maingAlertView = iCarousel()
+    let scrollView = UIScrollView()
+        let pageControl = UIPageControl()
+        var imageViews: [UIImageView] = []
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         opertunbsd(Fiupose:paoertuni ?? [:])
         
        
        OKdjijoip()
-        self.icalaert.addSubview(maingAlertView)
-        
-        
-        maingAlertView.translatesAutoresizingMaskIntoConstraints = false
+        self.icalaert.addSubview(scrollView)
+               self.icalaert.addSubview(pageControl)
+               
+               scrollView.translatesAutoresizingMaskIntoConstraints = false
+               pageControl.translatesAutoresizingMaskIntoConstraints = false
 
-        NSLayoutConstraint.activate([
-            maingAlertView.topAnchor.constraint(equalTo: self.icalaert.topAnchor),
-            maingAlertView.leadingAnchor.constraint(equalTo: self.icalaert.leadingAnchor),
-            maingAlertView.trailingAnchor.constraint(equalTo: self.icalaert.trailingAnchor),
-            maingAlertView.bottomAnchor.constraint(equalTo: self.icalaert.bottomAnchor)
-        ])
+               NSLayoutConstraint.activate([
+                   scrollView.topAnchor.constraint(equalTo: self.icalaert.topAnchor),
+                   scrollView.leadingAnchor.constraint(equalTo: self.icalaert.leadingAnchor),
+                   scrollView.trailingAnchor.constraint(equalTo: self.icalaert.trailingAnchor),
+                   scrollView.bottomAnchor.constraint(equalTo: self.icalaert.bottomAnchor),
+                   
+                   pageControl.bottomAnchor.constraint(equalTo: self.icalaert.bottomAnchor, constant: -8),
+                   pageControl.centerXAnchor.constraint(equalTo: self.icalaert.centerXAnchor)
+               ])
         
         allMonster()
+        setupImageCarousel()
     }
     
     
     
     private func OKdjijoip()  {
-        maingAlertView.type = .rotary // 选择 3D 效果类型
-        maingAlertView.autoscroll = 0.25
-        
-        maingAlertView.dataSource = self
+        scrollView.isPagingEnabled = true
+               scrollView.showsHorizontalScrollIndicator = false
+               scrollView.delegate = self
     }
     @IBAction func paperNoginb(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -90,8 +98,9 @@ class MBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        whiteHuibacolaer.layer.cornerRadius = 15
         neverGoinInputView.delegate = self
+        whiteHuibacolaer.layer.masksToBounds = true
         neverGoinInputView.returnKeyType = .send
         if self.paoertuni?["mineuseComment"] == nil {
             self.whiteHuibacolaer2.isHidden = true
@@ -221,33 +230,81 @@ class MBlaeifDeCrkllDComu: UIViewController ,iCarouselDataSource, iCarouselDeleg
         self.navigationController?.pushViewController(ginsdrng, animated: true)
     }
     
-    
-    
-    
-    
-    func numberOfItems(in carousel: iCarousel) -> Int {
-        if let forit = paoertuni?["Supplementaryimg"]?.components(separatedBy: "%"){
-            return forit.count
+    // ✅ 新增：替代 iCarousel 的原生实现
+        private func setupImageCarousel() {
+            imageViews.forEach { $0.removeFromSuperview() }
+            imageViews.removeAll()
+
+            let imageNames = paoertuni?["Supplementaryimg"]?.components(separatedBy: "%") ?? []
+            pageControl.numberOfPages = imageNames.count
+            pageControl.currentPage = 0
+            
+            var lastView: UIView?
+            scrollView.subviews.forEach { $0.removeFromSuperview() }
+            
+            for (index, imgName) in imageNames.enumerated() {
+                let imgView = UIImageView()
+                imgView.image = UIImage(named: imgName)
+                imgView.contentMode = .scaleAspectFill
+                imgView.clipsToBounds = true
+                imgView.layer.cornerRadius = 20
+                imgView.isUserInteractionEnabled = true
+                scrollView.addSubview(imgView)
+                imgView.translatesAutoresizingMaskIntoConstraints = false
+
+                NSLayoutConstraint.activate([
+                    imgView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+                    imgView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+                    imgView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+                    imgView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
+                ])
+
+                if let last = lastView {
+                    imgView.leadingAnchor.constraint(equalTo: last.trailingAnchor).isActive = true
+                } else {
+                    imgView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+                }
+                lastView = imgView
+                imageViews.append(imgView)
+            }
+
+            if let last = lastView {
+                last.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+            }
         }
 
-        return 1
-    }
-    
-    func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
-        let imagixonSingposs = UIImageView.init()
-        imagixonSingposs.isUserInteractionEnabled = true
-        imagixonSingposs.frame = CGRect.init(x: 0, y: 0, width:icalaert.frame.width, height: icalaert.frame.height)
-        imagixonSingposs.layer.cornerRadius = 20
-        imagixonSingposs.layer.masksToBounds = true
-        imagixonSingposs.contentMode = .scaleAspectFill
-        if let forit = paoertuni?["Supplementaryimg"]?.components(separatedBy: "%"){
-            imagixonSingposs.image = UIImage(named: forit[index])
+        // ✅ 实现滚动同步 pageControl
+        func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            let page = Int((scrollView.contentOffset.x + scrollView.frame.width / 2) / scrollView.frame.width)
+            pageControl.currentPage = page
         }
-        
-       
-        return imagixonSingposs
-    }
+
     
+    
+//    
+//    func numberOfItems(in carousel: iCarousel) -> Int {
+//        if let forit = paoertuni?["Supplementaryimg"]?.components(separatedBy: "%"){
+//            return forit.count
+//        }
+//
+//        return 1
+//    }
+//    
+//    func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
+//        let imagixonSingposs = UIImageView.init()
+//        imagixonSingposs.isUserInteractionEnabled = true
+//        imagixonSingposs.frame = CGRect.init(x: 0, y: 0, width:icalaert.frame.width, height: icalaert.frame.height)
+//        imagixonSingposs.layer.cornerRadius = 20
+//        imagixonSingposs.layer.masksToBounds = true
+//        imagixonSingposs.contentMode = .scaleAspectFill
+//        if let forit = paoertuni?["Supplementaryimg"]?.components(separatedBy: "%"){
+//            imagixonSingposs.image = UIImage(named: forit[index])
+//        }
+//        
+//       
+//        return imagixonSingposs
+//    }
+//    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if let sing = textField.text,sing.isEmpty == false {

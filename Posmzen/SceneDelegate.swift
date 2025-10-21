@@ -76,7 +76,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        }
     
     func asdioperpose() {
-//        IQKeyboardManager.shared().isEnabled = true
+
     }
    
 }
@@ -84,19 +84,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate{
     
-    
-//    func Apppdeleterdfggg(doi:[Purchase])  {
-//        for purchase in doi {
-//            switch purchase.transaction.transactionState {
-//            case .purchased, .restored:
-//                if purchase.needsFinishTransaction {
-//                    SwiftyStoreKit.finishTransaction(purchase.transaction)
-//                }
-//            case .failed, .purchasing, .deferred:break
-//            @unknown default:break
-//            }
-//        }
-//    }
+ 
 }
 
 

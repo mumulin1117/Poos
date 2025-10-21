@@ -113,20 +113,20 @@
                                     <rect key="frame" x="0.0" y="489" width="361" height="93"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q7d-vr-iPC">
-                                            <rect key="frame" x="13" y="15" width="40" height="40"/>
+                                            <rect key="frame" x="17" y="15" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="3I5-LL-5gs"/>
                                                 <constraint firstAttribute="height" constant="40" id="wcM-xd-g32"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ali" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1A-Jh-lYd">
-                                            <rect key="frame" x="65" y="40.333333333333314" width="276" height="16.333333333333329"/>
+                                            <rect key="frame" x="69" y="40.333333333333314" width="272" height="16.333333333333329"/>
                                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ali" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSv-Wd-1LU">
-                                            <rect key="frame" x="65" y="14.999999999999998" width="21" height="20.333333333333329"/>
+                                            <rect key="frame" x="69" y="14.999999999999998" width="21" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -137,7 +137,7 @@
                                         <constraint firstItem="D1A-Jh-lYd" firstAttribute="leading" secondItem="mSv-Wd-1LU" secondAttribute="leading" id="VJZ-1g-E1F"/>
                                         <constraint firstAttribute="height" constant="93" id="npF-Li-9D3"/>
                                         <constraint firstAttribute="trailing" secondItem="D1A-Jh-lYd" secondAttribute="trailing" constant="20" id="pIy-T5-Qir"/>
-                                        <constraint firstItem="q7d-vr-iPC" firstAttribute="leading" secondItem="GrR-4Q-7Vg" secondAttribute="leading" constant="13" id="qmQ-Au-77J"/>
+                                        <constraint firstItem="q7d-vr-iPC" firstAttribute="leading" secondItem="GrR-4Q-7Vg" secondAttribute="leading" constant="17" id="qmQ-Au-77J"/>
                                         <constraint firstItem="D1A-Jh-lYd" firstAttribute="top" secondItem="mSv-Wd-1LU" secondAttribute="bottom" constant="5" id="wws-uo-3JX"/>
                                         <constraint firstItem="mSv-Wd-1LU" firstAttribute="top" secondItem="q7d-vr-iPC" secondAttribute="top" id="yIE-x1-9Wv"/>
                                         <constraint firstAttribute="top" secondItem="q7d-vr-iPC" secondAttribute="top" constant="-15" id="yax-2w-QOf"/>
