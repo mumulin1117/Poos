@@ -54,7 +54,7 @@ class PourajingerDrcxaw: UIViewController,UICollectionViewDelegate,UICollectionV
         
         
         poos_showLoading( allTotail)
-        PoosPurchaseManager.shared.startPurchase(productID: allTotail) { result in
+        PoosPurchaseManager.shared.airbrushing(composite: allTotail) { result in
             switch result {
             case .success:
 

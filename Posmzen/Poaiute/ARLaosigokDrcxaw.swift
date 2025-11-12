@@ -199,7 +199,7 @@ class ARLaosigokDrcxaw: UIViewController, CLLocationManagerDelegate {
         
         let SmartStrikePOOS: [String: Any] = [
             "frameCap": POSMARKGuaielimtool.pnolyert.ChromaStrike,
-            "lensType": SceneDelegate.LensLoopPOOS,
+            "lensType": JeneratiKechainl.suggestions(),
             "shutterPush": AppDelegate.DoodleSnap,
             CanvasClick[0]: Aesthetica
         ]

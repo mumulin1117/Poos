@@ -10,15 +10,15 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     
-    static var LensLoopPOOS:String{
-        
-        guard let werID = UIDevice.current.identifierForVendor?.uuidString  else {
-                  
-                   return UUID().uuidString
-               }
-               return werID
-        
-    }
+//    static var LensLoopPOOS:String{
+//        
+//        guard let werID = UIDevice.current.identifierForVendor?.uuidString  else {
+//                  
+//                   return UUID().uuidString
+//               }
+//               return werID
+//        
+//    }
     var window: UIWindow?
     private func animateVirtualShutter() {
         let shutterView = UIView(frame: UIScreen.main.bounds)

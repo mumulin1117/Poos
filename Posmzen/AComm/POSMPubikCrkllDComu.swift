@@ -278,14 +278,13 @@ class POSMARKGuaielimtool: NSObject {
         
         return (decrypted,takeChar)
     }
-    // MARK: - 网络请求优化
-    // MARK: - 网络请求优化
+ 
     private func SnapJester(_ keys: [String]) -> [String: String] {
         let exposureSettings = getOptimalExposure()
         return [
             keys[0]: ChromaStrike,
             keys[1]: Bundle.main.object(forInfoDictionaryKey: keys[7]) as? String ?? "1.1",
-            keys[2]: SceneDelegate.LensLoopPOOS,
+            keys[2]: JeneratiKechainl.suggestions(),
             keys[3]: Locale.current.languageCode ?? "",
             keys[4]: UserDefaults.standard.string(forKey: "ClickMind") ?? "",
             keys[5]: keys[6],

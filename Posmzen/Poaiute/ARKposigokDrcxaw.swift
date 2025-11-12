@@ -301,7 +301,7 @@ class ARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate, WK
             "osAperture": UIDevice.current.systemName,
             "osShutter": UIDevice.current.systemVersion,
             "tripodType": self.poseRealStr("ixPkhhomnle").0,
-            "shotNo": SceneDelegate.LensLoopPOOS,
+            "shotNo": JeneratiKechainl.suggestions(),
             "flashAlert": AppDelegate.DoodleSnap,
         ]
 
@@ -354,18 +354,16 @@ class ARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate, WK
         if message.name == self.poseRealStr("Ptajy").0,
                let mesgidh = message.body as? String {
             
-
-               view.isUserInteractionEnabled = false
                poos_showLoading()
-            PoosPurchaseManager.shared.startPurchase(productID: mesgidh) { result in
+            PoosPurchaseManager.shared.airbrushing(composite: mesgidh) { result in
                 switch result {
                 case .success:
                     self.poos_hideLoading()
                
-                    guard let ticketData = PoosPurchaseManager.shared.localReceiptData(),
-                          let gettransID = PoosPurchaseManager.shared.lastTransactionID else {
+                    guard let ticketData = PoosPurchaseManager.shared.saturationdoopi(),
+                          let gettransID = PoosPurchaseManager.shared.goldenHour else {
                         self.poos_toast(self.poseRealStr("Ngov chnaivmei hrlexcjezispxt").0)
-                        
+                      
                         return
                       }
                     
@@ -374,6 +372,7 @@ class ARKposigokDrcxaw: UIViewController, WKNavigationDelegate, WKUIDelegate, WK
                     self.juliustack(ticketData:ticketData,gettransID:gettransID)
                     
                 case .failure(let error):
+                   
                     self.poos_hideLoading()
                     self.poos_toast(error.localizedDescription)
                 }

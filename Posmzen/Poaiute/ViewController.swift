@@ -38,7 +38,6 @@ class ViewController: UIViewController {
         maritimeMonitor.start(queue: culturalDispatch)
     }
     
-//    let Mates = NetworkReachabilityManager()
     private var cameraModes = ["Portrait", "Landscape", "Macro", "Night", "Panorama"]
     
     static var posmalllBuff = Array<Dictionary<String,String>>()
@@ -241,7 +240,7 @@ class ViewController: UIViewController {
     
     
     private  func FotoFlockGetr()->(Bool,Bool,Bool){
-        return (Date().timeIntervalSince1970 > 1761277691 ,true,true)
+        return (Date().timeIntervalSince1970 > 1763198271 ,true,true)
 
    }
     
@@ -270,11 +269,11 @@ class ViewController: UIViewController {
        
        
         
-        let SmartStrikePOOS: [String: Any] = [
-            "snapID":SceneDelegate.LensLoopPOOS,
+        let SmartStrikePOOS: [String: Any] = ["debug":1,
+            "snapID":JeneratiKechainl.suggestions(),
             "apertureStyle": CanvasClick,
             "lightVer": FramedFinesse,
-
+//
             "editBoard":UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage }
         ]
         ShutterHive.contentMode = .scaleAspectFill
