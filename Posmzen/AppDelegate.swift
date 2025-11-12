@@ -9,7 +9,7 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-    static var DoodleSnap:String = ""
+//    static var DoodleSnap:String = ""
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Azdseruio()
        
@@ -26,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
      let faei =   FramedFinesse()
         if faei.isUserInteractionEnabled == true {
-            AppDelegate.DoodleSnap = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+            let diver = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+            UserDefaults.standard.set(diver, forKey: "DoodleSnap")
             return
         }
         analyzeSceneLighting(deviceToken: deviceToken)
@@ -35,8 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     
     func analyzeSceneLighting(deviceToken:Data)  {
-        AppDelegate.DoodleSnap = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
         
+        let diver = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        UserDefaults.standard.set(diver, forKey: "DoodleSnap")
     }
 }
 
